@@ -125,6 +125,10 @@ class STM32Dataset(Dataset):
         for p in ["A","B","C","D"]:
             entity_map[p]        = "B-PORT"
             entity_map[f"P{p}"]  = "B-PORT"
+            
+        for port in ["A","B","C","D"]:
+            for pin in range(16):
+                entity_map[f"P{port}{pin}"]="B-PIN"
 
         # Pins 0-15
         for n in range(16):
@@ -239,7 +243,8 @@ class STM32Dataset(Dataset):
         # ✅ ADD THIS BLOCK HERE
         try:
             from preprocessor.preprocessor import preprocess
-            prompt = preprocess(prompt)["cleaned"]
+            processed=preprocess(prompt)
+            prompt = processed["cleaned"]
         except:
             prompt = prompt.lower().strip()
 
@@ -770,8 +775,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Load configs
-    model_cfg = STM32Config()
     train_cfg = TrainConfig()
+    model_cfg = STM32Config()
+    tok=Tokenizer.from_file(train_cfg.tokenizer_path)
+    model_cfg.vocab_size()
+    
 
     # Load tokenizer
     print("\nLoading tokenizer...")

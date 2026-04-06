@@ -30,7 +30,9 @@ if not model_path.exists():
     raise FileNotFoundError(f"Model checkpoint not found: {model_path}")
 
 config = STM32Config()
-config.vocab_size = tokenizer.get_vocab_size()   # IMPORTANT
+
+tok= Tokenizer.from_file("tokenizer/stm32_tokenizer.json")
+config.vocab_size=tok.get_vocab_size()
 
 model = STM32LLM(config)
 checkpoint = torch.load(model_path, map_location="cpu")
