@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual env
+.venv/
+venv/
+
+# Training outputs
+checkpoints/
+*.pt
+
+# OS files
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/

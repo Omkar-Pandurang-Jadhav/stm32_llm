@@ -1,0 +1,9316 @@
+{
+  "version": "1.0",
+  "truncation": null,
+  "padding": null,
+  "added_tokens": [
+    {
+      "id": 0,
+      "content": "<PAD>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 1,
+      "content": "<UNK>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 2,
+      "content": "<BOS>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 3,
+      "content": "<EOS>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 4,
+      "content": "<SEP>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 160,
+      "content": "PWM",
+      "single_word": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 161,
+      "content": "200ms",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 162,
+      "content": "500ms",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 170,
+      "content": "output_push_pull",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 172,
+      "content": "1000ms",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 179,
+      "content": "2000ms",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 180,
+      "content": "100ms",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 226,
+      "content": "50MHz",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 230,
+      "content": "2MHz",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 234,
+      "content": "output_open_drain",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 237,
+      "content": "10MHz",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 283,
+      "content": "input_pull_up",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 292,
+      "content": "input_pull_down",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 435,
+      "content": "CH2",
+      "single_word": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 458,
+      "content": "CH4",
+      "single_word": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 473,
+      "content": "CH1",
+      "single_word": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 475,
+      "content": "CH3",
+      "single_word": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 975,
+      "content": "PA9",
+      "single_word": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 976,
+      "content": "PA10",
+      "single_word": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 982,
+      "content": "PB10",
+      "single_word": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 1284,
+      "content": "PB11",
+      "single_word": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 1502,
+      "content": "input_floating",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 1826,
+      "content": "25%",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 1827,
+      "content": "50%",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 1828,
+      "content": "75%",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 1829,
+      "content": "100%",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 1830,
+      "content": "GPIO_OUTPUT",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 1831,
+      "content": "GPIO_INPUT",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 1832,
+      "content": "GPIO_TOGGLE",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 1833,
+      "content": "GPIO_READ",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 1834,
+      "content": "UART_INIT",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 1835,
+      "content": "UART_TRANSMIT",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 1836,
+      "content": "UART_RECEIVE",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 1837,
+      "content": "TIMER_DELAY",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 1838,
+      "content": "TIMER_PWM",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 1839,
+      "content": "RCC_ENABLE",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 1840,
+      "content": "RCC_APB2ENR",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    },
+    {
+      "id": 1841,
+      "content": "RCC_APB1ENR",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": true,
+      "special": false
+    }
+  ],
+  "normalizer": null,
+  "pre_tokenizer": {
+    "type": "Whitespace"
+  },
+  "post_processor": {
+    "type": "TemplateProcessing",
+    "single": [
+      {
+        "SpecialToken": {
+          "id": "<BOS>",
+          "type_id": 0
+        }
+      },
+      {
+        "Sequence": {
+          "id": "A",
+          "type_id": 0
+        }
+      },
+      {
+        "SpecialToken": {
+          "id": "<EOS>",
+          "type_id": 0
+        }
+      }
+    ],
+    "pair": [
+      {
+        "Sequence": {
+          "id": "A",
+          "type_id": 0
+        }
+      },
+      {
+        "Sequence": {
+          "id": "B",
+          "type_id": 1
+        }
+      }
+    ],
+    "special_tokens": {
+      "<BOS>": {
+        "id": "<BOS>",
+        "ids": [
+          2
+        ],
+        "tokens": [
+          "<BOS>"
+        ]
+      },
+      "<EOS>": {
+        "id": "<EOS>",
+        "ids": [
+          3
+        ],
+        "tokens": [
+          "<EOS>"
+        ]
+      }
+    }
+  },
+  "decoder": null,
+  "model": {
+    "type": "BPE",
+    "dropout": null,
+    "unk_token": "<UNK>",
+    "continuing_subword_prefix": null,
+    "end_of_word_suffix": null,
+    "fuse_unk": false,
+    "byte_fallback": false,
+    "ignore_merges": false,
+    "vocab": {
+      "<PAD>": 0,
+      "<UNK>": 1,
+      "<BOS>": 2,
+      "<EOS>": 3,
+      "<SEP>": 4,
+      "%": 5,
+      "-": 6,
+      "/": 7,
+      "0": 8,
+      "1": 9,
+      "2": 10,
+      "3": 11,
+      "4": 12,
+      "5": 13,
+      "6": 14,
+      "7": 15,
+      "8": 16,
+      "9": 17,
+      "A": 18,
+      "B": 19,
+      "C": 20,
+      "D": 21,
+      "E": 22,
+      "F": 23,
+      "G": 24,
+      "H": 25,
+      "I": 26,
+      "J": 27,
+      "K": 28,
+      "L": 29,
+      "M": 30,
+      "N": 31,
+      "O": 32,
+      "P": 33,
+      "Q": 34,
+      "R": 35,
+      "S": 36,
+      "T": 37,
+      "U": 38,
+      "V": 39,
+      "W": 40,
+      "X": 41,
+      "Y": 42,
+      "Z": 43,
+      "_": 44,
+      "a": 45,
+      "b": 46,
+      "c": 47,
+      "d": 48,
+      "e": 49,
+      "f": 50,
+      "g": 51,
+      "h": 52,
+      "i": 53,
+      "j": 54,
+      "k": 55,
+      "l": 56,
+      "m": 57,
+      "n": 58,
+      "o": 59,
+      "p": 60,
+      "q": 61,
+      "r": 62,
+      "s": 63,
+      "t": 64,
+      "u": 65,
+      "v": 66,
+      "w": 67,
+      "x": 68,
+      "y": 69,
+      "z": 70,
+      "00": 71,
+      "ut": 72,
+      "in": 73,
+      "at": 74,
+      "put": 75,
+      "it": 76,
+      "on": 77,
+      "AR": 78,
+      "SAR": 79,
+      "USAR": 80,
+      "USART": 81,
+      "ms": 82,
+      "se": 83,
+      "ll": 84,
+      "re": 85,
+      "out": 86,
+      "output": 87,
+      "200": 88,
+      "as": 89,
+      "ud": 90,
+      "ba": 91,
+      "baud": 92,
+      "IM": 93,
+      "TIM": 94,
+      "to": 95,
+      "le": 96,
+      "or": 97,
+      "pu": 98,
+      "al": 99,
+      "er": 100,
+      "_pu": 101,
+      "input": 102,
+      "ig": 103,
+      "set": 104,
+      "con": 105,
+      "en": 106,
+      "an": 107,
+      "100": 108,
+      "ing": 109,
+      "bl": 110,
+      "USART2": 111,
+      "USART3": 112,
+      "USART1": 113,
+      "ure": 114,
+      "Hz": 115,
+      "MHz": 116,
+      "up": 117,
+      "0ms": 118,
+      "el": 119,
+      "fig": 120,
+      "config": 121,
+      "configure": 122,
+      "pin": 123,
+      "for": 124,
+      "_pull": 125,
+      "600": 126,
+      "15": 127,
+      "ad": 128,
+      "iti": 129,
+      "bit": 130,
+      "ate": 131,
+      "ink": 132,
+      "blink": 133,
+      "wit": 134,
+      "us": 135,
+      "b1": 136,
+      "ev": 137,
+      "ery": 138,
+      "sh": 139,
+      "0MHz": 140,
+      "every": 141,
+      "with": 142,
+      "dr": 143,
+      "th": 144,
+      "ay": 145,
+      "del": 146,
+      "delay": 147,
+      "TIM3": 148,
+      "lo": 149,
+      "500": 150,
+      "ke": 151,
+      "TIM2": 152,
+      "setup": 153,
+      "TIM4": 154,
+      "115": 155,
+      "115200": 156,
+      "of": 157,
+      "ma": 158,
+      "PW": 159,
+      "PWM": 160,
+      "200ms": 161,
+      "500ms": 162,
+      "por": 163,
+      "port": 164,
+      "op": 165,
+      "make": 166,
+      "a1": 167,
+      "_push": 168,
+      "_push_pull": 169,
+      "output_push_pull": 170,
+      "400": 171,
+      "1000ms": 172,
+      "all": 173,
+      "st": 174,
+      "38": 175,
+      "38400": 176,
+      "od": 177,
+      "iv": 178,
+      "2000ms": 179,
+      "100ms": 180,
+      "19": 181,
+      "19200": 182,
+      "57": 183,
+      "57600": 184,
+      "9600": 185,
+      "ali": 186,
+      "ze": 187,
+      "initi": 188,
+      "alize": 189,
+      "initialize": 190,
+      "ch": 191,
+      "and": 192,
+      "ally": 193,
+      "gg": 194,
+      "togg": 195,
+      "toggle": 196,
+      "open": 197,
+      "input_pull": 198,
+      "input_pull_": 199,
+      "als": 200,
+      "ive": 201,
+      "wh": 202,
+      "ain": 203,
+      "led": 204,
+      "ck": 205,
+      "drain": 206,
+      "diti": 207,
+      "onally": 208,
+      "dat": 209,
+      "data": 210,
+      "pl": 211,
+      "ditionally": 212,
+      "whi": 213,
+      "read": 214,
+      "ell": 215,
+      "ro": 216,
+      "well": 217,
+      "then": 218,
+      "sto": 219,
+      "stop": 220,
+      "plus": 221,
+      "additionally": 222,
+      "ill": 223,
+      "wa": 224,
+      "also": 225,
+      "50MHz": 226,
+      "ce": 227,
+      "use": 228,
+      "while": 229,
+      "2MHz": 230,
+      "_open": 231,
+      "_drain": 232,
+      "output_open": 233,
+      "output_open_drain": 234,
+      "using": 235,
+      "sen": 236,
+      "10MHz": 237,
+      "tr": 238,
+      "wait": 239,
+      "dut": 240,
+      "duty": 241,
+      "ds": 242,
+      "bits": 243,
+      "cy": 244,
+      "ri": 245,
+      "sm": 246,
+      "seri": 247,
+      "serial": 248,
+      "ansm": 249,
+      "transm": 250,
+      "transmit": 251,
+      "cyc": 252,
+      "pa": 253,
+      "ee": 254,
+      "send": 255,
+      "vi": 256,
+      "cycle": 257,
+      "via": 258,
+      "nel": 259,
+      "flo": 260,
+      "mill": 261,
+      "ating": 262,
+      "floating": 263,
+      "conds": 264,
+      "chan": 265,
+      "milli": 266,
+      "c1": 267,
+      "CH": 268,
+      "rece": 269,
+      "receive": 270,
+      "rt": 271,
+      "seconds": 272,
+      "channel": 273,
+      "wn": 274,
+      "init": 275,
+      "milliseconds": 276,
+      "fl": 277,
+      "ge": 278,
+      "do": 279,
+      "eed": 280,
+      "te": 281,
+      "im": 282,
+      "input_pull_up": 283,
+      "bs": 284,
+      "per": 285,
+      "bsud": 286,
+      "50": 287,
+      "mod": 288,
+      "rn": 289,
+      "mode": 290,
+      "input_pull_do": 291,
+      "input_pull_down": 292,
+      "blo": 293,
+      "cre": 294,
+      "create": 295,
+      "block": 296,
+      "wan": 297,
+      "want": 298,
+      "25": 299,
+      "fro": 300,
+      "from": 301,
+      "75": 302,
+      "iod": 303,
+      "by": 304,
+      "un": 305,
+      "tx": 306,
+      "9n": 307,
+      "gp": 308,
+      "tim": 309,
+      "period": 310,
+      "ign": 311,
+      "sta": 312,
+      "drive": 313,
+      "b15": 314,
+      "a8": 315,
+      "pause": 316,
+      "get": 317,
+      "gen": 318,
+      "sign": 319,
+      "erate": 320,
+      "generate": 321,
+      "io": 322,
+      "timer": 323,
+      "a5": 324,
+      "a7": 325,
+      "gpio": 326,
+      "d1": 327,
+      "a6": 328,
+      "b12": 329,
+      "tu": 330,
+      "ena": 331,
+      "8n": 332,
+      "dig": 333,
+      "b8": 334,
+      "val": 335,
+      "a10": 336,
+      "byte": 337,
+      "gh": 338,
+      "c13": 339,
+      "rate": 340,
+      "a2": 341,
+      "digit": 342,
+      "a9": 343,
+      "off": 344,
+      "b2": 345,
+      "ble": 346,
+      "d0": 347,
+      "rit": 348,
+      "a11": 349,
+      "low": 350,
+      "a12": 351,
+      "b10": 352,
+      "clo": 353,
+      "clock": 354,
+      "co": 355,
+      "a4": 356,
+      "state": 357,
+      "run": 358,
+      "enable": 359,
+      "b5": 360,
+      "b9": 361,
+      "ugh": 362,
+      "b7": 363,
+      "os": 364,
+      "c15": 365,
+      "digital": 366,
+      "b11": 367,
+      "into": 368,
+      "b6": 369,
+      "swit": 370,
+      "switch": 371,
+      "a3": 372,
+      "bu": 373,
+      "ic": 374,
+      "c14": 375,
+      "b0": 376,
+      "b13": 377,
+      "turn": 378,
+      "osc": 379,
+      "thro": 380,
+      "sp": 381,
+      "b14": 382,
+      "oscill": 383,
+      "ion": 384,
+      "ash": 385,
+      "through": 386,
+      "flash": 387,
+      "ip": 388,
+      "pr": 389,
+      "runn": 390,
+      "hig": 391,
+      "high": 392,
+      "speed": 393,
+      "ct": 394,
+      "pp": 395,
+      "du": 396,
+      "the": 397,
+      "a0": 398,
+      "ring": 399,
+      "ld": 400,
+      "running": 401,
+      "sa": 402,
+      "oscillate": 403,
+      "flip": 404,
+      "blocking": 405,
+      "com": 406,
+      "art": 407,
+      "ue": 408,
+      "uart": 409,
+      "9n2": 410,
+      "is": 411,
+      "need": 412,
+      "coming": 413,
+      "9n1": 414,
+      "pe": 415,
+      "pre": 416,
+      "ple": 417,
+      "rx": 418,
+      "prod": 419,
+      "incoming": 420,
+      "ter": 421,
+      "produ": 422,
+      "writ": 423,
+      "8n2": 424,
+      "write": 425,
+      "inter": 426,
+      "produce": 427,
+      "baudrate": 428,
+      "ent": 429,
+      "assign": 430,
+      "bring": 431,
+      "ff": 432,
+      "wut": 433,
+      "sho": 434,
+      "CH2": 435,
+      "cc": 436,
+      "interval": 437,
+      "14": 438,
+      "uld": 439,
+      "repe": 440,
+      "pare": 441,
+      "pprt": 442,
+      "dl": 443,
+      "dly": 444,
+      "wuth": 445,
+      "rcc": 446,
+      "buff": 447,
+      "ws": 448,
+      "value": 449,
+      "prepare": 450,
+      "should": 451,
+      "no": 452,
+      "atedly": 453,
+      "signals": 454,
+      "de": 455,
+      "sl": 456,
+      "vel": 457,
+      "CH4": 458,
+      "PA": 459,
+      "pro": 460,
+      "repeatedly": 461,
+      "10": 462,
+      "me": 463,
+      "periodic": 464,
+      "8n1": 465,
+      "start": 466,
+      "buffer": 467,
+      "ap": 468,
+      "dsta": 469,
+      "level": 470,
+      "mske": 471,
+      "badu": 472,
+      "CH1": 473,
+      "tect": 474,
+      "CH3": 475,
+      "PB": 476,
+      "1000": 477,
+      "nee": 478,
+      "detect": 479,
+      "periodically": 480,
+      "ec": 481,
+      "ex": 482,
+      "bytes": 483,
+      "mes": 484,
+      "ist": 485,
+      "2000": 486,
+      "exec": 487,
+      "log": 488,
+      "needs": 489,
+      "13": 490,
+      "po": 491,
+      "so": 492,
+      "12": 493,
+      "ry": 494,
+      "ution": 495,
+      "pull": 496,
+      "oper": 497,
+      "rity": 498,
+      "sof": 499,
+      "sage": 500,
+      "soft": 501,
+      "ation": 502,
+      "parity": 503,
+      "execution": 504,
+      "nt": 505,
+      "message": 506,
+      "gr": 507,
+      "hal": 508,
+      "stall": 509,
+      "halt": 510,
+      "11": 511,
+      "cap": 512,
+      "load": 513,
+      "che": 514,
+      "ware": 515,
+      "progr": 516,
+      "am": 517,
+      "ture": 518,
+      "logic": 519,
+      "operation": 520,
+      "ih": 521,
+      "rv": 522,
+      "oprn": 523,
+      "buad": 524,
+      "software": 525,
+      "check": 526,
+      "ae": 527,
+      "rr": 528,
+      "sense": 529,
+      "ment": 530,
+      "bli": 531,
+      "capture": 532,
+      "program": 533,
+      "PC": 534,
+      "wor": 535,
+      "imple": 536,
+      "blish": 537,
+      "rvery": 538,
+      "work": 539,
+      "implement": 540,
+      "esta": 541,
+      "mo": 542,
+      "thrn": 543,
+      "sam": 544,
+      "ung": 545,
+      "establish": 546,
+      "push": 547,
+      "wsit": 548,
+      "wr": 549,
+      "slso": 550,
+      "wrll": 551,
+      "fr": 552,
+      "feed": 553,
+      "sample": 554,
+      "poll": 555,
+      "be": 556,
+      "driv": 557,
+      "cent": 558,
+      "list": 559,
+      "rriv": 560,
+      "lr": 561,
+      "ne": 562,
+      "dury": 563,
+      "arriv": 564,
+      "ta": 565,
+      "percent": 566,
+      "kae": 567,
+      "mkae": 568,
+      "ste": 569,
+      "pm": 570,
+      "wsnt": 571,
+      "arriving": 572,
+      "ho": 573,
+      "stpp": 574,
+      "reading": 575,
+      "sd": 576,
+      "string": 577,
+      "frpm": 578,
+      "but": 579,
+      "if": 580,
+      "mon": 581,
+      "buts": 582,
+      "ov": 583,
+      "listen": 584,
+      "dp": 585,
+      "ey": 586,
+      "reg": 587,
+      "evey": 588,
+      "gpioa": 589,
+      "coll": 590,
+      "hold": 591,
+      "dpwn": 592,
+      "800": 593,
+      "92": 594,
+      "pd": 595,
+      "ur": 596,
+      "wih": 597,
+      "evry": 598,
+      "over": 599,
+      "modr": 600,
+      "da": 601,
+      "nnel": 602,
+      "regist": 603,
+      "ect": 604,
+      "collect": 605,
+      "ol": 606,
+      "itor": 607,
+      "register": 608,
+      "ng": 609,
+      "gpiob": 610,
+      "monitor": 611,
+      "0x": 612,
+      "sin": 613,
+      "vol": 614,
+      "wi": 615,
+      "rent": 616,
+      "usung": 617,
+      "gpiod": 618,
+      "cur": 619,
+      "snnel": 620,
+      "wt": 621,
+      "red": 622,
+      "chsnnel": 623,
+      "gpioc": 624,
+      "driven": 625,
+      "current": 626,
+      "ed": 627,
+      "wat": 628,
+      "bling": 629,
+      "what": 630,
+      "whilr": 631,
+      "tage": 632,
+      "wiht": 633,
+      "sdditionally": 634,
+      "voltage": 635,
+      "act": 636,
+      "ek": 637,
+      "drsin": 638,
+      "maek": 639,
+      "enabling": 640,
+      "potr": 641,
+      "usrt": 642,
+      "activ": 643,
+      "82": 644,
+      "ss": 645,
+      "li": 646,
+      "ps": 647,
+      "rm": 648,
+      "rey": 649,
+      "evrey": 650,
+      "bytr": 651,
+      "turm": 652,
+      "activate": 653,
+      "91": 654,
+      "pn": 655,
+      "thr": 656,
+      "opne": 657,
+      "prot": 658,
+      "wtih": 659,
+      "81": 660,
+      "nig": 661,
+      "add": 662,
+      "millis": 663,
+      "14400": 664,
+      "28": 665,
+      "dta": 666,
+      "ti": 667,
+      "dri": 668,
+      "unto": 669,
+      "eveyr": 670,
+      "dtaa": 671,
+      "pugh": 672,
+      "stste": 673,
+      "digitsl": 674,
+      "oscillste": 675,
+      "drivr": 676,
+      "thrpugh": 677,
+      "4800": 678,
+      "epn": 679,
+      "ls": 680,
+      "nred": 681,
+      "oepn": 682,
+      "rin": 683,
+      "uing": 684,
+      "vsl": 685,
+      "eral": 686,
+      "additi": 687,
+      "usnig": 688,
+      "thne": 689,
+      "darin": 690,
+      "28800": 691,
+      "20": 692,
+      "2500": 693,
+      "2400": 694,
+      "eery": 695,
+      "eevry": 696,
+      "su": 697,
+      "vl": 698,
+      "yt": 699,
+      "plsu": 700,
+      "whiel": 701,
+      "daat": 702,
+      "wiat": 703,
+      "wati": 704,
+      "bt": 705,
+      "dtu": 706,
+      "gpu": 707,
+      "heral": 708,
+      "mi": 709,
+      "puls": 710,
+      "dran": 711,
+      "cyle": 712,
+      "cyclr": 713,
+      "flup": 714,
+      "turned": 715,
+      "PA1": 716,
+      "PB1": 717,
+      "250000": 718,
+      "dtuy": 719,
+      "gpuo": 720,
+      "ac": 721,
+      "hugh": 722,
+      "mdo": 723,
+      "ow": 724,
+      "aly": 725,
+      "form": 726,
+      "allow": 727,
+      "cess": 728,
+      "timrr": 729,
+      "rung": 730,
+      "ipheral": 731,
+      "duyt": 732,
+      "0x400": 733,
+      "watn": 734,
+      "addition": 735,
+      "access": 736,
+      "mdoe": 737,
+      "1200": 738,
+      "dain": 739,
+      "hn": 740,
+      "ible": 741,
+      "rconds": 742,
+      "uis": 743,
+      "wle": 744,
+      "ino": 745,
+      "aslo": 746,
+      "usign": 747,
+      "whie": 748,
+      "tehn": 749,
+      "PA13": 750,
+      "PB4": 751,
+      "sot": 752,
+      "moed": 753,
+      "ungate": 754,
+      "millisrconds": 755,
+      "accessible": 756,
+      "uisng": 757,
+      "wlel": 758,
+      "ah": 759,
+      "ting": 760,
+      "lly": 761,
+      "millise": 762,
+      "peripheral": 763,
+      "preps": 764,
+      "apb": 765,
+      "wile": 766,
+      "additionaly": 767,
+      "sotp": 768,
+      "prepsre": 769,
+      "brung": 770,
+      "es": 771,
+      "et": 772,
+      "nan": 773,
+      "pas": 774,
+      "pd1": 775,
+      "sate": 776,
+      "ve": 777,
+      "wpr": 778,
+      "alos": 779,
+      "blco": 780,
+      "losd": 781,
+      "chnan": 782,
+      "whle": 783,
+      "paue": 784,
+      "chanel": 785,
+      "peri": 786,
+      "PA15": 787,
+      "PB3": 788,
+      "frmo": 789,
+      "wihle": 790,
+      "psuse": 791,
+      "addit": 792,
+      "vslue": 793,
+      "btis": 794,
+      "pasue": 795,
+      "wprk": 796,
+      "blcok": 797,
+      "chnanel": 798,
+      "cr": 799,
+      "ccyle": 800,
+      "gate": 801,
+      "iit": 802,
+      "mr": 803,
+      "sat": 804,
+      "tae": 805,
+      "tmi": 806,
+      "uc": 807,
+      "puse": 808,
+      "setting": 809,
+      "usig": 810,
+      "drvi": 811,
+      "sts": 812,
+      "stpo": 813,
+      "riod": 814,
+      "chann": 815,
+      "blockung": 816,
+      "uncoming": 817,
+      "spred": 818,
+      "runnung": 819,
+      "loguc": 820,
+      "urat": 821,
+      "wtch": 822,
+      "satte": 823,
+      "tmier": 824,
+      "are": 825,
+      "brn": 826,
+      "dg": 827,
+      "dw": 828,
+      "dive": 829,
+      "ests": 830,
+      "hpl": 831,
+      "hsl": 832,
+      "hih": 833,
+      "il": 834,
+      "ionally": 835,
+      "oi": 836,
+      "pck": 837,
+      "ssh": 838,
+      "swut": 839,
+      "slly": 840,
+      "inc": 841,
+      "incom": 842,
+      "enl": 843,
+      "blck": 844,
+      "blpck": 845,
+      "drin": 846,
+      "whli": 847,
+      "chanenl": 848,
+      "wnat": 849,
+      "flah": 850,
+      "flssh": 851,
+      "bsudrate": 852,
+      "time": 853,
+      "timr": 854,
+      "prriod": 855,
+      "ppll": 856,
+      "producr": 857,
+      "intervsl": 858,
+      "ccle": 859,
+      "buffrr": 860,
+      "PA14": 861,
+      "periodicslly": 862,
+      "some": 863,
+      "PC1": 864,
+      "PC8": 865,
+      "liseconds": 866,
+      "drian": 867,
+      "driev": 868,
+      "iital": 869,
+      "drvie": 870,
+      "dwon": 871,
+      "estsblish": 872,
+      "hpld": 873,
+      "hslt": 874,
+      "hihg": 875,
+      "swutch": 876,
+      "whlie": 877,
+      "bo": 878,
+      "br": 879,
+      "di": 880,
+      "fe": 881,
+      "hg": 882,
+      "kc": 883,
+      "ming": 884,
+      "rae": 885,
+      "rste": 886,
+      "swtch": 887,
+      "uce": 888,
+      "itno": 889,
+      "onds": 890,
+      "baudrae": 891,
+      "stte": 892,
+      "sttae": 893,
+      "cyce": 894,
+      "byet": 895,
+      "gpoi": 896,
+      "signal": 897,
+      "b20": 898,
+      "prpe": 899,
+      "duce": 900,
+      "PA0": 901,
+      "PA5": 902,
+      "PA7": 903,
+      "PA20": 904,
+      "PB2": 905,
+      "PB5": 906,
+      "PB14": 907,
+      "messs": 908,
+      "somr": 909,
+      "moing": 910,
+      "lrvel": 911,
+      "pd2": 912,
+      "pd3": 913,
+      "pd6": 914,
+      "addti": 915,
+      "millisconds": 916,
+      "paues": 917,
+      "perid": 918,
+      "channle": 919,
+      "brng": 920,
+      "dgiital": 921,
+      "incmoing": 922,
+      "bock": 923,
+      "prpeare": 924,
+      "messsge": 925,
+      "04": 926,
+      "ar": 927,
+      "ase": 928,
+      "csp": 929,
+      "fred": 930,
+      "gn": 931,
+      "gip": 932,
+      "ial": 933,
+      "iop": 934,
+      "la": 935,
+      "lit": 936,
+      "lce": 937,
+      "lve": 938,
+      "mer": 939,
+      "mun": 940,
+      "sor": 941,
+      "swi": 942,
+      "tun": 943,
+      "tmer": 944,
+      "va": 945,
+      "ye": 946,
+      "inco": 947,
+      "resd": 948,
+      "ass": 949,
+      "assin": 950,
+      "puase": 951,
+      "enr": 952,
+      "blinking": 953,
+      "usng": 954,
+      "b18": 955,
+      "a16": 956,
+      "stion": 957,
+      "trho": 958,
+      "cylce": 959,
+      "smple": 960,
+      "cycel": 961,
+      "pase": 962,
+      "flsh": 963,
+      "flsa": 964,
+      "bloc": 965,
+      "signsl": 966,
+      "gpio_": 967,
+      "oscillae": 968,
+      "prduce": 969,
+      "commun": 970,
+      "shoud": 971,
+      "wsre": 972,
+      "PA4": 973,
+      "PA6": 974,
+      "PA9": 975,
+      "PA10": 976,
+      "PA11": 977,
+      "PB6": 978,
+      "PB8": 979,
+      "PB9": 980,
+      "PB15": 981,
+      "PB10": 982,
+      "softwsre": 983,
+      "PC0": 984,
+      "PC2": 985,
+      "PC3": 986,
+      "PC6": 987,
+      "PC7": 988,
+      "PC10": 989,
+      "PC13": 990,
+      "PC12": 991,
+      "PC11": 992,
+      "listrn": 993,
+      "monti": 994,
+      "pd4": 995,
+      "pd8": 996,
+      "sssign": 997,
+      "tie": 998,
+      "drie": 999,
+      "btye": 1000,
+      "miliseconds": 1001,
+      "drani": 1002,
+      "inoally": 1003,
+      "additionalyl": 1004,
+      "pd10": 1005,
+      "additinoally": 1006,
+      "hgih": 1007,
+      "cspture": 1008,
+      "gipo": 1009,
+      "lveel": 1010,
+      "swich": 1011,
+      "tunr": 1012,
+      "resding": 1013,
+      "trhough": 1014,
+      "flsah": 1015,
+      "communic": 1016,
+      "montior": 1017,
+      "avl": 1018,
+      "bist": 1019,
+      "cn": 1020,
+      "cat": 1021,
+      "cah": 1022,
+      "don": 1023,
+      "econds": 1024,
+      "fas": 1025,
+      "fal": 1026,
+      "fer": 1027,
+      "fash": 1028,
+      "fil": 1029,
+      "hl": 1030,
+      "iseconds": 1031,
+      "iionally": 1032,
+      "las": 1033,
+      "lud": 1034,
+      "lpe": 1035,
+      "mll": 1036,
+      "mnt": 1037,
+      "pi": 1038,
+      "pel": 1039,
+      "rck": 1040,
+      "rct": 1041,
+      "sn": 1042,
+      "srt": 1043,
+      "srn": 1044,
+      "sne": 1045,
+      "tct": 1046,
+      "uo": 1047,
+      "ule": 1048,
+      "vle": 1049,
+      "vali": 1050,
+      "inally": 1051,
+      "llate": 1052,
+      "asis": 1053,
+      "levle": 1054,
+      "pure": 1055,
+      "puld": 1056,
+      "usart": 1057,
+      "evr": 1058,
+      "shpuld": 1059,
+      "drtect": 1060,
+      "drve": 1061,
+      "loda": 1062,
+      "a17": 1063,
+      "a18": 1064,
+      "strung": 1065,
+      "chrck": 1066,
+      "whst": 1067,
+      "illate": 1068,
+      "senes": 1069,
+      "trun": 1070,
+      "pari": 1071,
+      "millieconds": 1072,
+      "rty": 1073,
+      "flpi": 1074,
+      "tedly": 1075,
+      "impl": 1076,
+      "imng": 1077,
+      "byt": 1078,
+      "stae": 1079,
+      "staet": 1080,
+      "signlas": 1081,
+      "digial": 1082,
+      "a20": 1083,
+      "bufe": 1084,
+      "oscil": 1085,
+      "oscllate": 1086,
+      "throgh": 1087,
+      "pror": 1088,
+      "uart_": 1089,
+      "interavl": 1090,
+      "sholud": 1091,
+      "repeste": 1092,
+      "repetedly": 1093,
+      "rcc_": 1094,
+      "PA2": 1095,
+      "PA3": 1096,
+      "PA8": 1097,
+      "PA12": 1098,
+      "apb1": 1099,
+      "apb2": 1100,
+      "PB13": 1101,
+      "PB12": 1102,
+      "PB20": 1103,
+      "execut": 1104,
+      "sould": 1105,
+      "opera": 1106,
+      "operstion": 1107,
+      "chekc": 1108,
+      "progrsm": 1109,
+      "rve": 1110,
+      "PC5": 1111,
+      "PC14": 1112,
+      "implemnt": 1113,
+      "establ": 1114,
+      "sampel": 1115,
+      "collrct": 1116,
+      "pd5": 1117,
+      "pd7": 1118,
+      "pd9": 1119,
+      "volt": 1120,
+      "addiionally": 1121,
+      "additio": 1122,
+      "vla": 1123,
+      "vlue": 1124,
+      "PA17": 1125,
+      "PB16": 1126,
+      "PB18": 1127,
+      "0x40000": 1128,
+      "0x40010": 1129,
+      "inoming": 1130,
+      "milliseonds": 1131,
+      "perido": 1132,
+      "flahs": 1133,
+      "brign": 1134,
+      "dirve": 1135,
+      "addtiionally": 1136,
+      "litsen": 1137,
+      "vaule": 1138,
+      "incoimng": 1139,
+      "assing": 1140,
+      "blocing": 1141,
+      "signsls": 1142,
+      "shoudl": 1143,
+      "catpure": 1144,
+      "cahnnel": 1145,
+      "donw": 1146,
+      "fast": 1147,
+      "falsh": 1148,
+      "filp": 1149,
+      "hlat": 1150,
+      "mlliseconds": 1151,
+      "valid": 1152,
+      "asisgn": 1153,
+      "bufefr": 1154,
+      "repestedly": 1155,
+      "08": 1156,
+      "2en": 1157,
+      "2800": 1158,
+      "3en": 1159,
+      "40": 1160,
+      "apre": 1161,
+      "bi": 1162,
+      "bing": 1163,
+      "bte": 1164,
+      "bff": 1165,
+      "bol": 1166,
+      "ca": 1167,
+      "cp": 1168,
+      "ede": 1169,
+      "fo": 1170,
+      "fs": 1171,
+      "gic": 1172,
+      "gae": 1173,
+      "hod": 1174,
+      "hck": 1175,
+      "ir": 1176,
+      "iwtch": 1177,
+      "irty": 1178,
+      "kr": 1179,
+      "lst": 1180,
+      "lvel": 1181,
+      "lgic": 1182,
+      "mli": 1183,
+      "nre": 1184,
+      "nate": 1185,
+      "ough": 1186,
+      "ocn": 1187,
+      "oinally": 1188,
+      "oevr": 1189,
+      "okr": 1190,
+      "rcent": 1191,
+      "sit": 1192,
+      "sma": 1193,
+      "sge": 1194,
+      "srriv": 1195,
+      "sbling": 1196,
+      "siwtch": 1197,
+      "tre": 1198,
+      "tal": 1199,
+      "uh": 1200,
+      "uat": 1201,
+      "wro": 1202,
+      "wokr": 1203,
+      "utor": 1204,
+      "iner": 1205,
+      "inng": 1206,
+      "atl": 1207,
+      "atel": 1208,
+      "iton": 1209,
+      "iten": 1210,
+      "sese": 1211,
+      "sesne": 1212,
+      "ree": 1213,
+      "asign": 1214,
+      "badr": 1215,
+      "leev": 1216,
+      "levl": 1217,
+      "alte": 1218,
+      "alter": 1219,
+      "setn": 1220,
+      "sett": 1221,
+      "cons": 1222,
+      "ensbling": 1223,
+      "anlly": 1224,
+      "aditi": 1225,
+      "b16": 1226,
+      "b17": 1227,
+      "thing": 1228,
+      "though": 1229,
+      "ster": 1230,
+      "chnnel": 1231,
+      "readign": 1232,
+      "cet": 1233,
+      "ceck": 1234,
+      "ceonds": 1235,
+      "cehck": 1236,
+      "sensor": 1237,
+      "true": 1238,
+      "riing": 1239,
+      "pae": 1240,
+      "pairty": 1241,
+      "millseconds": 1242,
+      "millies": 1243,
+      "douce": 1244,
+      "tet": 1245,
+      "perpare": 1246,
+      "blokc": 1247,
+      "blockign": 1248,
+      "byes": 1249,
+      "tim4": 1250,
+      "timre": 1251,
+      "timer_": 1252,
+      "tuion": 1253,
+      "digti": 1254,
+      "digitl": 1255,
+      "digitla": 1256,
+      "runinng": 1257,
+      "osillate": 1258,
+      "c15ms": 1259,
+      "bufer": 1260,
+      "ically": 1261,
+      "turnd": 1262,
+      "spede": 1263,
+      "prrcent": 1264,
+      "prdouce": 1265,
+      "runnign": 1266,
+      "sapm": 1267,
+      "pepare": 1268,
+      "peir": 1269,
+      "preipheral": 1270,
+      "preapre": 1271,
+      "prepae": 1272,
+      "produe": 1273,
+      "1404": 1274,
+      "repeatel": 1275,
+      "buffr": 1276,
+      "buffre": 1277,
+      "detct": 1278,
+      "detet": 1279,
+      "prouce": 1280,
+      "1020": 1281,
+      "meent": 1282,
+      "PB7": 1283,
+      "PB11": 1284,
+      "nees": 1285,
+      "exectuion": 1286,
+      "logc": 1287,
+      "captu": 1288,
+      "captre": 1289,
+      "captrue": 1290,
+      "progrm": 1291,
+      "iheral": 1292,
+      "rving": 1293,
+      "PC4": 1294,
+      "PC9": 1295,
+      "PC15": 1296,
+      "sampe": 1297,
+      "samlpe": 1298,
+      "drivrn": 1299,
+      "listn": 1300,
+      "listne": 1301,
+      "neds": 1302,
+      "nede": 1303,
+      "monutor": 1304,
+      "ovrr": 1305,
+      "regster": 1306,
+      "0x1": 1307,
+      "0x2": 1308,
+      "0x3": 1309,
+      "lisen": 1310,
+      "lisetn": 1311,
+      "psrity": 1312,
+      "thrugh": 1313,
+      "millisceonds": 1314,
+      "lsiten": 1315,
+      "2040": 1316,
+      "PA16": 1317,
+      "PA18": 1318,
+      "PB17": 1319,
+      "0x4001": 1320,
+      "inot": 1321,
+      "milliseocn": 1322,
+      "millisecons": 1323,
+      "additoinally": 1324,
+      "channl": 1325,
+      "incomig": 1326,
+      "incomign": 1327,
+      "incomng": 1328,
+      "brig": 1329,
+      "fede": 1330,
+      "baudraet": 1331,
+      "byets": 1332,
+      "addtionally": 1333,
+      "arriing": 1334,
+      "tiem": 1335,
+      "tiemr": 1336,
+      "communication": 1337,
+      "snse": 1338,
+      "srtting": 1339,
+      "srnse": 1340,
+      "pariyt": 1341,
+      "implmeent": 1342,
+      "bytse": 1343,
+      "oscilalte": 1344,
+      "proram": 1345,
+      "apb1enr": 1346,
+      "apb2enr": 1347,
+      "executon": 1348,
+      "operaiton": 1349,
+      "additioanlly": 1350,
+      "vlaue": 1351,
+      "valid_": 1352,
+      "btes": 1353,
+      "bffer": 1354,
+      "bolck": 1355,
+      "fsst": 1356,
+      "hodl": 1357,
+      "lsten": 1358,
+      "mliliseconds": 1359,
+      "nreds": 1360,
+      "sitch": 1361,
+      "smaple": 1362,
+      "srriving": 1363,
+      "uatr": 1364,
+      "wrok": 1365,
+      "inerval": 1366,
+      "badrate": 1367,
+      "leevl": 1368,
+      "alternate": 1369,
+      "aditionally": 1370,
+      "milliesconds": 1371,
+      "digtial": 1372,
+      "sapmle": 1373,
+      "14040": 1374,
+      "repeately": 1375,
+      "milliseocnds": 1376,
+      "0c": 1377,
+      "0400": 1378,
+      "1en": 1379,
+      "2ms": 1380,
+      "21000": 1381,
+      "_floating": 1382,
+      "af": 1383,
+      "ag": 1384,
+      "ai": 1385,
+      "aen": 1386,
+      "a0ms": 1387,
+      "a15": 1388,
+      "ach": 1389,
+      "ari": 1390,
+      "aion": 1391,
+      "b3": 1392,
+      "b4": 1393,
+      "bf": 1394,
+      "bud": 1395,
+      "big": 1396,
+      "ben": 1397,
+      "c00": 1398,
+      "cen": 1399,
+      "can": 1400,
+      "cod": 1401,
+      "cue": 1402,
+      "cution": 1403,
+      "cnt": 1404,
+      "cillate": 1405,
+      "dt": 1406,
+      "dy": 1407,
+      "den": 1408,
+      "div": 1409,
+      "dee": 1410,
+      "dng": 1411,
+      "diital": 1412,
+      "eg": 1413,
+      "eution": 1414,
+      "eation": 1415,
+      "each": 1416,
+      "fre": 1417,
+      "fware": 1418,
+      "gin": 1419,
+      "gist": 1420,
+      "gam": 1421,
+      "gtae": 1422,
+      "guh": 1423,
+      "her": 1424,
+      "hlo": 1425,
+      "huld": 1426,
+      "hatl": 1427,
+      "ik": 1428,
+      "ise": 1429,
+      "ior": 1430,
+      "icoming": 1431,
+      "iatl": 1432,
+      "king": 1433,
+      "lseconds": 1434,
+      "laly": 1435,
+      "ns": 1436,
+      "non": 1437,
+      "ning": 1438,
+      "oer": 1439,
+      "ocillate": 1440,
+      "pw": 1441,
+      "plo": 1442,
+      "pod": 1443,
+      "pd0": 1444,
+      "patedly": 1445,
+      "prity": 1446,
+      "pheral": 1447,
+      "priod": 1448,
+      "piheral": 1449,
+      "qu": 1450,
+      "ror": 1451,
+      "rig": 1452,
+      "rment": 1453,
+      "sig": 1454,
+      "swith": 1455,
+      "sall": 1456,
+      "sct": 1457,
+      "sih": 1458,
+      "sgn": 1459,
+      "ssmple": 1460,
+      "sca": 1461,
+      "sfo": 1462,
+      "tion": 1463,
+      "tware": 1464,
+      "tih": 1465,
+      "tevr": 1466,
+      "tcet": 1467,
+      "urate": 1468,
+      "uion": 1469,
+      "ugate": 1470,
+      "uhg": 1471,
+      "ufer": 1472,
+      "vate": 1473,
+      "wre": 1474,
+      "000": 1475,
+      "invalid": 1476,
+      "intevr": 1477,
+      "ature": 1478,
+      "atblish": 1479,
+      "putre": 1480,
+      "ital": 1481,
+      "ono": 1482,
+      "onoff": 1483,
+      "mssage": 1484,
+      "seed": 1485,
+      "sesor": 1486,
+      "sesn": 1487,
+      "reai": 1488,
+      "recnt": 1489,
+      "asge": 1490,
+      "udce": 1491,
+      "baurate": 1492,
+      "baudrt": 1493,
+      "baudart": 1494,
+      "TIM1": 1495,
+      "tor": 1496,
+      "ler": 1497,
+      "leel": 1498,
+      "lement": 1499,
+      "orugh": 1500,
+      "error": 1501,
+      "input_floating": 1502,
+      "igc": 1503,
+      "igtal": 1504,
+      "ency": 1505,
+      "blign": 1506,
+      "atedy": 1507,
+      "blinkig": 1508,
+      "even": 1509,
+      "shuld": 1510,
+      "shuo": 1511,
+      "thorugh": 1512,
+      "loic": 1513,
+      "loigc": 1514,
+      "porduce": 1515,
+      "opeation": 1516,
+      "a13": 1517,
+      "a14": 1518,
+      "a10ms": 1519,
+      "stal": 1520,
+      "strn": 1521,
+      "strig": 1522,
+      "3800": 1523,
+      "odd": 1524,
+      "ods": 1525,
+      "iving": 1526,
+      "ivate": 1527,
+      "when": 1528,
+      "readng": 1529,
+      "readnig": 1530,
+      "wae": 1531,
+      "wave": 1532,
+      "sene": 1533,
+      "part": 1534,
+      "party": 1535,
+      "eect": 1536,
+      "eecution": 1537,
+      "impe": 1538,
+      "imlpe": 1539,
+      "imlement": 1540,
+      "perod": 1541,
+      "perio": 1542,
+      "perip": 1543,
+      "peroi": 1544,
+      "percet": 1545,
+      "periheral": 1546,
+      "perpiheral": 1547,
+      "rng": 1548,
+      "rnun": 1549,
+      "rnning": 1550,
+      "crent": 1551,
+      "blockig": 1552,
+      "blocknig": 1553,
+      "unag": 1554,
+      "tim2en": 1555,
+      "tim3en": 1556,
+      "tim2ms": 1557,
+      "signla": 1558,
+      "a5ms": 1559,
+      "b12ms": 1560,
+      "enablign": 1561,
+      "digtal": 1562,
+      "digiatl": 1563,
+      "a12ms": 1564,
+      "b6ms": 1565,
+      "icno": 1566,
+      "throuh": 1567,
+      "throguh": 1568,
+      "throuhg": 1569,
+      "sped": 1570,
+      "oscillte": 1571,
+      "prpare": 1572,
+      "prgr": 1573,
+      "prae": 1574,
+      "runnng": 1575,
+      "runnnig": 1576,
+      "sable": 1577,
+      "saple": 1578,
+      "saeg": 1579,
+      "comple": 1580,
+      "uart1": 1581,
+      "uart2": 1582,
+      "uart3": 1583,
+      "peiod": 1584,
+      "perecnt": 1585,
+      "pecrent": 1586,
+      "preiod": 1587,
+      "prepre": 1588,
+      "preare": 1589,
+      "presca": 1590,
+      "preprae": 1591,
+      "rxec": 1592,
+      "prodcue": 1593,
+      "intervl": 1594,
+      "intervla": 1595,
+      "shold": 1596,
+      "repeatedy": 1597,
+      "detcet": 1598,
+      "proudce": 1599,
+      "mesage": 1600,
+      "periodicaly": 1601,
+      "PB0": 1602,
+      "neesd": 1603,
+      "exeution": 1604,
+      "messge": 1605,
+      "mesasge": 1606,
+      "messaeg": 1607,
+      "execuion": 1608,
+      "sohuld": 1609,
+      "opertion": 1610,
+      "sofware": 1611,
+      "softwr": 1612,
+      "softwre": 1613,
+      "softwae": 1614,
+      "chek": 1615,
+      "progrma": 1616,
+      "ambig": 1617,
+      "buadrate": 1618,
+      "aet": 1619,
+      "rrgist": 1620,
+      "bliking": 1621,
+      "word": 1622,
+      "moitor": 1623,
+      "ungste": 1624,
+      "ungtae": 1625,
+      "ungaet": 1626,
+      "befo": 1627,
+      "drivn": 1628,
+      "arrivig": 1629,
+      "arrivign": 1630,
+      "monior": 1631,
+      "montor": 1632,
+      "regise": 1633,
+      "collct": 1634,
+      "registr": 1635,
+      "registre": 1636,
+      "0x00": 1637,
+      "0x38": 1638,
+      "0x14": 1639,
+      "0x10": 1640,
+      "0x28": 1641,
+      "0x20": 1642,
+      "0x04": 1643,
+      "0x08": 1644,
+      "0x0c": 1645,
+      "actvate": 1646,
+      "activte": 1647,
+      "activae": 1648,
+      "lilseconds": 1649,
+      "bytrs": 1650,
+      "thruo": 1651,
+      "addiit": 1652,
+      "2808": 1653,
+      "tier": 1654,
+      "25000": 1655,
+      "vltage": 1656,
+      "mililseconds": 1657,
+      "0x40004": 1658,
+      "0x4000400": 1659,
+      "0x40021000": 1660,
+      "additionlly": 1661,
+      "additionlaly": 1662,
+      "accessbi": 1663,
+      "sotfware": 1664,
+      "millisecn": 1665,
+      "millisecod": 1666,
+      "esatblish": 1667,
+      "additonally": 1668,
+      "additinally": 1669,
+      "blcoking": 1670,
+      "crrent": 1671,
+      "drvien": 1672,
+      "stsll": 1673,
+      "brnig": 1674,
+      "dgital": 1675,
+      "incming": 1676,
+      "blcking": 1677,
+      "something": 1678,
+      "sometih": 1679,
+      "diigtal": 1680,
+      "disable": 1681,
+      "somrthing": 1682,
+      "peridically": 1683,
+      "bocking": 1684,
+      "arrving": 1685,
+      "ariving": 1686,
+      "iopaen": 1687,
+      "iopben": 1688,
+      "iopcen": 1689,
+      "iopden": 1690,
+      "laod": 1691,
+      "liten": 1692,
+      "vaue": 1693,
+      "incoing": 1694,
+      "assgin": 1695,
+      "blocik": 1696,
+      "gpio_output": 1697,
+      "gpio_input": 1698,
+      "gpio_toggle": 1699,
+      "gpio_read": 1700,
+      "oscillaet": 1701,
+      "communicstion": 1702,
+      "communicaion": 1703,
+      "srting": 1704,
+      "srnsor": 1705,
+      "snese": 1706,
+      "uous": 1707,
+      "usart2en": 1708,
+      "usart3en": 1709,
+      "usart1en": 1710,
+      "pariy": 1711,
+      "implrment": 1712,
+      "byts": 1713,
+      "oscilate": 1714,
+      "prorgam": 1715,
+      "uart_transmit": 1716,
+      "uart_receive": 1717,
+      "uart_init": 1718,
+      "rcc_enable": 1719,
+      "rcc_apb1enr": 1720,
+      "rcc_apb2enr": 1721,
+      "executino": 1722,
+      "operaion": 1723,
+      "establsh": 1724,
+      "establih": 1725,
+      "establsih": 1726,
+      "voltge": 1727,
+      "voltgae": 1728,
+      "voltsge": 1729,
+      "additioally": 1730,
+      "0x40000400": 1731,
+      "0x40000800": 1732,
+      "0x40000000": 1733,
+      "0x40010400": 1734,
+      "0x40010800": 1735,
+      "0x40010c00": 1736,
+      "birng": 1737,
+      "caputre": 1738,
+      "cpture": 1739,
+      "cpature": 1740,
+      "gaet": 1741,
+      "reeatedly": 1742,
+      "reepatedly": 1743,
+      "settig": 1744,
+      "settng": 1745,
+      "tim4ms": 1746,
+      "tim4en": 1747,
+      "timer_delay": 1748,
+      "timer_pw": 1749,
+      "peirod": 1750,
+      "peirpheral": 1751,
+      "produec": 1752,
+      "detetc": 1753,
+      "captue": 1754,
+      "captuer": 1755,
+      "0x18": 1756,
+      "0x1c": 1757,
+      "0x24": 1758,
+      "0x2c": 1759,
+      "0x34": 1760,
+      "0x3c": 1761,
+      "0x40011000": 1762,
+      "0x40013800": 1763,
+      "valid_part": 1764,
+      "valid_comple": 1765,
+      "alternate_push_pull": 1766,
+      "after": 1767,
+      "arirving": 1768,
+      "bfufer": 1769,
+      "budrate": 1770,
+      "cannel": 1771,
+      "dteect": 1772,
+      "diven": 1773,
+      "deetct": 1774,
+      "frequ": 1775,
+      "hersl": 1776,
+      "hlod": 1777,
+      "none": 1778,
+      "oeration": 1779,
+      "plol": 1780,
+      "poduce": 1781,
+      "sigals": 1782,
+      "swithc": 1783,
+      "sctivate": 1784,
+      "sgnals": 1785,
+      "sfotware": 1786,
+      "intevral": 1787,
+      "sesnor": 1788,
+      "reaidng": 1789,
+      "baudrtae": 1790,
+      "baudarte": 1791,
+      "shuold": 1792,
+      "strnig": 1793,
+      "waveform": 1794,
+      "impement": 1795,
+      "imlpement": 1796,
+      "perioically": 1797,
+      "periphersl": 1798,
+      "peroid": 1799,
+      "rnuning": 1800,
+      "unagte": 1801,
+      "icnoming": 1802,
+      "prgram": 1803,
+      "prescaler": 1804,
+      "rxecution": 1805,
+      "periodicalyl": 1806,
+      "softwrae": 1807,
+      "ambiguous": 1808,
+      "rrgister": 1809,
+      "before": 1810,
+      "regiser": 1811,
+      "thruogh": 1812,
+      "addiitonally": 1813,
+      "28080": 1814,
+      "0x40004400": 1815,
+      "0x40004000": 1816,
+      "accessbile": 1817,
+      "millisecnods": 1818,
+      "millisecodns": 1819,
+      "sometihng": 1820,
+      "blocikng": 1821,
+      "timer_pwm": 1822,
+      "valid_partial": 1823,
+      "valid_complete": 1824,
+      "frequency": 1825
+    },
+    "merges": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "u",
+        "t"
+      ],
+      [
+        "i",
+        "n"
+      ],
+      [
+        "a",
+        "t"
+      ],
+      [
+        "p",
+        "ut"
+      ],
+      [
+        "i",
+        "t"
+      ],
+      [
+        "o",
+        "n"
+      ],
+      [
+        "A",
+        "R"
+      ],
+      [
+        "S",
+        "AR"
+      ],
+      [
+        "U",
+        "SAR"
+      ],
+      [
+        "USAR",
+        "T"
+      ],
+      [
+        "m",
+        "s"
+      ],
+      [
+        "s",
+        "e"
+      ],
+      [
+        "l",
+        "l"
+      ],
+      [
+        "r",
+        "e"
+      ],
+      [
+        "o",
+        "ut"
+      ],
+      [
+        "out",
+        "put"
+      ],
+      [
+        "2",
+        "00"
+      ],
+      [
+        "a",
+        "s"
+      ],
+      [
+        "u",
+        "d"
+      ],
+      [
+        "b",
+        "a"
+      ],
+      [
+        "ba",
+        "ud"
+      ],
+      [
+        "I",
+        "M"
+      ],
+      [
+        "T",
+        "IM"
+      ],
+      [
+        "t",
+        "o"
+      ],
+      [
+        "l",
+        "e"
+      ],
+      [
+        "o",
+        "r"
+      ],
+      [
+        "p",
+        "u"
+      ],
+      [
+        "a",
+        "l"
+      ],
+      [
+        "e",
+        "r"
+      ],
+      [
+        "_",
+        "pu"
+      ],
+      [
+        "in",
+        "put"
+      ],
+      [
+        "i",
+        "g"
+      ],
+      [
+        "se",
+        "t"
+      ],
+      [
+        "c",
+        "on"
+      ],
+      [
+        "e",
+        "n"
+      ],
+      [
+        "a",
+        "n"
+      ],
+      [
+        "1",
+        "00"
+      ],
+      [
+        "in",
+        "g"
+      ],
+      [
+        "b",
+        "l"
+      ],
+      [
+        "USART",
+        "2"
+      ],
+      [
+        "USART",
+        "3"
+      ],
+      [
+        "USART",
+        "1"
+      ],
+      [
+        "u",
+        "re"
+      ],
+      [
+        "H",
+        "z"
+      ],
+      [
+        "M",
+        "Hz"
+      ],
+      [
+        "u",
+        "p"
+      ],
+      [
+        "0",
+        "ms"
+      ],
+      [
+        "e",
+        "l"
+      ],
+      [
+        "f",
+        "ig"
+      ],
+      [
+        "con",
+        "fig"
+      ],
+      [
+        "config",
+        "ure"
+      ],
+      [
+        "p",
+        "in"
+      ],
+      [
+        "f",
+        "or"
+      ],
+      [
+        "_pu",
+        "ll"
+      ],
+      [
+        "6",
+        "00"
+      ],
+      [
+        "1",
+        "5"
+      ],
+      [
+        "a",
+        "d"
+      ],
+      [
+        "it",
+        "i"
+      ],
+      [
+        "b",
+        "it"
+      ],
+      [
+        "at",
+        "e"
+      ],
+      [
+        "in",
+        "k"
+      ],
+      [
+        "bl",
+        "ink"
+      ],
+      [
+        "w",
+        "it"
+      ],
+      [
+        "u",
+        "s"
+      ],
+      [
+        "b",
+        "1"
+      ],
+      [
+        "e",
+        "v"
+      ],
+      [
+        "er",
+        "y"
+      ],
+      [
+        "s",
+        "h"
+      ],
+      [
+        "0",
+        "MHz"
+      ],
+      [
+        "ev",
+        "ery"
+      ],
+      [
+        "wit",
+        "h"
+      ],
+      [
+        "d",
+        "r"
+      ],
+      [
+        "t",
+        "h"
+      ],
+      [
+        "a",
+        "y"
+      ],
+      [
+        "d",
+        "el"
+      ],
+      [
+        "del",
+        "ay"
+      ],
+      [
+        "TIM",
+        "3"
+      ],
+      [
+        "l",
+        "o"
+      ],
+      [
+        "5",
+        "00"
+      ],
+      [
+        "k",
+        "e"
+      ],
+      [
+        "TIM",
+        "2"
+      ],
+      [
+        "set",
+        "up"
+      ],
+      [
+        "TIM",
+        "4"
+      ],
+      [
+        "1",
+        "15"
+      ],
+      [
+        "115",
+        "200"
+      ],
+      [
+        "o",
+        "f"
+      ],
+      [
+        "m",
+        "a"
+      ],
+      [
+        "P",
+        "W"
+      ],
+      [
+        "PW",
+        "M"
+      ],
+      [
+        "200",
+        "ms"
+      ],
+      [
+        "500",
+        "ms"
+      ],
+      [
+        "p",
+        "or"
+      ],
+      [
+        "por",
+        "t"
+      ],
+      [
+        "o",
+        "p"
+      ],
+      [
+        "ma",
+        "ke"
+      ],
+      [
+        "a",
+        "1"
+      ],
+      [
+        "_pu",
+        "sh"
+      ],
+      [
+        "_push",
+        "_pull"
+      ],
+      [
+        "output",
+        "_push_pull"
+      ],
+      [
+        "4",
+        "00"
+      ],
+      [
+        "100",
+        "0ms"
+      ],
+      [
+        "a",
+        "ll"
+      ],
+      [
+        "s",
+        "t"
+      ],
+      [
+        "3",
+        "8"
+      ],
+      [
+        "38",
+        "400"
+      ],
+      [
+        "o",
+        "d"
+      ],
+      [
+        "i",
+        "v"
+      ],
+      [
+        "200",
+        "0ms"
+      ],
+      [
+        "100",
+        "ms"
+      ],
+      [
+        "1",
+        "9"
+      ],
+      [
+        "19",
+        "200"
+      ],
+      [
+        "5",
+        "7"
+      ],
+      [
+        "57",
+        "600"
+      ],
+      [
+        "9",
+        "600"
+      ],
+      [
+        "al",
+        "i"
+      ],
+      [
+        "z",
+        "e"
+      ],
+      [
+        "in",
+        "iti"
+      ],
+      [
+        "ali",
+        "ze"
+      ],
+      [
+        "initi",
+        "alize"
+      ],
+      [
+        "c",
+        "h"
+      ],
+      [
+        "an",
+        "d"
+      ],
+      [
+        "all",
+        "y"
+      ],
+      [
+        "g",
+        "g"
+      ],
+      [
+        "to",
+        "gg"
+      ],
+      [
+        "togg",
+        "le"
+      ],
+      [
+        "op",
+        "en"
+      ],
+      [
+        "input",
+        "_pull"
+      ],
+      [
+        "input_pull",
+        "_"
+      ],
+      [
+        "al",
+        "s"
+      ],
+      [
+        "iv",
+        "e"
+      ],
+      [
+        "w",
+        "h"
+      ],
+      [
+        "a",
+        "in"
+      ],
+      [
+        "le",
+        "d"
+      ],
+      [
+        "c",
+        "k"
+      ],
+      [
+        "dr",
+        "ain"
+      ],
+      [
+        "d",
+        "iti"
+      ],
+      [
+        "on",
+        "ally"
+      ],
+      [
+        "d",
+        "at"
+      ],
+      [
+        "dat",
+        "a"
+      ],
+      [
+        "p",
+        "l"
+      ],
+      [
+        "diti",
+        "onally"
+      ],
+      [
+        "wh",
+        "i"
+      ],
+      [
+        "re",
+        "ad"
+      ],
+      [
+        "e",
+        "ll"
+      ],
+      [
+        "r",
+        "o"
+      ],
+      [
+        "w",
+        "ell"
+      ],
+      [
+        "th",
+        "en"
+      ],
+      [
+        "s",
+        "to"
+      ],
+      [
+        "sto",
+        "p"
+      ],
+      [
+        "pl",
+        "us"
+      ],
+      [
+        "ad",
+        "ditionally"
+      ],
+      [
+        "i",
+        "ll"
+      ],
+      [
+        "w",
+        "a"
+      ],
+      [
+        "als",
+        "o"
+      ],
+      [
+        "5",
+        "0MHz"
+      ],
+      [
+        "c",
+        "e"
+      ],
+      [
+        "u",
+        "se"
+      ],
+      [
+        "whi",
+        "le"
+      ],
+      [
+        "2",
+        "MHz"
+      ],
+      [
+        "_",
+        "open"
+      ],
+      [
+        "_",
+        "drain"
+      ],
+      [
+        "output",
+        "_open"
+      ],
+      [
+        "output_open",
+        "_drain"
+      ],
+      [
+        "us",
+        "ing"
+      ],
+      [
+        "se",
+        "n"
+      ],
+      [
+        "1",
+        "0MHz"
+      ],
+      [
+        "t",
+        "r"
+      ],
+      [
+        "wa",
+        "it"
+      ],
+      [
+        "d",
+        "ut"
+      ],
+      [
+        "dut",
+        "y"
+      ],
+      [
+        "d",
+        "s"
+      ],
+      [
+        "bit",
+        "s"
+      ],
+      [
+        "c",
+        "y"
+      ],
+      [
+        "r",
+        "i"
+      ],
+      [
+        "s",
+        "m"
+      ],
+      [
+        "se",
+        "ri"
+      ],
+      [
+        "seri",
+        "al"
+      ],
+      [
+        "an",
+        "sm"
+      ],
+      [
+        "tr",
+        "ansm"
+      ],
+      [
+        "transm",
+        "it"
+      ],
+      [
+        "cy",
+        "c"
+      ],
+      [
+        "p",
+        "a"
+      ],
+      [
+        "e",
+        "e"
+      ],
+      [
+        "sen",
+        "d"
+      ],
+      [
+        "v",
+        "i"
+      ],
+      [
+        "cyc",
+        "le"
+      ],
+      [
+        "vi",
+        "a"
+      ],
+      [
+        "n",
+        "el"
+      ],
+      [
+        "f",
+        "lo"
+      ],
+      [
+        "m",
+        "ill"
+      ],
+      [
+        "at",
+        "ing"
+      ],
+      [
+        "flo",
+        "ating"
+      ],
+      [
+        "con",
+        "ds"
+      ],
+      [
+        "ch",
+        "an"
+      ],
+      [
+        "mill",
+        "i"
+      ],
+      [
+        "c",
+        "1"
+      ],
+      [
+        "C",
+        "H"
+      ],
+      [
+        "re",
+        "ce"
+      ],
+      [
+        "rece",
+        "ive"
+      ],
+      [
+        "r",
+        "t"
+      ],
+      [
+        "se",
+        "conds"
+      ],
+      [
+        "chan",
+        "nel"
+      ],
+      [
+        "w",
+        "n"
+      ],
+      [
+        "in",
+        "it"
+      ],
+      [
+        "milli",
+        "seconds"
+      ],
+      [
+        "f",
+        "l"
+      ],
+      [
+        "g",
+        "e"
+      ],
+      [
+        "d",
+        "o"
+      ],
+      [
+        "ee",
+        "d"
+      ],
+      [
+        "t",
+        "e"
+      ],
+      [
+        "i",
+        "m"
+      ],
+      [
+        "input_pull_",
+        "up"
+      ],
+      [
+        "b",
+        "s"
+      ],
+      [
+        "p",
+        "er"
+      ],
+      [
+        "bs",
+        "ud"
+      ],
+      [
+        "5",
+        "0"
+      ],
+      [
+        "m",
+        "od"
+      ],
+      [
+        "r",
+        "n"
+      ],
+      [
+        "mod",
+        "e"
+      ],
+      [
+        "input_pull_",
+        "do"
+      ],
+      [
+        "input_pull_do",
+        "wn"
+      ],
+      [
+        "bl",
+        "o"
+      ],
+      [
+        "c",
+        "re"
+      ],
+      [
+        "cre",
+        "ate"
+      ],
+      [
+        "blo",
+        "ck"
+      ],
+      [
+        "w",
+        "an"
+      ],
+      [
+        "wan",
+        "t"
+      ],
+      [
+        "2",
+        "5"
+      ],
+      [
+        "f",
+        "ro"
+      ],
+      [
+        "fro",
+        "m"
+      ],
+      [
+        "7",
+        "5"
+      ],
+      [
+        "i",
+        "od"
+      ],
+      [
+        "b",
+        "y"
+      ],
+      [
+        "u",
+        "n"
+      ],
+      [
+        "t",
+        "x"
+      ],
+      [
+        "9",
+        "n"
+      ],
+      [
+        "g",
+        "p"
+      ],
+      [
+        "t",
+        "im"
+      ],
+      [
+        "per",
+        "iod"
+      ],
+      [
+        "ig",
+        "n"
+      ],
+      [
+        "st",
+        "a"
+      ],
+      [
+        "dr",
+        "ive"
+      ],
+      [
+        "b",
+        "15"
+      ],
+      [
+        "a",
+        "8"
+      ],
+      [
+        "pa",
+        "use"
+      ],
+      [
+        "ge",
+        "t"
+      ],
+      [
+        "g",
+        "en"
+      ],
+      [
+        "s",
+        "ign"
+      ],
+      [
+        "er",
+        "ate"
+      ],
+      [
+        "gen",
+        "erate"
+      ],
+      [
+        "i",
+        "o"
+      ],
+      [
+        "tim",
+        "er"
+      ],
+      [
+        "a",
+        "5"
+      ],
+      [
+        "a",
+        "7"
+      ],
+      [
+        "gp",
+        "io"
+      ],
+      [
+        "d",
+        "1"
+      ],
+      [
+        "a",
+        "6"
+      ],
+      [
+        "b1",
+        "2"
+      ],
+      [
+        "t",
+        "u"
+      ],
+      [
+        "en",
+        "a"
+      ],
+      [
+        "8",
+        "n"
+      ],
+      [
+        "d",
+        "ig"
+      ],
+      [
+        "b",
+        "8"
+      ],
+      [
+        "v",
+        "al"
+      ],
+      [
+        "a1",
+        "0"
+      ],
+      [
+        "by",
+        "te"
+      ],
+      [
+        "g",
+        "h"
+      ],
+      [
+        "c1",
+        "3"
+      ],
+      [
+        "r",
+        "ate"
+      ],
+      [
+        "a",
+        "2"
+      ],
+      [
+        "dig",
+        "it"
+      ],
+      [
+        "a",
+        "9"
+      ],
+      [
+        "of",
+        "f"
+      ],
+      [
+        "b",
+        "2"
+      ],
+      [
+        "b",
+        "le"
+      ],
+      [
+        "d",
+        "0"
+      ],
+      [
+        "r",
+        "it"
+      ],
+      [
+        "a1",
+        "1"
+      ],
+      [
+        "lo",
+        "w"
+      ],
+      [
+        "a1",
+        "2"
+      ],
+      [
+        "b1",
+        "0"
+      ],
+      [
+        "c",
+        "lo"
+      ],
+      [
+        "clo",
+        "ck"
+      ],
+      [
+        "c",
+        "o"
+      ],
+      [
+        "a",
+        "4"
+      ],
+      [
+        "st",
+        "ate"
+      ],
+      [
+        "r",
+        "un"
+      ],
+      [
+        "ena",
+        "ble"
+      ],
+      [
+        "b",
+        "5"
+      ],
+      [
+        "b",
+        "9"
+      ],
+      [
+        "u",
+        "gh"
+      ],
+      [
+        "b",
+        "7"
+      ],
+      [
+        "o",
+        "s"
+      ],
+      [
+        "c",
+        "15"
+      ],
+      [
+        "digit",
+        "al"
+      ],
+      [
+        "b1",
+        "1"
+      ],
+      [
+        "in",
+        "to"
+      ],
+      [
+        "b",
+        "6"
+      ],
+      [
+        "s",
+        "wit"
+      ],
+      [
+        "swit",
+        "ch"
+      ],
+      [
+        "a",
+        "3"
+      ],
+      [
+        "b",
+        "u"
+      ],
+      [
+        "i",
+        "c"
+      ],
+      [
+        "c1",
+        "4"
+      ],
+      [
+        "b",
+        "0"
+      ],
+      [
+        "b1",
+        "3"
+      ],
+      [
+        "tu",
+        "rn"
+      ],
+      [
+        "os",
+        "c"
+      ],
+      [
+        "th",
+        "ro"
+      ],
+      [
+        "s",
+        "p"
+      ],
+      [
+        "b1",
+        "4"
+      ],
+      [
+        "osc",
+        "ill"
+      ],
+      [
+        "i",
+        "on"
+      ],
+      [
+        "as",
+        "h"
+      ],
+      [
+        "thro",
+        "ugh"
+      ],
+      [
+        "fl",
+        "ash"
+      ],
+      [
+        "i",
+        "p"
+      ],
+      [
+        "p",
+        "r"
+      ],
+      [
+        "run",
+        "n"
+      ],
+      [
+        "h",
+        "ig"
+      ],
+      [
+        "hig",
+        "h"
+      ],
+      [
+        "sp",
+        "eed"
+      ],
+      [
+        "c",
+        "t"
+      ],
+      [
+        "p",
+        "p"
+      ],
+      [
+        "d",
+        "u"
+      ],
+      [
+        "th",
+        "e"
+      ],
+      [
+        "a",
+        "0"
+      ],
+      [
+        "r",
+        "ing"
+      ],
+      [
+        "l",
+        "d"
+      ],
+      [
+        "runn",
+        "ing"
+      ],
+      [
+        "s",
+        "a"
+      ],
+      [
+        "oscill",
+        "ate"
+      ],
+      [
+        "fl",
+        "ip"
+      ],
+      [
+        "block",
+        "ing"
+      ],
+      [
+        "co",
+        "m"
+      ],
+      [
+        "a",
+        "rt"
+      ],
+      [
+        "u",
+        "e"
+      ],
+      [
+        "u",
+        "art"
+      ],
+      [
+        "9n",
+        "2"
+      ],
+      [
+        "i",
+        "s"
+      ],
+      [
+        "n",
+        "eed"
+      ],
+      [
+        "com",
+        "ing"
+      ],
+      [
+        "9n",
+        "1"
+      ],
+      [
+        "p",
+        "e"
+      ],
+      [
+        "p",
+        "re"
+      ],
+      [
+        "p",
+        "le"
+      ],
+      [
+        "r",
+        "x"
+      ],
+      [
+        "pr",
+        "od"
+      ],
+      [
+        "in",
+        "coming"
+      ],
+      [
+        "t",
+        "er"
+      ],
+      [
+        "prod",
+        "u"
+      ],
+      [
+        "w",
+        "rit"
+      ],
+      [
+        "8n",
+        "2"
+      ],
+      [
+        "writ",
+        "e"
+      ],
+      [
+        "in",
+        "ter"
+      ],
+      [
+        "produ",
+        "ce"
+      ],
+      [
+        "baud",
+        "rate"
+      ],
+      [
+        "en",
+        "t"
+      ],
+      [
+        "as",
+        "sign"
+      ],
+      [
+        "b",
+        "ring"
+      ],
+      [
+        "f",
+        "f"
+      ],
+      [
+        "w",
+        "ut"
+      ],
+      [
+        "sh",
+        "o"
+      ],
+      [
+        "CH",
+        "2"
+      ],
+      [
+        "c",
+        "c"
+      ],
+      [
+        "inter",
+        "val"
+      ],
+      [
+        "1",
+        "4"
+      ],
+      [
+        "u",
+        "ld"
+      ],
+      [
+        "re",
+        "pe"
+      ],
+      [
+        "pa",
+        "re"
+      ],
+      [
+        "pp",
+        "rt"
+      ],
+      [
+        "d",
+        "l"
+      ],
+      [
+        "dl",
+        "y"
+      ],
+      [
+        "wut",
+        "h"
+      ],
+      [
+        "r",
+        "cc"
+      ],
+      [
+        "bu",
+        "ff"
+      ],
+      [
+        "w",
+        "s"
+      ],
+      [
+        "val",
+        "ue"
+      ],
+      [
+        "pre",
+        "pare"
+      ],
+      [
+        "sho",
+        "uld"
+      ],
+      [
+        "n",
+        "o"
+      ],
+      [
+        "ate",
+        "dly"
+      ],
+      [
+        "sign",
+        "als"
+      ],
+      [
+        "d",
+        "e"
+      ],
+      [
+        "s",
+        "l"
+      ],
+      [
+        "v",
+        "el"
+      ],
+      [
+        "CH",
+        "4"
+      ],
+      [
+        "P",
+        "A"
+      ],
+      [
+        "p",
+        "ro"
+      ],
+      [
+        "repe",
+        "atedly"
+      ],
+      [
+        "1",
+        "0"
+      ],
+      [
+        "m",
+        "e"
+      ],
+      [
+        "period",
+        "ic"
+      ],
+      [
+        "8n",
+        "1"
+      ],
+      [
+        "sta",
+        "rt"
+      ],
+      [
+        "buff",
+        "er"
+      ],
+      [
+        "a",
+        "p"
+      ],
+      [
+        "d",
+        "sta"
+      ],
+      [
+        "le",
+        "vel"
+      ],
+      [
+        "ms",
+        "ke"
+      ],
+      [
+        "ba",
+        "du"
+      ],
+      [
+        "CH",
+        "1"
+      ],
+      [
+        "te",
+        "ct"
+      ],
+      [
+        "CH",
+        "3"
+      ],
+      [
+        "P",
+        "B"
+      ],
+      [
+        "100",
+        "0"
+      ],
+      [
+        "n",
+        "ee"
+      ],
+      [
+        "de",
+        "tect"
+      ],
+      [
+        "periodic",
+        "ally"
+      ],
+      [
+        "e",
+        "c"
+      ],
+      [
+        "e",
+        "x"
+      ],
+      [
+        "byte",
+        "s"
+      ],
+      [
+        "me",
+        "s"
+      ],
+      [
+        "i",
+        "st"
+      ],
+      [
+        "200",
+        "0"
+      ],
+      [
+        "ex",
+        "ec"
+      ],
+      [
+        "lo",
+        "g"
+      ],
+      [
+        "nee",
+        "ds"
+      ],
+      [
+        "1",
+        "3"
+      ],
+      [
+        "p",
+        "o"
+      ],
+      [
+        "s",
+        "o"
+      ],
+      [
+        "1",
+        "2"
+      ],
+      [
+        "r",
+        "y"
+      ],
+      [
+        "ut",
+        "ion"
+      ],
+      [
+        "pu",
+        "ll"
+      ],
+      [
+        "op",
+        "er"
+      ],
+      [
+        "rit",
+        "y"
+      ],
+      [
+        "s",
+        "of"
+      ],
+      [
+        "sa",
+        "ge"
+      ],
+      [
+        "sof",
+        "t"
+      ],
+      [
+        "at",
+        "ion"
+      ],
+      [
+        "pa",
+        "rity"
+      ],
+      [
+        "exec",
+        "ution"
+      ],
+      [
+        "n",
+        "t"
+      ],
+      [
+        "mes",
+        "sage"
+      ],
+      [
+        "g",
+        "r"
+      ],
+      [
+        "h",
+        "al"
+      ],
+      [
+        "st",
+        "all"
+      ],
+      [
+        "hal",
+        "t"
+      ],
+      [
+        "1",
+        "1"
+      ],
+      [
+        "c",
+        "ap"
+      ],
+      [
+        "lo",
+        "ad"
+      ],
+      [
+        "ch",
+        "e"
+      ],
+      [
+        "wa",
+        "re"
+      ],
+      [
+        "pro",
+        "gr"
+      ],
+      [
+        "a",
+        "m"
+      ],
+      [
+        "t",
+        "ure"
+      ],
+      [
+        "log",
+        "ic"
+      ],
+      [
+        "oper",
+        "ation"
+      ],
+      [
+        "i",
+        "h"
+      ],
+      [
+        "r",
+        "v"
+      ],
+      [
+        "op",
+        "rn"
+      ],
+      [
+        "bu",
+        "ad"
+      ],
+      [
+        "soft",
+        "ware"
+      ],
+      [
+        "che",
+        "ck"
+      ],
+      [
+        "a",
+        "e"
+      ],
+      [
+        "r",
+        "r"
+      ],
+      [
+        "sen",
+        "se"
+      ],
+      [
+        "m",
+        "ent"
+      ],
+      [
+        "bl",
+        "i"
+      ],
+      [
+        "cap",
+        "ture"
+      ],
+      [
+        "progr",
+        "am"
+      ],
+      [
+        "P",
+        "C"
+      ],
+      [
+        "w",
+        "or"
+      ],
+      [
+        "im",
+        "ple"
+      ],
+      [
+        "bli",
+        "sh"
+      ],
+      [
+        "rv",
+        "ery"
+      ],
+      [
+        "wor",
+        "k"
+      ],
+      [
+        "imple",
+        "ment"
+      ],
+      [
+        "e",
+        "sta"
+      ],
+      [
+        "m",
+        "o"
+      ],
+      [
+        "th",
+        "rn"
+      ],
+      [
+        "sa",
+        "m"
+      ],
+      [
+        "un",
+        "g"
+      ],
+      [
+        "esta",
+        "blish"
+      ],
+      [
+        "pu",
+        "sh"
+      ],
+      [
+        "ws",
+        "it"
+      ],
+      [
+        "w",
+        "r"
+      ],
+      [
+        "sl",
+        "so"
+      ],
+      [
+        "wr",
+        "ll"
+      ],
+      [
+        "f",
+        "r"
+      ],
+      [
+        "f",
+        "eed"
+      ],
+      [
+        "sam",
+        "ple"
+      ],
+      [
+        "po",
+        "ll"
+      ],
+      [
+        "b",
+        "e"
+      ],
+      [
+        "dr",
+        "iv"
+      ],
+      [
+        "c",
+        "ent"
+      ],
+      [
+        "l",
+        "ist"
+      ],
+      [
+        "rr",
+        "iv"
+      ],
+      [
+        "l",
+        "r"
+      ],
+      [
+        "n",
+        "e"
+      ],
+      [
+        "du",
+        "ry"
+      ],
+      [
+        "a",
+        "rriv"
+      ],
+      [
+        "t",
+        "a"
+      ],
+      [
+        "per",
+        "cent"
+      ],
+      [
+        "k",
+        "ae"
+      ],
+      [
+        "m",
+        "kae"
+      ],
+      [
+        "st",
+        "e"
+      ],
+      [
+        "p",
+        "m"
+      ],
+      [
+        "ws",
+        "nt"
+      ],
+      [
+        "arriv",
+        "ing"
+      ],
+      [
+        "h",
+        "o"
+      ],
+      [
+        "st",
+        "pp"
+      ],
+      [
+        "read",
+        "ing"
+      ],
+      [
+        "s",
+        "d"
+      ],
+      [
+        "st",
+        "ring"
+      ],
+      [
+        "fr",
+        "pm"
+      ],
+      [
+        "b",
+        "ut"
+      ],
+      [
+        "i",
+        "f"
+      ],
+      [
+        "m",
+        "on"
+      ],
+      [
+        "but",
+        "s"
+      ],
+      [
+        "o",
+        "v"
+      ],
+      [
+        "list",
+        "en"
+      ],
+      [
+        "d",
+        "p"
+      ],
+      [
+        "e",
+        "y"
+      ],
+      [
+        "re",
+        "g"
+      ],
+      [
+        "ev",
+        "ey"
+      ],
+      [
+        "gpio",
+        "a"
+      ],
+      [
+        "co",
+        "ll"
+      ],
+      [
+        "ho",
+        "ld"
+      ],
+      [
+        "dp",
+        "wn"
+      ],
+      [
+        "8",
+        "00"
+      ],
+      [
+        "9",
+        "2"
+      ],
+      [
+        "p",
+        "d"
+      ],
+      [
+        "u",
+        "r"
+      ],
+      [
+        "w",
+        "ih"
+      ],
+      [
+        "ev",
+        "ry"
+      ],
+      [
+        "ov",
+        "er"
+      ],
+      [
+        "mo",
+        "dr"
+      ],
+      [
+        "d",
+        "a"
+      ],
+      [
+        "n",
+        "nel"
+      ],
+      [
+        "reg",
+        "ist"
+      ],
+      [
+        "e",
+        "ct"
+      ],
+      [
+        "coll",
+        "ect"
+      ],
+      [
+        "o",
+        "l"
+      ],
+      [
+        "it",
+        "or"
+      ],
+      [
+        "regist",
+        "er"
+      ],
+      [
+        "n",
+        "g"
+      ],
+      [
+        "gpio",
+        "b"
+      ],
+      [
+        "mon",
+        "itor"
+      ],
+      [
+        "0",
+        "x"
+      ],
+      [
+        "s",
+        "in"
+      ],
+      [
+        "v",
+        "ol"
+      ],
+      [
+        "w",
+        "i"
+      ],
+      [
+        "re",
+        "nt"
+      ],
+      [
+        "us",
+        "ung"
+      ],
+      [
+        "gp",
+        "iod"
+      ],
+      [
+        "c",
+        "ur"
+      ],
+      [
+        "s",
+        "nnel"
+      ],
+      [
+        "w",
+        "t"
+      ],
+      [
+        "re",
+        "d"
+      ],
+      [
+        "ch",
+        "snnel"
+      ],
+      [
+        "gpio",
+        "c"
+      ],
+      [
+        "driv",
+        "en"
+      ],
+      [
+        "cur",
+        "rent"
+      ],
+      [
+        "e",
+        "d"
+      ],
+      [
+        "w",
+        "at"
+      ],
+      [
+        "bl",
+        "ing"
+      ],
+      [
+        "wh",
+        "at"
+      ],
+      [
+        "whi",
+        "lr"
+      ],
+      [
+        "ta",
+        "ge"
+      ],
+      [
+        "wih",
+        "t"
+      ],
+      [
+        "sd",
+        "ditionally"
+      ],
+      [
+        "vol",
+        "tage"
+      ],
+      [
+        "a",
+        "ct"
+      ],
+      [
+        "e",
+        "k"
+      ],
+      [
+        "dr",
+        "sin"
+      ],
+      [
+        "ma",
+        "ek"
+      ],
+      [
+        "ena",
+        "bling"
+      ],
+      [
+        "po",
+        "tr"
+      ],
+      [
+        "us",
+        "rt"
+      ],
+      [
+        "act",
+        "iv"
+      ],
+      [
+        "8",
+        "2"
+      ],
+      [
+        "s",
+        "s"
+      ],
+      [
+        "l",
+        "i"
+      ],
+      [
+        "p",
+        "s"
+      ],
+      [
+        "r",
+        "m"
+      ],
+      [
+        "re",
+        "y"
+      ],
+      [
+        "ev",
+        "rey"
+      ],
+      [
+        "by",
+        "tr"
+      ],
+      [
+        "tu",
+        "rm"
+      ],
+      [
+        "activ",
+        "ate"
+      ],
+      [
+        "9",
+        "1"
+      ],
+      [
+        "p",
+        "n"
+      ],
+      [
+        "th",
+        "r"
+      ],
+      [
+        "op",
+        "ne"
+      ],
+      [
+        "pro",
+        "t"
+      ],
+      [
+        "wt",
+        "ih"
+      ],
+      [
+        "8",
+        "1"
+      ],
+      [
+        "n",
+        "ig"
+      ],
+      [
+        "ad",
+        "d"
+      ],
+      [
+        "milli",
+        "s"
+      ],
+      [
+        "14",
+        "400"
+      ],
+      [
+        "2",
+        "8"
+      ],
+      [
+        "d",
+        "ta"
+      ],
+      [
+        "t",
+        "i"
+      ],
+      [
+        "dr",
+        "i"
+      ],
+      [
+        "un",
+        "to"
+      ],
+      [
+        "evey",
+        "r"
+      ],
+      [
+        "dta",
+        "a"
+      ],
+      [
+        "pu",
+        "gh"
+      ],
+      [
+        "st",
+        "ste"
+      ],
+      [
+        "digit",
+        "sl"
+      ],
+      [
+        "oscill",
+        "ste"
+      ],
+      [
+        "driv",
+        "r"
+      ],
+      [
+        "thr",
+        "pugh"
+      ],
+      [
+        "4",
+        "800"
+      ],
+      [
+        "e",
+        "pn"
+      ],
+      [
+        "l",
+        "s"
+      ],
+      [
+        "n",
+        "red"
+      ],
+      [
+        "o",
+        "epn"
+      ],
+      [
+        "r",
+        "in"
+      ],
+      [
+        "u",
+        "ing"
+      ],
+      [
+        "v",
+        "sl"
+      ],
+      [
+        "er",
+        "al"
+      ],
+      [
+        "ad",
+        "diti"
+      ],
+      [
+        "us",
+        "nig"
+      ],
+      [
+        "th",
+        "ne"
+      ],
+      [
+        "da",
+        "rin"
+      ],
+      [
+        "28",
+        "800"
+      ],
+      [
+        "2",
+        "0"
+      ],
+      [
+        "2",
+        "500"
+      ],
+      [
+        "2",
+        "400"
+      ],
+      [
+        "e",
+        "ery"
+      ],
+      [
+        "e",
+        "evry"
+      ],
+      [
+        "s",
+        "u"
+      ],
+      [
+        "v",
+        "l"
+      ],
+      [
+        "y",
+        "t"
+      ],
+      [
+        "pl",
+        "su"
+      ],
+      [
+        "whi",
+        "el"
+      ],
+      [
+        "da",
+        "at"
+      ],
+      [
+        "wi",
+        "at"
+      ],
+      [
+        "wat",
+        "i"
+      ],
+      [
+        "b",
+        "t"
+      ],
+      [
+        "d",
+        "tu"
+      ],
+      [
+        "g",
+        "pu"
+      ],
+      [
+        "h",
+        "eral"
+      ],
+      [
+        "m",
+        "i"
+      ],
+      [
+        "pu",
+        "ls"
+      ],
+      [
+        "dr",
+        "an"
+      ],
+      [
+        "cy",
+        "le"
+      ],
+      [
+        "cyc",
+        "lr"
+      ],
+      [
+        "fl",
+        "up"
+      ],
+      [
+        "turn",
+        "ed"
+      ],
+      [
+        "PA",
+        "1"
+      ],
+      [
+        "PB",
+        "1"
+      ],
+      [
+        "2500",
+        "00"
+      ],
+      [
+        "dtu",
+        "y"
+      ],
+      [
+        "gpu",
+        "o"
+      ],
+      [
+        "a",
+        "c"
+      ],
+      [
+        "h",
+        "ugh"
+      ],
+      [
+        "m",
+        "do"
+      ],
+      [
+        "o",
+        "w"
+      ],
+      [
+        "al",
+        "y"
+      ],
+      [
+        "for",
+        "m"
+      ],
+      [
+        "all",
+        "ow"
+      ],
+      [
+        "ce",
+        "ss"
+      ],
+      [
+        "tim",
+        "rr"
+      ],
+      [
+        "run",
+        "g"
+      ],
+      [
+        "ip",
+        "heral"
+      ],
+      [
+        "du",
+        "yt"
+      ],
+      [
+        "0x",
+        "400"
+      ],
+      [
+        "wat",
+        "n"
+      ],
+      [
+        "additi",
+        "on"
+      ],
+      [
+        "ac",
+        "cess"
+      ],
+      [
+        "mdo",
+        "e"
+      ],
+      [
+        "1",
+        "200"
+      ],
+      [
+        "d",
+        "ain"
+      ],
+      [
+        "h",
+        "n"
+      ],
+      [
+        "i",
+        "ble"
+      ],
+      [
+        "r",
+        "conds"
+      ],
+      [
+        "u",
+        "is"
+      ],
+      [
+        "w",
+        "le"
+      ],
+      [
+        "in",
+        "o"
+      ],
+      [
+        "as",
+        "lo"
+      ],
+      [
+        "us",
+        "ign"
+      ],
+      [
+        "whi",
+        "e"
+      ],
+      [
+        "te",
+        "hn"
+      ],
+      [
+        "PA",
+        "13"
+      ],
+      [
+        "PB",
+        "4"
+      ],
+      [
+        "so",
+        "t"
+      ],
+      [
+        "mo",
+        "ed"
+      ],
+      [
+        "ung",
+        "ate"
+      ],
+      [
+        "millis",
+        "rconds"
+      ],
+      [
+        "access",
+        "ible"
+      ],
+      [
+        "uis",
+        "ng"
+      ],
+      [
+        "wle",
+        "l"
+      ],
+      [
+        "a",
+        "h"
+      ],
+      [
+        "t",
+        "ing"
+      ],
+      [
+        "ll",
+        "y"
+      ],
+      [
+        "milli",
+        "se"
+      ],
+      [
+        "per",
+        "ipheral"
+      ],
+      [
+        "pre",
+        "ps"
+      ],
+      [
+        "ap",
+        "b"
+      ],
+      [
+        "wi",
+        "le"
+      ],
+      [
+        "addition",
+        "aly"
+      ],
+      [
+        "sot",
+        "p"
+      ],
+      [
+        "preps",
+        "re"
+      ],
+      [
+        "b",
+        "rung"
+      ],
+      [
+        "e",
+        "s"
+      ],
+      [
+        "e",
+        "t"
+      ],
+      [
+        "n",
+        "an"
+      ],
+      [
+        "p",
+        "as"
+      ],
+      [
+        "p",
+        "d1"
+      ],
+      [
+        "s",
+        "ate"
+      ],
+      [
+        "v",
+        "e"
+      ],
+      [
+        "w",
+        "pr"
+      ],
+      [
+        "al",
+        "os"
+      ],
+      [
+        "bl",
+        "co"
+      ],
+      [
+        "lo",
+        "sd"
+      ],
+      [
+        "ch",
+        "nan"
+      ],
+      [
+        "wh",
+        "le"
+      ],
+      [
+        "pa",
+        "ue"
+      ],
+      [
+        "chan",
+        "el"
+      ],
+      [
+        "per",
+        "i"
+      ],
+      [
+        "PA",
+        "15"
+      ],
+      [
+        "PB",
+        "3"
+      ],
+      [
+        "fr",
+        "mo"
+      ],
+      [
+        "wih",
+        "le"
+      ],
+      [
+        "ps",
+        "use"
+      ],
+      [
+        "add",
+        "it"
+      ],
+      [
+        "vsl",
+        "ue"
+      ],
+      [
+        "bt",
+        "is"
+      ],
+      [
+        "pas",
+        "ue"
+      ],
+      [
+        "wpr",
+        "k"
+      ],
+      [
+        "blco",
+        "k"
+      ],
+      [
+        "chnan",
+        "el"
+      ],
+      [
+        "c",
+        "r"
+      ],
+      [
+        "c",
+        "cyle"
+      ],
+      [
+        "g",
+        "ate"
+      ],
+      [
+        "i",
+        "it"
+      ],
+      [
+        "m",
+        "r"
+      ],
+      [
+        "s",
+        "at"
+      ],
+      [
+        "t",
+        "ae"
+      ],
+      [
+        "t",
+        "mi"
+      ],
+      [
+        "u",
+        "c"
+      ],
+      [
+        "pu",
+        "se"
+      ],
+      [
+        "set",
+        "ting"
+      ],
+      [
+        "us",
+        "ig"
+      ],
+      [
+        "dr",
+        "vi"
+      ],
+      [
+        "st",
+        "s"
+      ],
+      [
+        "st",
+        "po"
+      ],
+      [
+        "ri",
+        "od"
+      ],
+      [
+        "chan",
+        "n"
+      ],
+      [
+        "block",
+        "ung"
+      ],
+      [
+        "un",
+        "coming"
+      ],
+      [
+        "sp",
+        "red"
+      ],
+      [
+        "runn",
+        "ung"
+      ],
+      [
+        "log",
+        "uc"
+      ],
+      [
+        "ur",
+        "at"
+      ],
+      [
+        "wt",
+        "ch"
+      ],
+      [
+        "sat",
+        "te"
+      ],
+      [
+        "tmi",
+        "er"
+      ],
+      [
+        "a",
+        "re"
+      ],
+      [
+        "b",
+        "rn"
+      ],
+      [
+        "d",
+        "g"
+      ],
+      [
+        "d",
+        "w"
+      ],
+      [
+        "d",
+        "ive"
+      ],
+      [
+        "e",
+        "sts"
+      ],
+      [
+        "h",
+        "pl"
+      ],
+      [
+        "h",
+        "sl"
+      ],
+      [
+        "h",
+        "ih"
+      ],
+      [
+        "i",
+        "l"
+      ],
+      [
+        "i",
+        "onally"
+      ],
+      [
+        "o",
+        "i"
+      ],
+      [
+        "p",
+        "ck"
+      ],
+      [
+        "s",
+        "sh"
+      ],
+      [
+        "s",
+        "wut"
+      ],
+      [
+        "s",
+        "lly"
+      ],
+      [
+        "in",
+        "c"
+      ],
+      [
+        "in",
+        "com"
+      ],
+      [
+        "en",
+        "l"
+      ],
+      [
+        "bl",
+        "ck"
+      ],
+      [
+        "bl",
+        "pck"
+      ],
+      [
+        "dr",
+        "in"
+      ],
+      [
+        "wh",
+        "li"
+      ],
+      [
+        "chan",
+        "enl"
+      ],
+      [
+        "wn",
+        "at"
+      ],
+      [
+        "fl",
+        "ah"
+      ],
+      [
+        "fl",
+        "ssh"
+      ],
+      [
+        "bsud",
+        "rate"
+      ],
+      [
+        "tim",
+        "e"
+      ],
+      [
+        "tim",
+        "r"
+      ],
+      [
+        "pr",
+        "riod"
+      ],
+      [
+        "pp",
+        "ll"
+      ],
+      [
+        "produ",
+        "cr"
+      ],
+      [
+        "inter",
+        "vsl"
+      ],
+      [
+        "cc",
+        "le"
+      ],
+      [
+        "buff",
+        "rr"
+      ],
+      [
+        "PA",
+        "14"
+      ],
+      [
+        "periodic",
+        "slly"
+      ],
+      [
+        "so",
+        "me"
+      ],
+      [
+        "PC",
+        "1"
+      ],
+      [
+        "PC",
+        "8"
+      ],
+      [
+        "li",
+        "seconds"
+      ],
+      [
+        "dri",
+        "an"
+      ],
+      [
+        "dri",
+        "ev"
+      ],
+      [
+        "iit",
+        "al"
+      ],
+      [
+        "drvi",
+        "e"
+      ],
+      [
+        "dw",
+        "on"
+      ],
+      [
+        "ests",
+        "blish"
+      ],
+      [
+        "hpl",
+        "d"
+      ],
+      [
+        "hsl",
+        "t"
+      ],
+      [
+        "hih",
+        "g"
+      ],
+      [
+        "swut",
+        "ch"
+      ],
+      [
+        "whli",
+        "e"
+      ],
+      [
+        "b",
+        "o"
+      ],
+      [
+        "b",
+        "r"
+      ],
+      [
+        "d",
+        "i"
+      ],
+      [
+        "f",
+        "e"
+      ],
+      [
+        "h",
+        "g"
+      ],
+      [
+        "k",
+        "c"
+      ],
+      [
+        "m",
+        "ing"
+      ],
+      [
+        "r",
+        "ae"
+      ],
+      [
+        "r",
+        "ste"
+      ],
+      [
+        "s",
+        "wtch"
+      ],
+      [
+        "u",
+        "ce"
+      ],
+      [
+        "it",
+        "no"
+      ],
+      [
+        "on",
+        "ds"
+      ],
+      [
+        "baud",
+        "rae"
+      ],
+      [
+        "st",
+        "te"
+      ],
+      [
+        "st",
+        "tae"
+      ],
+      [
+        "cy",
+        "ce"
+      ],
+      [
+        "by",
+        "et"
+      ],
+      [
+        "gp",
+        "oi"
+      ],
+      [
+        "sign",
+        "al"
+      ],
+      [
+        "b2",
+        "0"
+      ],
+      [
+        "pr",
+        "pe"
+      ],
+      [
+        "du",
+        "ce"
+      ],
+      [
+        "PA",
+        "0"
+      ],
+      [
+        "PA",
+        "5"
+      ],
+      [
+        "PA",
+        "7"
+      ],
+      [
+        "PA",
+        "20"
+      ],
+      [
+        "PB",
+        "2"
+      ],
+      [
+        "PB",
+        "5"
+      ],
+      [
+        "PB",
+        "14"
+      ],
+      [
+        "mes",
+        "ss"
+      ],
+      [
+        "so",
+        "mr"
+      ],
+      [
+        "mo",
+        "ing"
+      ],
+      [
+        "lr",
+        "vel"
+      ],
+      [
+        "pd",
+        "2"
+      ],
+      [
+        "pd",
+        "3"
+      ],
+      [
+        "pd",
+        "6"
+      ],
+      [
+        "add",
+        "ti"
+      ],
+      [
+        "millis",
+        "conds"
+      ],
+      [
+        "paue",
+        "s"
+      ],
+      [
+        "peri",
+        "d"
+      ],
+      [
+        "chann",
+        "le"
+      ],
+      [
+        "brn",
+        "g"
+      ],
+      [
+        "dg",
+        "iital"
+      ],
+      [
+        "inc",
+        "moing"
+      ],
+      [
+        "bo",
+        "ck"
+      ],
+      [
+        "prpe",
+        "are"
+      ],
+      [
+        "messs",
+        "ge"
+      ],
+      [
+        "0",
+        "4"
+      ],
+      [
+        "a",
+        "r"
+      ],
+      [
+        "a",
+        "se"
+      ],
+      [
+        "c",
+        "sp"
+      ],
+      [
+        "f",
+        "red"
+      ],
+      [
+        "g",
+        "n"
+      ],
+      [
+        "g",
+        "ip"
+      ],
+      [
+        "i",
+        "al"
+      ],
+      [
+        "i",
+        "op"
+      ],
+      [
+        "l",
+        "a"
+      ],
+      [
+        "l",
+        "it"
+      ],
+      [
+        "l",
+        "ce"
+      ],
+      [
+        "l",
+        "ve"
+      ],
+      [
+        "m",
+        "er"
+      ],
+      [
+        "m",
+        "un"
+      ],
+      [
+        "s",
+        "or"
+      ],
+      [
+        "s",
+        "wi"
+      ],
+      [
+        "t",
+        "un"
+      ],
+      [
+        "t",
+        "mer"
+      ],
+      [
+        "v",
+        "a"
+      ],
+      [
+        "y",
+        "e"
+      ],
+      [
+        "in",
+        "co"
+      ],
+      [
+        "re",
+        "sd"
+      ],
+      [
+        "as",
+        "s"
+      ],
+      [
+        "as",
+        "sin"
+      ],
+      [
+        "pu",
+        "ase"
+      ],
+      [
+        "en",
+        "r"
+      ],
+      [
+        "blink",
+        "ing"
+      ],
+      [
+        "us",
+        "ng"
+      ],
+      [
+        "b1",
+        "8"
+      ],
+      [
+        "a1",
+        "6"
+      ],
+      [
+        "st",
+        "ion"
+      ],
+      [
+        "tr",
+        "ho"
+      ],
+      [
+        "cy",
+        "lce"
+      ],
+      [
+        "sm",
+        "ple"
+      ],
+      [
+        "cyc",
+        "el"
+      ],
+      [
+        "pa",
+        "se"
+      ],
+      [
+        "fl",
+        "sh"
+      ],
+      [
+        "fl",
+        "sa"
+      ],
+      [
+        "blo",
+        "c"
+      ],
+      [
+        "sign",
+        "sl"
+      ],
+      [
+        "gpio",
+        "_"
+      ],
+      [
+        "oscill",
+        "ae"
+      ],
+      [
+        "pr",
+        "duce"
+      ],
+      [
+        "com",
+        "mun"
+      ],
+      [
+        "sho",
+        "ud"
+      ],
+      [
+        "ws",
+        "re"
+      ],
+      [
+        "PA",
+        "4"
+      ],
+      [
+        "PA",
+        "6"
+      ],
+      [
+        "PA",
+        "9"
+      ],
+      [
+        "PA",
+        "10"
+      ],
+      [
+        "PA",
+        "11"
+      ],
+      [
+        "PB",
+        "6"
+      ],
+      [
+        "PB",
+        "8"
+      ],
+      [
+        "PB",
+        "9"
+      ],
+      [
+        "PB",
+        "15"
+      ],
+      [
+        "PB",
+        "10"
+      ],
+      [
+        "soft",
+        "wsre"
+      ],
+      [
+        "PC",
+        "0"
+      ],
+      [
+        "PC",
+        "2"
+      ],
+      [
+        "PC",
+        "3"
+      ],
+      [
+        "PC",
+        "6"
+      ],
+      [
+        "PC",
+        "7"
+      ],
+      [
+        "PC",
+        "10"
+      ],
+      [
+        "PC",
+        "13"
+      ],
+      [
+        "PC",
+        "12"
+      ],
+      [
+        "PC",
+        "11"
+      ],
+      [
+        "list",
+        "rn"
+      ],
+      [
+        "mon",
+        "ti"
+      ],
+      [
+        "pd",
+        "4"
+      ],
+      [
+        "pd",
+        "8"
+      ],
+      [
+        "ss",
+        "sign"
+      ],
+      [
+        "ti",
+        "e"
+      ],
+      [
+        "dri",
+        "e"
+      ],
+      [
+        "bt",
+        "ye"
+      ],
+      [
+        "mi",
+        "liseconds"
+      ],
+      [
+        "dran",
+        "i"
+      ],
+      [
+        "ino",
+        "ally"
+      ],
+      [
+        "additionaly",
+        "l"
+      ],
+      [
+        "pd1",
+        "0"
+      ],
+      [
+        "addit",
+        "inoally"
+      ],
+      [
+        "hg",
+        "ih"
+      ],
+      [
+        "csp",
+        "ture"
+      ],
+      [
+        "gip",
+        "o"
+      ],
+      [
+        "lve",
+        "el"
+      ],
+      [
+        "swi",
+        "ch"
+      ],
+      [
+        "tun",
+        "r"
+      ],
+      [
+        "resd",
+        "ing"
+      ],
+      [
+        "trho",
+        "ugh"
+      ],
+      [
+        "flsa",
+        "h"
+      ],
+      [
+        "commun",
+        "ic"
+      ],
+      [
+        "monti",
+        "or"
+      ],
+      [
+        "a",
+        "vl"
+      ],
+      [
+        "b",
+        "ist"
+      ],
+      [
+        "c",
+        "n"
+      ],
+      [
+        "c",
+        "at"
+      ],
+      [
+        "c",
+        "ah"
+      ],
+      [
+        "d",
+        "on"
+      ],
+      [
+        "e",
+        "conds"
+      ],
+      [
+        "f",
+        "as"
+      ],
+      [
+        "f",
+        "al"
+      ],
+      [
+        "f",
+        "er"
+      ],
+      [
+        "f",
+        "ash"
+      ],
+      [
+        "f",
+        "il"
+      ],
+      [
+        "h",
+        "l"
+      ],
+      [
+        "i",
+        "seconds"
+      ],
+      [
+        "i",
+        "ionally"
+      ],
+      [
+        "l",
+        "as"
+      ],
+      [
+        "l",
+        "ud"
+      ],
+      [
+        "l",
+        "pe"
+      ],
+      [
+        "m",
+        "ll"
+      ],
+      [
+        "m",
+        "nt"
+      ],
+      [
+        "p",
+        "i"
+      ],
+      [
+        "p",
+        "el"
+      ],
+      [
+        "r",
+        "ck"
+      ],
+      [
+        "r",
+        "ct"
+      ],
+      [
+        "s",
+        "n"
+      ],
+      [
+        "s",
+        "rt"
+      ],
+      [
+        "s",
+        "rn"
+      ],
+      [
+        "s",
+        "ne"
+      ],
+      [
+        "t",
+        "ct"
+      ],
+      [
+        "u",
+        "o"
+      ],
+      [
+        "u",
+        "le"
+      ],
+      [
+        "v",
+        "le"
+      ],
+      [
+        "v",
+        "ali"
+      ],
+      [
+        "in",
+        "ally"
+      ],
+      [
+        "ll",
+        "ate"
+      ],
+      [
+        "as",
+        "is"
+      ],
+      [
+        "le",
+        "vle"
+      ],
+      [
+        "pu",
+        "re"
+      ],
+      [
+        "pu",
+        "ld"
+      ],
+      [
+        "us",
+        "art"
+      ],
+      [
+        "ev",
+        "r"
+      ],
+      [
+        "sh",
+        "puld"
+      ],
+      [
+        "dr",
+        "tect"
+      ],
+      [
+        "dr",
+        "ve"
+      ],
+      [
+        "lo",
+        "da"
+      ],
+      [
+        "a1",
+        "7"
+      ],
+      [
+        "a1",
+        "8"
+      ],
+      [
+        "st",
+        "rung"
+      ],
+      [
+        "ch",
+        "rck"
+      ],
+      [
+        "wh",
+        "st"
+      ],
+      [
+        "ill",
+        "ate"
+      ],
+      [
+        "sen",
+        "es"
+      ],
+      [
+        "tr",
+        "un"
+      ],
+      [
+        "pa",
+        "ri"
+      ],
+      [
+        "milli",
+        "econds"
+      ],
+      [
+        "rt",
+        "y"
+      ],
+      [
+        "fl",
+        "pi"
+      ],
+      [
+        "te",
+        "dly"
+      ],
+      [
+        "im",
+        "pl"
+      ],
+      [
+        "im",
+        "ng"
+      ],
+      [
+        "by",
+        "t"
+      ],
+      [
+        "sta",
+        "e"
+      ],
+      [
+        "sta",
+        "et"
+      ],
+      [
+        "sign",
+        "las"
+      ],
+      [
+        "dig",
+        "ial"
+      ],
+      [
+        "a2",
+        "0"
+      ],
+      [
+        "bu",
+        "fe"
+      ],
+      [
+        "osc",
+        "il"
+      ],
+      [
+        "osc",
+        "llate"
+      ],
+      [
+        "thro",
+        "gh"
+      ],
+      [
+        "pr",
+        "or"
+      ],
+      [
+        "uart",
+        "_"
+      ],
+      [
+        "inter",
+        "avl"
+      ],
+      [
+        "sho",
+        "lud"
+      ],
+      [
+        "repe",
+        "ste"
+      ],
+      [
+        "repe",
+        "tedly"
+      ],
+      [
+        "rcc",
+        "_"
+      ],
+      [
+        "PA",
+        "2"
+      ],
+      [
+        "PA",
+        "3"
+      ],
+      [
+        "PA",
+        "8"
+      ],
+      [
+        "PA",
+        "12"
+      ],
+      [
+        "ap",
+        "b1"
+      ],
+      [
+        "ap",
+        "b2"
+      ],
+      [
+        "PB",
+        "13"
+      ],
+      [
+        "PB",
+        "12"
+      ],
+      [
+        "PB",
+        "20"
+      ],
+      [
+        "exec",
+        "ut"
+      ],
+      [
+        "so",
+        "uld"
+      ],
+      [
+        "oper",
+        "a"
+      ],
+      [
+        "oper",
+        "stion"
+      ],
+      [
+        "che",
+        "kc"
+      ],
+      [
+        "progr",
+        "sm"
+      ],
+      [
+        "rv",
+        "e"
+      ],
+      [
+        "PC",
+        "5"
+      ],
+      [
+        "PC",
+        "14"
+      ],
+      [
+        "imple",
+        "mnt"
+      ],
+      [
+        "esta",
+        "bl"
+      ],
+      [
+        "sam",
+        "pel"
+      ],
+      [
+        "coll",
+        "rct"
+      ],
+      [
+        "pd",
+        "5"
+      ],
+      [
+        "pd",
+        "7"
+      ],
+      [
+        "pd",
+        "9"
+      ],
+      [
+        "vol",
+        "t"
+      ],
+      [
+        "add",
+        "iionally"
+      ],
+      [
+        "additi",
+        "o"
+      ],
+      [
+        "vl",
+        "a"
+      ],
+      [
+        "vl",
+        "ue"
+      ],
+      [
+        "PA1",
+        "7"
+      ],
+      [
+        "PB1",
+        "6"
+      ],
+      [
+        "PB1",
+        "8"
+      ],
+      [
+        "0x400",
+        "00"
+      ],
+      [
+        "0x400",
+        "10"
+      ],
+      [
+        "ino",
+        "ming"
+      ],
+      [
+        "millise",
+        "onds"
+      ],
+      [
+        "peri",
+        "do"
+      ],
+      [
+        "flah",
+        "s"
+      ],
+      [
+        "br",
+        "ign"
+      ],
+      [
+        "di",
+        "rve"
+      ],
+      [
+        "addti",
+        "ionally"
+      ],
+      [
+        "lit",
+        "sen"
+      ],
+      [
+        "va",
+        "ule"
+      ],
+      [
+        "inco",
+        "imng"
+      ],
+      [
+        "ass",
+        "ing"
+      ],
+      [
+        "bloc",
+        "ing"
+      ],
+      [
+        "signsl",
+        "s"
+      ],
+      [
+        "shoud",
+        "l"
+      ],
+      [
+        "cat",
+        "pure"
+      ],
+      [
+        "cah",
+        "nnel"
+      ],
+      [
+        "don",
+        "w"
+      ],
+      [
+        "fas",
+        "t"
+      ],
+      [
+        "fal",
+        "sh"
+      ],
+      [
+        "fil",
+        "p"
+      ],
+      [
+        "hl",
+        "at"
+      ],
+      [
+        "mll",
+        "iseconds"
+      ],
+      [
+        "vali",
+        "d"
+      ],
+      [
+        "asis",
+        "gn"
+      ],
+      [
+        "bufe",
+        "fr"
+      ],
+      [
+        "repeste",
+        "dly"
+      ],
+      [
+        "0",
+        "8"
+      ],
+      [
+        "2",
+        "en"
+      ],
+      [
+        "2",
+        "800"
+      ],
+      [
+        "3",
+        "en"
+      ],
+      [
+        "4",
+        "0"
+      ],
+      [
+        "a",
+        "pre"
+      ],
+      [
+        "b",
+        "i"
+      ],
+      [
+        "b",
+        "ing"
+      ],
+      [
+        "b",
+        "te"
+      ],
+      [
+        "b",
+        "ff"
+      ],
+      [
+        "b",
+        "ol"
+      ],
+      [
+        "c",
+        "a"
+      ],
+      [
+        "c",
+        "p"
+      ],
+      [
+        "e",
+        "de"
+      ],
+      [
+        "f",
+        "o"
+      ],
+      [
+        "f",
+        "s"
+      ],
+      [
+        "g",
+        "ic"
+      ],
+      [
+        "g",
+        "ae"
+      ],
+      [
+        "h",
+        "od"
+      ],
+      [
+        "h",
+        "ck"
+      ],
+      [
+        "i",
+        "r"
+      ],
+      [
+        "i",
+        "wtch"
+      ],
+      [
+        "i",
+        "rty"
+      ],
+      [
+        "k",
+        "r"
+      ],
+      [
+        "l",
+        "st"
+      ],
+      [
+        "l",
+        "vel"
+      ],
+      [
+        "l",
+        "gic"
+      ],
+      [
+        "m",
+        "li"
+      ],
+      [
+        "n",
+        "re"
+      ],
+      [
+        "n",
+        "ate"
+      ],
+      [
+        "o",
+        "ugh"
+      ],
+      [
+        "o",
+        "cn"
+      ],
+      [
+        "o",
+        "inally"
+      ],
+      [
+        "o",
+        "evr"
+      ],
+      [
+        "o",
+        "kr"
+      ],
+      [
+        "r",
+        "cent"
+      ],
+      [
+        "s",
+        "it"
+      ],
+      [
+        "s",
+        "ma"
+      ],
+      [
+        "s",
+        "ge"
+      ],
+      [
+        "s",
+        "rriv"
+      ],
+      [
+        "s",
+        "bling"
+      ],
+      [
+        "s",
+        "iwtch"
+      ],
+      [
+        "t",
+        "re"
+      ],
+      [
+        "t",
+        "al"
+      ],
+      [
+        "u",
+        "h"
+      ],
+      [
+        "u",
+        "at"
+      ],
+      [
+        "w",
+        "ro"
+      ],
+      [
+        "w",
+        "okr"
+      ],
+      [
+        "ut",
+        "or"
+      ],
+      [
+        "in",
+        "er"
+      ],
+      [
+        "in",
+        "ng"
+      ],
+      [
+        "at",
+        "l"
+      ],
+      [
+        "at",
+        "el"
+      ],
+      [
+        "it",
+        "on"
+      ],
+      [
+        "it",
+        "en"
+      ],
+      [
+        "se",
+        "se"
+      ],
+      [
+        "se",
+        "sne"
+      ],
+      [
+        "re",
+        "e"
+      ],
+      [
+        "as",
+        "ign"
+      ],
+      [
+        "ba",
+        "dr"
+      ],
+      [
+        "le",
+        "ev"
+      ],
+      [
+        "le",
+        "vl"
+      ],
+      [
+        "al",
+        "te"
+      ],
+      [
+        "al",
+        "ter"
+      ],
+      [
+        "set",
+        "n"
+      ],
+      [
+        "set",
+        "t"
+      ],
+      [
+        "con",
+        "s"
+      ],
+      [
+        "en",
+        "sbling"
+      ],
+      [
+        "an",
+        "lly"
+      ],
+      [
+        "ad",
+        "iti"
+      ],
+      [
+        "b1",
+        "6"
+      ],
+      [
+        "b1",
+        "7"
+      ],
+      [
+        "th",
+        "ing"
+      ],
+      [
+        "th",
+        "ough"
+      ],
+      [
+        "st",
+        "er"
+      ],
+      [
+        "ch",
+        "nnel"
+      ],
+      [
+        "read",
+        "ign"
+      ],
+      [
+        "ce",
+        "t"
+      ],
+      [
+        "ce",
+        "ck"
+      ],
+      [
+        "ce",
+        "onds"
+      ],
+      [
+        "ce",
+        "hck"
+      ],
+      [
+        "sen",
+        "sor"
+      ],
+      [
+        "tr",
+        "ue"
+      ],
+      [
+        "ri",
+        "ing"
+      ],
+      [
+        "pa",
+        "e"
+      ],
+      [
+        "pa",
+        "irty"
+      ],
+      [
+        "mill",
+        "seconds"
+      ],
+      [
+        "milli",
+        "es"
+      ],
+      [
+        "do",
+        "uce"
+      ],
+      [
+        "te",
+        "t"
+      ],
+      [
+        "per",
+        "pare"
+      ],
+      [
+        "blo",
+        "kc"
+      ],
+      [
+        "block",
+        "ign"
+      ],
+      [
+        "by",
+        "es"
+      ],
+      [
+        "tim",
+        "4"
+      ],
+      [
+        "tim",
+        "re"
+      ],
+      [
+        "timer",
+        "_"
+      ],
+      [
+        "tu",
+        "ion"
+      ],
+      [
+        "dig",
+        "ti"
+      ],
+      [
+        "digit",
+        "l"
+      ],
+      [
+        "digit",
+        "la"
+      ],
+      [
+        "run",
+        "inng"
+      ],
+      [
+        "os",
+        "illate"
+      ],
+      [
+        "c15",
+        "ms"
+      ],
+      [
+        "bu",
+        "fer"
+      ],
+      [
+        "ic",
+        "ally"
+      ],
+      [
+        "turn",
+        "d"
+      ],
+      [
+        "sp",
+        "ede"
+      ],
+      [
+        "pr",
+        "rcent"
+      ],
+      [
+        "pr",
+        "douce"
+      ],
+      [
+        "runn",
+        "ign"
+      ],
+      [
+        "sa",
+        "pm"
+      ],
+      [
+        "pe",
+        "pare"
+      ],
+      [
+        "pe",
+        "ir"
+      ],
+      [
+        "pre",
+        "ipheral"
+      ],
+      [
+        "pre",
+        "apre"
+      ],
+      [
+        "pre",
+        "pae"
+      ],
+      [
+        "prod",
+        "ue"
+      ],
+      [
+        "14",
+        "04"
+      ],
+      [
+        "repe",
+        "atel"
+      ],
+      [
+        "buff",
+        "r"
+      ],
+      [
+        "buff",
+        "re"
+      ],
+      [
+        "de",
+        "tct"
+      ],
+      [
+        "de",
+        "tet"
+      ],
+      [
+        "pro",
+        "uce"
+      ],
+      [
+        "10",
+        "20"
+      ],
+      [
+        "me",
+        "ent"
+      ],
+      [
+        "PB",
+        "7"
+      ],
+      [
+        "PB",
+        "11"
+      ],
+      [
+        "nee",
+        "s"
+      ],
+      [
+        "exec",
+        "tuion"
+      ],
+      [
+        "log",
+        "c"
+      ],
+      [
+        "cap",
+        "tu"
+      ],
+      [
+        "cap",
+        "tre"
+      ],
+      [
+        "cap",
+        "true"
+      ],
+      [
+        "progr",
+        "m"
+      ],
+      [
+        "ih",
+        "eral"
+      ],
+      [
+        "rv",
+        "ing"
+      ],
+      [
+        "PC",
+        "4"
+      ],
+      [
+        "PC",
+        "9"
+      ],
+      [
+        "PC",
+        "15"
+      ],
+      [
+        "sam",
+        "pe"
+      ],
+      [
+        "sam",
+        "lpe"
+      ],
+      [
+        "driv",
+        "rn"
+      ],
+      [
+        "list",
+        "n"
+      ],
+      [
+        "list",
+        "ne"
+      ],
+      [
+        "ne",
+        "ds"
+      ],
+      [
+        "ne",
+        "de"
+      ],
+      [
+        "mon",
+        "utor"
+      ],
+      [
+        "ov",
+        "rr"
+      ],
+      [
+        "reg",
+        "ster"
+      ],
+      [
+        "0x",
+        "1"
+      ],
+      [
+        "0x",
+        "2"
+      ],
+      [
+        "0x",
+        "3"
+      ],
+      [
+        "li",
+        "sen"
+      ],
+      [
+        "li",
+        "setn"
+      ],
+      [
+        "ps",
+        "rity"
+      ],
+      [
+        "thr",
+        "ugh"
+      ],
+      [
+        "millis",
+        "ceonds"
+      ],
+      [
+        "ls",
+        "iten"
+      ],
+      [
+        "20",
+        "40"
+      ],
+      [
+        "PA1",
+        "6"
+      ],
+      [
+        "PA1",
+        "8"
+      ],
+      [
+        "PB1",
+        "7"
+      ],
+      [
+        "0x400",
+        "1"
+      ],
+      [
+        "ino",
+        "t"
+      ],
+      [
+        "millise",
+        "ocn"
+      ],
+      [
+        "millise",
+        "cons"
+      ],
+      [
+        "addit",
+        "oinally"
+      ],
+      [
+        "chann",
+        "l"
+      ],
+      [
+        "incom",
+        "ig"
+      ],
+      [
+        "incom",
+        "ign"
+      ],
+      [
+        "incom",
+        "ng"
+      ],
+      [
+        "br",
+        "ig"
+      ],
+      [
+        "fe",
+        "de"
+      ],
+      [
+        "baudrae",
+        "t"
+      ],
+      [
+        "byet",
+        "s"
+      ],
+      [
+        "addti",
+        "onally"
+      ],
+      [
+        "ar",
+        "riing"
+      ],
+      [
+        "tie",
+        "m"
+      ],
+      [
+        "tie",
+        "mr"
+      ],
+      [
+        "communic",
+        "ation"
+      ],
+      [
+        "sn",
+        "se"
+      ],
+      [
+        "srt",
+        "ting"
+      ],
+      [
+        "srn",
+        "se"
+      ],
+      [
+        "pari",
+        "yt"
+      ],
+      [
+        "impl",
+        "meent"
+      ],
+      [
+        "byt",
+        "se"
+      ],
+      [
+        "oscil",
+        "alte"
+      ],
+      [
+        "pror",
+        "am"
+      ],
+      [
+        "apb1",
+        "enr"
+      ],
+      [
+        "apb2",
+        "enr"
+      ],
+      [
+        "execut",
+        "on"
+      ],
+      [
+        "opera",
+        "iton"
+      ],
+      [
+        "additio",
+        "anlly"
+      ],
+      [
+        "vla",
+        "ue"
+      ],
+      [
+        "valid",
+        "_"
+      ],
+      [
+        "bte",
+        "s"
+      ],
+      [
+        "bff",
+        "er"
+      ],
+      [
+        "bol",
+        "ck"
+      ],
+      [
+        "fs",
+        "st"
+      ],
+      [
+        "hod",
+        "l"
+      ],
+      [
+        "lst",
+        "en"
+      ],
+      [
+        "mli",
+        "liseconds"
+      ],
+      [
+        "nre",
+        "ds"
+      ],
+      [
+        "sit",
+        "ch"
+      ],
+      [
+        "sma",
+        "ple"
+      ],
+      [
+        "srriv",
+        "ing"
+      ],
+      [
+        "uat",
+        "r"
+      ],
+      [
+        "wro",
+        "k"
+      ],
+      [
+        "iner",
+        "val"
+      ],
+      [
+        "badr",
+        "ate"
+      ],
+      [
+        "leev",
+        "l"
+      ],
+      [
+        "alter",
+        "nate"
+      ],
+      [
+        "aditi",
+        "onally"
+      ],
+      [
+        "millies",
+        "conds"
+      ],
+      [
+        "digti",
+        "al"
+      ],
+      [
+        "sapm",
+        "le"
+      ],
+      [
+        "1404",
+        "0"
+      ],
+      [
+        "repeatel",
+        "y"
+      ],
+      [
+        "milliseocn",
+        "ds"
+      ],
+      [
+        "0",
+        "c"
+      ],
+      [
+        "0",
+        "400"
+      ],
+      [
+        "1",
+        "en"
+      ],
+      [
+        "2",
+        "ms"
+      ],
+      [
+        "2",
+        "1000"
+      ],
+      [
+        "_",
+        "floating"
+      ],
+      [
+        "a",
+        "f"
+      ],
+      [
+        "a",
+        "g"
+      ],
+      [
+        "a",
+        "i"
+      ],
+      [
+        "a",
+        "en"
+      ],
+      [
+        "a",
+        "0ms"
+      ],
+      [
+        "a",
+        "15"
+      ],
+      [
+        "a",
+        "ch"
+      ],
+      [
+        "a",
+        "ri"
+      ],
+      [
+        "a",
+        "ion"
+      ],
+      [
+        "b",
+        "3"
+      ],
+      [
+        "b",
+        "4"
+      ],
+      [
+        "b",
+        "f"
+      ],
+      [
+        "b",
+        "ud"
+      ],
+      [
+        "b",
+        "ig"
+      ],
+      [
+        "b",
+        "en"
+      ],
+      [
+        "c",
+        "00"
+      ],
+      [
+        "c",
+        "en"
+      ],
+      [
+        "c",
+        "an"
+      ],
+      [
+        "c",
+        "od"
+      ],
+      [
+        "c",
+        "ue"
+      ],
+      [
+        "c",
+        "ution"
+      ],
+      [
+        "c",
+        "nt"
+      ],
+      [
+        "c",
+        "illate"
+      ],
+      [
+        "d",
+        "t"
+      ],
+      [
+        "d",
+        "y"
+      ],
+      [
+        "d",
+        "en"
+      ],
+      [
+        "d",
+        "iv"
+      ],
+      [
+        "d",
+        "ee"
+      ],
+      [
+        "d",
+        "ng"
+      ],
+      [
+        "d",
+        "iital"
+      ],
+      [
+        "e",
+        "g"
+      ],
+      [
+        "e",
+        "ution"
+      ],
+      [
+        "e",
+        "ation"
+      ],
+      [
+        "e",
+        "ach"
+      ],
+      [
+        "f",
+        "re"
+      ],
+      [
+        "f",
+        "ware"
+      ],
+      [
+        "g",
+        "in"
+      ],
+      [
+        "g",
+        "ist"
+      ],
+      [
+        "g",
+        "am"
+      ],
+      [
+        "g",
+        "tae"
+      ],
+      [
+        "g",
+        "uh"
+      ],
+      [
+        "h",
+        "er"
+      ],
+      [
+        "h",
+        "lo"
+      ],
+      [
+        "h",
+        "uld"
+      ],
+      [
+        "h",
+        "atl"
+      ],
+      [
+        "i",
+        "k"
+      ],
+      [
+        "i",
+        "se"
+      ],
+      [
+        "i",
+        "or"
+      ],
+      [
+        "i",
+        "coming"
+      ],
+      [
+        "i",
+        "atl"
+      ],
+      [
+        "k",
+        "ing"
+      ],
+      [
+        "l",
+        "seconds"
+      ],
+      [
+        "l",
+        "aly"
+      ],
+      [
+        "n",
+        "s"
+      ],
+      [
+        "n",
+        "on"
+      ],
+      [
+        "n",
+        "ing"
+      ],
+      [
+        "o",
+        "er"
+      ],
+      [
+        "o",
+        "cillate"
+      ],
+      [
+        "p",
+        "w"
+      ],
+      [
+        "p",
+        "lo"
+      ],
+      [
+        "p",
+        "od"
+      ],
+      [
+        "p",
+        "d0"
+      ],
+      [
+        "p",
+        "atedly"
+      ],
+      [
+        "p",
+        "rity"
+      ],
+      [
+        "p",
+        "heral"
+      ],
+      [
+        "p",
+        "riod"
+      ],
+      [
+        "p",
+        "iheral"
+      ],
+      [
+        "q",
+        "u"
+      ],
+      [
+        "r",
+        "or"
+      ],
+      [
+        "r",
+        "ig"
+      ],
+      [
+        "r",
+        "ment"
+      ],
+      [
+        "s",
+        "ig"
+      ],
+      [
+        "s",
+        "with"
+      ],
+      [
+        "s",
+        "all"
+      ],
+      [
+        "s",
+        "ct"
+      ],
+      [
+        "s",
+        "ih"
+      ],
+      [
+        "s",
+        "gn"
+      ],
+      [
+        "s",
+        "smple"
+      ],
+      [
+        "s",
+        "ca"
+      ],
+      [
+        "s",
+        "fo"
+      ],
+      [
+        "t",
+        "ion"
+      ],
+      [
+        "t",
+        "ware"
+      ],
+      [
+        "t",
+        "ih"
+      ],
+      [
+        "t",
+        "evr"
+      ],
+      [
+        "t",
+        "cet"
+      ],
+      [
+        "u",
+        "rate"
+      ],
+      [
+        "u",
+        "ion"
+      ],
+      [
+        "u",
+        "gate"
+      ],
+      [
+        "u",
+        "hg"
+      ],
+      [
+        "u",
+        "fer"
+      ],
+      [
+        "v",
+        "ate"
+      ],
+      [
+        "w",
+        "re"
+      ],
+      [
+        "00",
+        "0"
+      ],
+      [
+        "in",
+        "valid"
+      ],
+      [
+        "in",
+        "tevr"
+      ],
+      [
+        "at",
+        "ure"
+      ],
+      [
+        "at",
+        "blish"
+      ],
+      [
+        "put",
+        "re"
+      ],
+      [
+        "it",
+        "al"
+      ],
+      [
+        "on",
+        "o"
+      ],
+      [
+        "on",
+        "off"
+      ],
+      [
+        "ms",
+        "sage"
+      ],
+      [
+        "se",
+        "ed"
+      ],
+      [
+        "se",
+        "sor"
+      ],
+      [
+        "se",
+        "sn"
+      ],
+      [
+        "re",
+        "ai"
+      ],
+      [
+        "re",
+        "cnt"
+      ],
+      [
+        "as",
+        "ge"
+      ],
+      [
+        "ud",
+        "ce"
+      ],
+      [
+        "ba",
+        "urate"
+      ],
+      [
+        "baud",
+        "rt"
+      ],
+      [
+        "baud",
+        "art"
+      ],
+      [
+        "TIM",
+        "1"
+      ],
+      [
+        "to",
+        "r"
+      ],
+      [
+        "le",
+        "r"
+      ],
+      [
+        "le",
+        "el"
+      ],
+      [
+        "le",
+        "ment"
+      ],
+      [
+        "or",
+        "ugh"
+      ],
+      [
+        "er",
+        "ror"
+      ],
+      [
+        "input",
+        "_floating"
+      ],
+      [
+        "ig",
+        "c"
+      ],
+      [
+        "ig",
+        "tal"
+      ],
+      [
+        "en",
+        "cy"
+      ],
+      [
+        "bl",
+        "ign"
+      ],
+      [
+        "ate",
+        "dy"
+      ],
+      [
+        "blink",
+        "ig"
+      ],
+      [
+        "ev",
+        "en"
+      ],
+      [
+        "sh",
+        "uld"
+      ],
+      [
+        "sh",
+        "uo"
+      ],
+      [
+        "th",
+        "orugh"
+      ],
+      [
+        "lo",
+        "ic"
+      ],
+      [
+        "lo",
+        "igc"
+      ],
+      [
+        "por",
+        "duce"
+      ],
+      [
+        "op",
+        "eation"
+      ],
+      [
+        "a1",
+        "3"
+      ],
+      [
+        "a1",
+        "4"
+      ],
+      [
+        "a1",
+        "0ms"
+      ],
+      [
+        "st",
+        "al"
+      ],
+      [
+        "st",
+        "rn"
+      ],
+      [
+        "st",
+        "rig"
+      ],
+      [
+        "38",
+        "00"
+      ],
+      [
+        "od",
+        "d"
+      ],
+      [
+        "od",
+        "s"
+      ],
+      [
+        "iv",
+        "ing"
+      ],
+      [
+        "iv",
+        "ate"
+      ],
+      [
+        "wh",
+        "en"
+      ],
+      [
+        "read",
+        "ng"
+      ],
+      [
+        "read",
+        "nig"
+      ],
+      [
+        "wa",
+        "e"
+      ],
+      [
+        "wa",
+        "ve"
+      ],
+      [
+        "sen",
+        "e"
+      ],
+      [
+        "pa",
+        "rt"
+      ],
+      [
+        "pa",
+        "rty"
+      ],
+      [
+        "ee",
+        "ct"
+      ],
+      [
+        "ee",
+        "cution"
+      ],
+      [
+        "im",
+        "pe"
+      ],
+      [
+        "im",
+        "lpe"
+      ],
+      [
+        "im",
+        "lement"
+      ],
+      [
+        "per",
+        "od"
+      ],
+      [
+        "per",
+        "io"
+      ],
+      [
+        "per",
+        "ip"
+      ],
+      [
+        "per",
+        "oi"
+      ],
+      [
+        "per",
+        "cet"
+      ],
+      [
+        "per",
+        "iheral"
+      ],
+      [
+        "per",
+        "piheral"
+      ],
+      [
+        "rn",
+        "g"
+      ],
+      [
+        "rn",
+        "un"
+      ],
+      [
+        "rn",
+        "ning"
+      ],
+      [
+        "cre",
+        "nt"
+      ],
+      [
+        "block",
+        "ig"
+      ],
+      [
+        "block",
+        "nig"
+      ],
+      [
+        "un",
+        "ag"
+      ],
+      [
+        "tim",
+        "2en"
+      ],
+      [
+        "tim",
+        "3en"
+      ],
+      [
+        "tim",
+        "2ms"
+      ],
+      [
+        "sign",
+        "la"
+      ],
+      [
+        "a5",
+        "ms"
+      ],
+      [
+        "b12",
+        "ms"
+      ],
+      [
+        "ena",
+        "blign"
+      ],
+      [
+        "dig",
+        "tal"
+      ],
+      [
+        "dig",
+        "iatl"
+      ],
+      [
+        "a12",
+        "ms"
+      ],
+      [
+        "b6",
+        "ms"
+      ],
+      [
+        "ic",
+        "no"
+      ],
+      [
+        "thro",
+        "uh"
+      ],
+      [
+        "thro",
+        "guh"
+      ],
+      [
+        "thro",
+        "uhg"
+      ],
+      [
+        "sp",
+        "ed"
+      ],
+      [
+        "oscill",
+        "te"
+      ],
+      [
+        "pr",
+        "pare"
+      ],
+      [
+        "pr",
+        "gr"
+      ],
+      [
+        "pr",
+        "ae"
+      ],
+      [
+        "runn",
+        "ng"
+      ],
+      [
+        "runn",
+        "nig"
+      ],
+      [
+        "sa",
+        "ble"
+      ],
+      [
+        "sa",
+        "ple"
+      ],
+      [
+        "sa",
+        "eg"
+      ],
+      [
+        "com",
+        "ple"
+      ],
+      [
+        "uart",
+        "1"
+      ],
+      [
+        "uart",
+        "2"
+      ],
+      [
+        "uart",
+        "3"
+      ],
+      [
+        "pe",
+        "iod"
+      ],
+      [
+        "pe",
+        "recnt"
+      ],
+      [
+        "pe",
+        "crent"
+      ],
+      [
+        "pre",
+        "iod"
+      ],
+      [
+        "pre",
+        "pre"
+      ],
+      [
+        "pre",
+        "are"
+      ],
+      [
+        "pre",
+        "sca"
+      ],
+      [
+        "pre",
+        "prae"
+      ],
+      [
+        "rx",
+        "ec"
+      ],
+      [
+        "prod",
+        "cue"
+      ],
+      [
+        "inter",
+        "vl"
+      ],
+      [
+        "inter",
+        "vla"
+      ],
+      [
+        "sho",
+        "ld"
+      ],
+      [
+        "repe",
+        "atedy"
+      ],
+      [
+        "de",
+        "tcet"
+      ],
+      [
+        "pro",
+        "udce"
+      ],
+      [
+        "me",
+        "sage"
+      ],
+      [
+        "periodic",
+        "aly"
+      ],
+      [
+        "PB",
+        "0"
+      ],
+      [
+        "nee",
+        "sd"
+      ],
+      [
+        "ex",
+        "eution"
+      ],
+      [
+        "mes",
+        "sge"
+      ],
+      [
+        "mes",
+        "asge"
+      ],
+      [
+        "mes",
+        "saeg"
+      ],
+      [
+        "exec",
+        "uion"
+      ],
+      [
+        "so",
+        "huld"
+      ],
+      [
+        "oper",
+        "tion"
+      ],
+      [
+        "sof",
+        "ware"
+      ],
+      [
+        "soft",
+        "wr"
+      ],
+      [
+        "soft",
+        "wre"
+      ],
+      [
+        "soft",
+        "wae"
+      ],
+      [
+        "che",
+        "k"
+      ],
+      [
+        "progr",
+        "ma"
+      ],
+      [
+        "am",
+        "big"
+      ],
+      [
+        "buad",
+        "rate"
+      ],
+      [
+        "ae",
+        "t"
+      ],
+      [
+        "rr",
+        "gist"
+      ],
+      [
+        "bli",
+        "king"
+      ],
+      [
+        "wor",
+        "d"
+      ],
+      [
+        "mo",
+        "itor"
+      ],
+      [
+        "ung",
+        "ste"
+      ],
+      [
+        "ung",
+        "tae"
+      ],
+      [
+        "ung",
+        "aet"
+      ],
+      [
+        "be",
+        "fo"
+      ],
+      [
+        "driv",
+        "n"
+      ],
+      [
+        "arriv",
+        "ig"
+      ],
+      [
+        "arriv",
+        "ign"
+      ],
+      [
+        "mon",
+        "ior"
+      ],
+      [
+        "mon",
+        "tor"
+      ],
+      [
+        "reg",
+        "ise"
+      ],
+      [
+        "coll",
+        "ct"
+      ],
+      [
+        "regist",
+        "r"
+      ],
+      [
+        "regist",
+        "re"
+      ],
+      [
+        "0x",
+        "00"
+      ],
+      [
+        "0x",
+        "38"
+      ],
+      [
+        "0x",
+        "14"
+      ],
+      [
+        "0x",
+        "10"
+      ],
+      [
+        "0x",
+        "28"
+      ],
+      [
+        "0x",
+        "20"
+      ],
+      [
+        "0x",
+        "04"
+      ],
+      [
+        "0x",
+        "08"
+      ],
+      [
+        "0x",
+        "0c"
+      ],
+      [
+        "act",
+        "vate"
+      ],
+      [
+        "activ",
+        "te"
+      ],
+      [
+        "activ",
+        "ae"
+      ],
+      [
+        "li",
+        "lseconds"
+      ],
+      [
+        "bytr",
+        "s"
+      ],
+      [
+        "thr",
+        "uo"
+      ],
+      [
+        "add",
+        "iit"
+      ],
+      [
+        "28",
+        "08"
+      ],
+      [
+        "ti",
+        "er"
+      ],
+      [
+        "2500",
+        "0"
+      ],
+      [
+        "vl",
+        "tage"
+      ],
+      [
+        "mi",
+        "lilseconds"
+      ],
+      [
+        "0x400",
+        "04"
+      ],
+      [
+        "0x400",
+        "0400"
+      ],
+      [
+        "0x400",
+        "21000"
+      ],
+      [
+        "addition",
+        "lly"
+      ],
+      [
+        "addition",
+        "laly"
+      ],
+      [
+        "access",
+        "bi"
+      ],
+      [
+        "sot",
+        "fware"
+      ],
+      [
+        "millise",
+        "cn"
+      ],
+      [
+        "millise",
+        "cod"
+      ],
+      [
+        "es",
+        "atblish"
+      ],
+      [
+        "addit",
+        "onally"
+      ],
+      [
+        "addit",
+        "inally"
+      ],
+      [
+        "blcok",
+        "ing"
+      ],
+      [
+        "cr",
+        "rent"
+      ],
+      [
+        "drvi",
+        "en"
+      ],
+      [
+        "sts",
+        "ll"
+      ],
+      [
+        "brn",
+        "ig"
+      ],
+      [
+        "dg",
+        "ital"
+      ],
+      [
+        "inc",
+        "ming"
+      ],
+      [
+        "blck",
+        "ing"
+      ],
+      [
+        "some",
+        "thing"
+      ],
+      [
+        "some",
+        "tih"
+      ],
+      [
+        "di",
+        "igtal"
+      ],
+      [
+        "di",
+        "sable"
+      ],
+      [
+        "somr",
+        "thing"
+      ],
+      [
+        "perid",
+        "ically"
+      ],
+      [
+        "bock",
+        "ing"
+      ],
+      [
+        "ar",
+        "rving"
+      ],
+      [
+        "ar",
+        "iving"
+      ],
+      [
+        "iop",
+        "aen"
+      ],
+      [
+        "iop",
+        "ben"
+      ],
+      [
+        "iop",
+        "cen"
+      ],
+      [
+        "iop",
+        "den"
+      ],
+      [
+        "la",
+        "od"
+      ],
+      [
+        "lit",
+        "en"
+      ],
+      [
+        "va",
+        "ue"
+      ],
+      [
+        "inco",
+        "ing"
+      ],
+      [
+        "ass",
+        "gin"
+      ],
+      [
+        "bloc",
+        "ik"
+      ],
+      [
+        "gpio_",
+        "output"
+      ],
+      [
+        "gpio_",
+        "input"
+      ],
+      [
+        "gpio_",
+        "toggle"
+      ],
+      [
+        "gpio_",
+        "read"
+      ],
+      [
+        "oscillae",
+        "t"
+      ],
+      [
+        "communic",
+        "stion"
+      ],
+      [
+        "communic",
+        "aion"
+      ],
+      [
+        "srt",
+        "ing"
+      ],
+      [
+        "srn",
+        "sor"
+      ],
+      [
+        "sne",
+        "se"
+      ],
+      [
+        "uo",
+        "us"
+      ],
+      [
+        "usart",
+        "2en"
+      ],
+      [
+        "usart",
+        "3en"
+      ],
+      [
+        "usart",
+        "1en"
+      ],
+      [
+        "pari",
+        "y"
+      ],
+      [
+        "impl",
+        "rment"
+      ],
+      [
+        "byt",
+        "s"
+      ],
+      [
+        "oscil",
+        "ate"
+      ],
+      [
+        "pror",
+        "gam"
+      ],
+      [
+        "uart_",
+        "transmit"
+      ],
+      [
+        "uart_",
+        "receive"
+      ],
+      [
+        "uart_",
+        "init"
+      ],
+      [
+        "rcc_",
+        "enable"
+      ],
+      [
+        "rcc_",
+        "apb1enr"
+      ],
+      [
+        "rcc_",
+        "apb2enr"
+      ],
+      [
+        "execut",
+        "ino"
+      ],
+      [
+        "opera",
+        "ion"
+      ],
+      [
+        "establ",
+        "sh"
+      ],
+      [
+        "establ",
+        "ih"
+      ],
+      [
+        "establ",
+        "sih"
+      ],
+      [
+        "volt",
+        "ge"
+      ],
+      [
+        "volt",
+        "gae"
+      ],
+      [
+        "volt",
+        "sge"
+      ],
+      [
+        "additio",
+        "ally"
+      ],
+      [
+        "0x40000",
+        "400"
+      ],
+      [
+        "0x40000",
+        "800"
+      ],
+      [
+        "0x40000",
+        "000"
+      ],
+      [
+        "0x40010",
+        "400"
+      ],
+      [
+        "0x40010",
+        "800"
+      ],
+      [
+        "0x40010",
+        "c00"
+      ],
+      [
+        "bi",
+        "rng"
+      ],
+      [
+        "ca",
+        "putre"
+      ],
+      [
+        "cp",
+        "ture"
+      ],
+      [
+        "cp",
+        "ature"
+      ],
+      [
+        "gae",
+        "t"
+      ],
+      [
+        "ree",
+        "atedly"
+      ],
+      [
+        "ree",
+        "patedly"
+      ],
+      [
+        "sett",
+        "ig"
+      ],
+      [
+        "sett",
+        "ng"
+      ],
+      [
+        "tim4",
+        "ms"
+      ],
+      [
+        "tim4",
+        "en"
+      ],
+      [
+        "timer_",
+        "delay"
+      ],
+      [
+        "timer_",
+        "pw"
+      ],
+      [
+        "peir",
+        "od"
+      ],
+      [
+        "peir",
+        "pheral"
+      ],
+      [
+        "produe",
+        "c"
+      ],
+      [
+        "detet",
+        "c"
+      ],
+      [
+        "captu",
+        "e"
+      ],
+      [
+        "captu",
+        "er"
+      ],
+      [
+        "0x1",
+        "8"
+      ],
+      [
+        "0x1",
+        "c"
+      ],
+      [
+        "0x2",
+        "4"
+      ],
+      [
+        "0x2",
+        "c"
+      ],
+      [
+        "0x3",
+        "4"
+      ],
+      [
+        "0x3",
+        "c"
+      ],
+      [
+        "0x4001",
+        "1000"
+      ],
+      [
+        "0x4001",
+        "3800"
+      ],
+      [
+        "valid_",
+        "part"
+      ],
+      [
+        "valid_",
+        "comple"
+      ],
+      [
+        "alternate",
+        "_push_pull"
+      ],
+      [
+        "af",
+        "ter"
+      ],
+      [
+        "ari",
+        "rving"
+      ],
+      [
+        "bf",
+        "ufer"
+      ],
+      [
+        "bud",
+        "rate"
+      ],
+      [
+        "can",
+        "nel"
+      ],
+      [
+        "dt",
+        "eect"
+      ],
+      [
+        "div",
+        "en"
+      ],
+      [
+        "dee",
+        "tct"
+      ],
+      [
+        "fre",
+        "qu"
+      ],
+      [
+        "her",
+        "sl"
+      ],
+      [
+        "hlo",
+        "d"
+      ],
+      [
+        "non",
+        "e"
+      ],
+      [
+        "oer",
+        "ation"
+      ],
+      [
+        "plo",
+        "l"
+      ],
+      [
+        "pod",
+        "uce"
+      ],
+      [
+        "sig",
+        "als"
+      ],
+      [
+        "swith",
+        "c"
+      ],
+      [
+        "sct",
+        "ivate"
+      ],
+      [
+        "sgn",
+        "als"
+      ],
+      [
+        "sfo",
+        "tware"
+      ],
+      [
+        "intevr",
+        "al"
+      ],
+      [
+        "sesn",
+        "or"
+      ],
+      [
+        "reai",
+        "dng"
+      ],
+      [
+        "baudrt",
+        "ae"
+      ],
+      [
+        "baudart",
+        "e"
+      ],
+      [
+        "shuo",
+        "ld"
+      ],
+      [
+        "strn",
+        "ig"
+      ],
+      [
+        "wave",
+        "form"
+      ],
+      [
+        "impe",
+        "ment"
+      ],
+      [
+        "imlpe",
+        "ment"
+      ],
+      [
+        "perio",
+        "ically"
+      ],
+      [
+        "perip",
+        "hersl"
+      ],
+      [
+        "peroi",
+        "d"
+      ],
+      [
+        "rnun",
+        "ing"
+      ],
+      [
+        "unag",
+        "te"
+      ],
+      [
+        "icno",
+        "ming"
+      ],
+      [
+        "prgr",
+        "am"
+      ],
+      [
+        "presca",
+        "ler"
+      ],
+      [
+        "rxec",
+        "ution"
+      ],
+      [
+        "periodicaly",
+        "l"
+      ],
+      [
+        "softwr",
+        "ae"
+      ],
+      [
+        "ambig",
+        "uous"
+      ],
+      [
+        "rrgist",
+        "er"
+      ],
+      [
+        "befo",
+        "re"
+      ],
+      [
+        "regise",
+        "r"
+      ],
+      [
+        "thruo",
+        "gh"
+      ],
+      [
+        "addiit",
+        "onally"
+      ],
+      [
+        "2808",
+        "0"
+      ],
+      [
+        "0x40004",
+        "400"
+      ],
+      [
+        "0x4000400",
+        "0"
+      ],
+      [
+        "accessbi",
+        "le"
+      ],
+      [
+        "millisecn",
+        "ods"
+      ],
+      [
+        "millisecod",
+        "ns"
+      ],
+      [
+        "sometih",
+        "ng"
+      ],
+      [
+        "blocik",
+        "ng"
+      ],
+      [
+        "timer_pw",
+        "m"
+      ],
+      [
+        "valid_part",
+        "ial"
+      ],
+      [
+        "valid_comple",
+        "te"
+      ],
+      [
+        "frequ",
+        "ency"
+      ]
+    ]
+  }
+}
