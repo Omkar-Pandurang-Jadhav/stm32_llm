@@ -187,6 +187,13 @@ def normalize_text(text):
 
     # CH must be uppercase before tokenization
     text = re.sub(r'\bch\s*([1-4])\b', r'CH\1', text, flags=re.IGNORECASE)
+    
+    text = re.sub(r'\bpa(\d+)\b',r'PA\1',text)
+    text = re.sub(r'\bpb(\d+)\b',r'PB\1',text)
+    text = re.sub(r'\bpc(\d+)\b',r'PC\1',text)
+    text = re.sub(r'\bpd(\d+)\b',r'PD\1',text)
+    
+    text = re.sub(r'\b(P[A-D])(\d{1,2})\b',r'\1 \2',text)
 
     # ===== CLEAN =====
     text = re.sub(r'\s+', ' ', text)
@@ -194,6 +201,22 @@ def normalize_text(text):
     text = re.sub(r'\bCH([1-4])\b',r'CH\1', text)
     text = re.sub(r'\bPWM\b', 'PWM', text)
     text = re.sub(r'(\d+)%',r'\1%',text)
+    
+    text = re.sub(r'push\s+pull',
+                  'output_push_pull', text,
+                  flags=re.IGNORECASE)
+    text = re.sub(r'open\s+drain',
+                  'output_open_drain', text,
+                  flags=re.IGNORECASE)
+    text = re.sub(r'pull\s+up',
+                  'input_pull_up', text,
+                  flags=re.IGNORECASE)
+    text = re.sub(r'pull\s+down',
+                  'input_pull_down', text,
+                  flags=re.IGNORECASE)
+   
+    
+   
 
     return text.strip()
 
@@ -263,7 +286,10 @@ def save_corpus(corpus, path):
 def train_tokenizer(corpus_file, output_dir):
 
     tokenizer = Tokenizer(BPE(unk_token="<UNK>"))
-    tokenizer.pre_tokenizer = Whitespace()
+    tokenizer.pre_tokenizer = Sequence([
+        Whitespace(),
+        Split(pattern=r"([A-Z]{2})(\d{1,2})",behavior="isolated")
+    ])
 
     # ── Step 1: Train BPE normally ────────────────────
     trainer = BpeTrainer(
@@ -309,10 +335,10 @@ def train_tokenizer(corpus_file, output_dir):
         AddedToken("2000ms", single_word=False),
 
         # Pins — sometimes split PA + 10
-        AddedToken("PA9",  single_word=True),
-        AddedToken("PA10", single_word=True),
-        AddedToken("PB10", single_word=True),
-        AddedToken("PB11", single_word=True),
+        AddedToken("PA",single_word=True),
+        AddedToken("PB",single_word=True),
+        AddedToken("PC",single_word=True),
+        AddedToken("PD",single_word=True),
 
         # GPIO modes — underscores cause splits
         AddedToken("output_push_pull",  single_word=False),
@@ -408,6 +434,7 @@ def verify_tokenizer(tokenizer):
         "generate 500ms delay using TIM3",
         "blink PA5 every 500ms and init USART1 at 115200 baud",
         "cnfig PA5 otpt 50mhz",
+        "configure A5 output at 50Mhz"
     ]
 
     for p in prompts:

@@ -157,6 +157,7 @@ def normalize_stm32_keywords(text):
     text = re.sub(r'50\s*mhz', '50MHz', text, flags=re.IGNORECASE)
     text = re.sub(r'10\s*mhz', '10MHz', text, flags=re.IGNORECASE)
     text = re.sub(r'2\s*mhz',  '2MHz',  text, flags=re.IGNORECASE)
+    text = re.sub(r'\b([A-D])(\d{1,2})\b',r'P\1\2',text,flags=re.IGNORECASE)
 
     return text
 
@@ -207,11 +208,14 @@ def normalize_units(text):
 
 def normalize_modes(text):
     # merge push pull → push_pull
-    text = re.sub(r'push\s+pull', 'push_pull', text)
+    text = re.sub(r'push\s+pull', 'output_push_pull', text)
 
     # merge pull up/down
-    text = re.sub(r'pull\s+up', 'pull_up', text)
-    text = re.sub(r'pull\s+down', 'pull_down', text)
+    text = re.sub(r'pull\s+up', 'input_pull_up', text)
+    text = re.sub(r'pull\s+down', 'input_pull_down', text)
+    text = re.sub(r'floating','input_floating',text)
+    
+    text = re.sub(r'open\s+drain','output_open_drain',text)
 
     return text
 
@@ -269,6 +273,9 @@ def preprocess(raw_prompt):
 
     # Step 1: lowercase first
     text = text.lower()
+    
+    text = re.sub(r'\b([a-d])(\d{1,2})\b',
+                  lambda m:f"P{m.group(1).upper()} {m.group(2)}", text)
 
     # 🔥 FIX 1: correct regex
     text = re.sub(r'\bch\s*([1-4])\b', r'CH\1', text)
@@ -292,6 +299,9 @@ def preprocess(raw_prompt):
 
     # Step 5: STM32 normalization
     text = normalize_stm32_keywords(text)
+    
+    text = re.sub(r'\b([A-D])(\d{1,2})]b',
+                  lambda m: f"P{m.group(1).upper()}{m.group(2)}",text)
 
     # Step 6: detect complexity
     complexity = detect_complexity(text)
@@ -300,6 +310,17 @@ def preprocess(raw_prompt):
     text = re.sub(r'\bCH([1-4])\b', r'CH\1', text)
     text = re.sub(r'\bPWM\b', 'PWM', text)
     text = re.sub(r'(\d)\s+%', r'\1%', text)
+    
+    # After all processing -> fix case
+    text = re.sub(r'\bpa\b', 'PA',text)
+    text = re.sub(r'\bpb\b', 'PB',text)
+    text = re.sub(r'\bpc\b', 'PC',text)
+    text = re.sub(r'\bpd\b', 'PD',text)
+    
+    text = re.sub(r'\ba\b', 'PA',text)
+    text = re.sub(r'\bb\b', 'PB',text)
+    text = re.sub(r'\bc\b', 'PC',text)
+    text = re.sub(r'\bd\b', 'PD',text)
 
     # Step 7: final strip
     text = text.strip()

@@ -39,11 +39,11 @@ GPIO_SPEEDS       = ["2MHz","10MHz","50MHz"]
 VALID_BAUDRATES   = [9600,19200,38400,57600,115200]
 
 MODE_TEXT = {
-    "output_push_pull" : "push pull",
-    "output_open_drain": "open drain",
-    "input_floating"   : "floating",
-    "input_pull_up"    : "pull up",
-    "input_pull_down"  : "pull down",
+    "output_push_pull" : "output_push_pull",  # ✅
+    "output_open_drain": "output_open_drain", # ✅
+    "input_floating"   : "input_floating",    # ✅
+    "input_pull_up"    : "input_pull_up",     # ✅
+    "input_pull_down"  : "input_pull_down",   # ✅
 }
 
 RCC_MAP = {
@@ -131,62 +131,7 @@ INTENT_ORDER = {
 }
 
 
-def standardize_assumed_flags(cfg, intent):
-    """
-    Enforces standard format for all assumed flags.
 
-    ALWAYS uses nested format:
-      "tx_pin": {"port":"A","pin":9,"assumed":true}
-
-    NEVER uses flat format:
-      "tx_pin_assumed": true   ← remove this
-    """
-
-    # ── TX pin ────────────────────────────────────────
-    if "tx_pin_assumed" in cfg:
-        tx = cfg.get("tx_pin", {})
-        if isinstance(tx, dict):
-            tx["assumed"] = True
-            cfg["tx_pin"] = tx
-        del cfg["tx_pin_assumed"]
-
-    # ── RX pin ────────────────────────────────────────
-    if "rx_pin_assumed" in cfg:
-        rx = cfg.get("rx_pin", {})
-        if isinstance(rx, dict):
-            rx["assumed"] = True
-            cfg["rx_pin"] = rx
-        del cfg["rx_pin_assumed"]
-
-    # ── PWM pin ───────────────────────────────────────
-    if "pwm_pin_assumed" in cfg:
-        pwm = cfg.get("pwm_pin", {})
-        if isinstance(pwm, dict):
-            pwm["assumed"] = True
-            cfg["pwm_pin"] = pwm
-        del cfg["pwm_pin_assumed"]
-
-    # ── Ensure tx/rx pins always have assumed:true ────
-    # These are hardware-fixed, always assumed
-    if intent in ["UART_INIT","UART_TRANSMIT"]:
-        tx = cfg.get("tx_pin", {})
-        if isinstance(tx, dict) and tx:
-            tx["assumed"] = True
-            cfg["tx_pin"] = tx
-
-    if intent in ["UART_INIT","UART_RECEIVE"]:
-        rx = cfg.get("rx_pin", {})
-        if isinstance(rx, dict) and rx:
-            rx["assumed"] = True
-            cfg["rx_pin"] = rx
-
-    if intent == "TIMER_PWM":
-        pwm = cfg.get("pwm_pin", {})
-        if isinstance(pwm, dict) and pwm:
-            pwm["assumed"] = True
-            cfg["pwm_pin"] = pwm
-
-    return cfg
 
 # ══════════════════════════════════════════════════════
 # CORE VALIDATION + FINALIZATION LAYER
@@ -196,83 +141,68 @@ def standardize_assumed_flags(cfg, intent):
 
 def validate_and_finalize(example_json):
     """
-    Input:  raw list of JSON blocks from any builder
-    Output: (finalized_blocks, data_class, error_block)
-
-    Steps:
-      1. Validate each block against hardware tables
-      2. Inject deterministic defaults where missing
-      3. Add assumption flags consistently
-      4. Sort blocks by INTENT_ORDER
-      5. Determine data_class:
-           VALID_COMPLETE → no assumptions
-           VALID_PARTIAL  → some assumptions
-           INVALID        → hardware violation found
+    ONLY validate.
+    DO NOT add defaults.
+    DO NOT add assumed flags.
     """
-    finalized   = []
-    assumptions = []   # track which fields were assumed
-    errors      = []   # track hardware violations
+
+    finalized = []
+    errors    = []
+    has_missing = False
 
     for block in example_json:
-        intent = block.get("intent","")
+        intent = block.get("intent", "")
 
-        # Skip already-error blocks — pass through
-        if intent in ["ERROR","AMBIGUOUS","INVALID"]:
+        # Skip error/invalid blocks
+        if intent in ["ERROR", "AMBIGUOUS", "INVALID"]:
             finalized.append(block)
             continue
 
-        block, assumed, error = _validate_block(
-            block, intent)
+        block, missing_fields, error = _validate_block(block, intent)
 
         if error:
             errors.append(error)
         else:
-            assumptions.extend(assumed)
+            if missing_fields:
+                has_missing = True
+
+            # ❌ DO NOT MODIFY CONFIG
             finalized.append(block)
 
-    # If any hardware violation found → INVALID
+    # ❌ If any error → INVALID
     if errors:
         error_block = {
             "intent": "INVALID",
             "error_details": {
-                "error":         "INVALID_HARDWARE",
-                "message":       errors[0]["message"],
+                "error": "INVALID_HARDWARE",
+                "message": errors[0]["message"],
                 "invalid_field": errors[0]["field"],
-                "suggestion":    errors[0]["suggestion"],
+                "suggestion": errors[0]["suggestion"],
             }
         }
         return [error_block], "INVALID", error_block
 
-    # Sort by intent order (Issue 6)
-    finalized.sort(
-        key=lambda b: INTENT_ORDER.get(
-            b.get("intent",""), 99))
-
-    # Determine data class (Issue 3)
-    if assumptions:
-        data_class = "VALID_PARTIAL"
-    else:
-        data_class = "VALID_COMPLETE"
+    # ✅ Decide class
+    data_class = "VALID_PARTIAL" if has_missing else "VALID_COMPLETE"
 
     return finalized, data_class, None
 
-
 def _validate_block(block, intent):
     """
-    Validates and finalizes a single JSON block.
+    Validates a single JSON block.
+    Only validates — does NOT inject values.
     Returns (block, assumed_fields, error_or_None)
     """
     assumed = []
     cfg     = block.get("config", {})
 
     # ── GPIO blocks ───────────────────────────────────
-    if intent in ["GPIO_OUTPUT","GPIO_TOGGLE",
-                  "GPIO_INPUT","GPIO_READ"]:
+    if intent in ["GPIO_OUTPUT", "GPIO_TOGGLE",
+                  "GPIO_INPUT", "GPIO_READ"]:
 
         port = cfg.get("port")
         pin  = cfg.get("pin")
 
-        # Validate port exists
         if port not in PORT_VALID_PINS:
             return block, assumed, {
                 "field":      "port",
@@ -281,66 +211,46 @@ def _validate_block(block, intent):
                 "suggestion": "Use port A, B, C, or D",
             }
 
-        # Validate pin exists for this port
         if pin not in PORT_VALID_PINS[port]:
             valid = PORT_VALID_PINS[port]
             return block, assumed, {
-                "field":   "pin",
-                "message": (f"P{port}{pin} is invalid. "
-                            f"Port {port} supports: "
-                            f"{valid}"),
+                "field":      "pin",
+                "message":    (f"P{port}{pin} is invalid. "
+                               f"Port {port} supports: "
+                               f"{valid}"),
                 "suggestion": (f"Use pins "
                                f"{valid[0]}-{valid[-1]} "
                                f"for port {port}"),
             }
 
-        # Validate not reserved
         if (port, pin) in RESERVED_PINS:
             return block, assumed, {
-                "field":   "pin",
-                "message": (f"P{port}{pin} is reserved "
-                            f"for JTAG/SWD debugger"),
+                "field":      "pin",
+                "message":    (f"P{port}{pin} is reserved "
+                               f"for JTAG/SWD debugger"),
                 "suggestion": ("Use a non-reserved pin. "
                                "Avoid PA13,PA14,PA15,"
                                "PB3,PB4"),
             }
 
-        # Fix missing speed for output
-        if intent in ["GPIO_OUTPUT","GPIO_TOGGLE"]:
-            if not cfg.get("speed"):
-                cfg["speed"]        = DEFAULTS["GPIO"]["speed"]
-                cfg["speed_assumed"] = True
-                assumed.append("speed")
-
-        # Fix missing mode
-        if intent in ["GPIO_OUTPUT","GPIO_TOGGLE"]:
+        # Track what is missing (do NOT inject)
+        if intent in ["GPIO_OUTPUT", "GPIO_TOGGLE"]:
             if not cfg.get("mode"):
-                cfg["mode"]        = DEFAULTS["GPIO"]["mode_output"]
-                cfg["mode_assumed"] = True
                 assumed.append("mode")
+            if not cfg.get("speed"):
+                assumed.append("speed")
 
         if intent == "GPIO_INPUT":
             if not cfg.get("mode"):
-                cfg["mode"]        = DEFAULTS["GPIO"]["mode_input"]
-                cfg["mode_assumed"] = True
                 assumed.append("mode")
 
-        # Issue 6: standardize action flag
-        action = block.get("action", {})
-        if intent in ["GPIO_OUTPUT","GPIO_TOGGLE"]:
-            if not action.get("type"):
-                action["type"]    = "set_high"
-                action["assumed"] = True
-                assumed.append("action")
-
         block["config"] = cfg
-        block["action"] = action
 
     # ── UART blocks ───────────────────────────────────
-    elif intent in ["UART_INIT","UART_TRANSMIT",
+    elif intent in ["UART_INIT", "UART_TRANSMIT",
                     "UART_RECEIVE"]:
 
-        uart = block.get("peripheral","")
+        uart = block.get("peripheral", "")
         if uart not in USART_MAP:
             return block, assumed, {
                 "field":      "peripheral",
@@ -350,101 +260,37 @@ def _validate_block(block, intent):
                               "or USART3",
             }
 
-        info = USART_MAP[uart]
-
-        # Validate baudrate
         baud = cfg.get("baudrate")
-        if baud is None:
-            cfg["baudrate"]          = DEFAULTS["UART"]["baudrate"]
-            cfg["brr_value"]         = brr_value(
-                DEFAULTS["UART"]["baudrate"])
-            cfg["baudrate_assumed"]  = True
-            assumed.append("baudrate")
-        elif baud not in VALID_BAUDRATES:
+        if baud is not None and \
+                baud not in VALID_BAUDRATES:
             return block, assumed, {
-                "field":   "baudrate",
-                "message": (f"{baud} is not a supported "
-                            f"baudrate for STM32F103VB "
-                            f"at 72MHz"),
+                "field":      "baudrate",
+                "message":    (f"{baud} is not a supported "
+                               f"baudrate for STM32F103VB "
+                               f"at 72MHz"),
                 "suggestion": ("Use one of: " +
                                ", ".join(
                                    map(str,
                                        VALID_BAUDRATES))),
             }
-        else:
-            # Ensure brr_value always correct
-            cfg["brr_value"] = brr_value(baud)
 
-        # Issue 5: standardize TX/RX pin flags
-        if intent in ["UART_INIT","UART_TRANSMIT"]:
-            tx = cfg.get("tx_pin", {})
-            if not tx:
-                cfg["tx_pin"] = {
-                    **info["tx"],
-                    "tx_pin_assumed": True,
-                }
-                assumed.append("tx_pin")
-            else:
-                # Validate TX pin
-                if (tx.get("port") != info["tx"]["port"] or
-                        tx.get("pin") != info["tx"]["pin"]):
-                    return block, assumed, {
-                        "field":   "tx_pin",
-                        "message": (
-                            f"{uart} TX must be "
-                            f"P{info['tx']['port']}"
-                            f"{info['tx']['pin']}, "
-                            f"not P{tx.get('port')}"
-                            f"{tx.get('pin')}"),
-                        "suggestion": (
-                            f"Use P{info['tx']['port']}"
-                            f"{info['tx']['pin']} "
-                            f"for {uart} TX"),
-                    }
-                # Mark as assumed (hardware fixed)
-                cfg["tx_pin"] = {
-                    **info["tx"],
-                    "tx_pin_assumed": True,
-                }
-                assumed.append("tx_pin")
-
-        if intent in ["UART_INIT","UART_RECEIVE"]:
-            rx = cfg.get("rx_pin", {})
-            if not rx:
-                cfg["rx_pin"] = {
-                    **info["rx"],
-                    "rx_pin_assumed": True,
-                }
-                assumed.append("rx_pin")
-            else:
-                cfg["rx_pin"] = {
-                    **info["rx"],
-                    "rx_pin_assumed": True,
-                }
-                assumed.append("rx_pin")
-
-        # Fill UART defaults
-        if intent == "UART_INIT":
-            if not cfg.get("word_length"):
-                cfg["word_length"]         = DEFAULTS["UART"]["word_length"]
-                cfg["word_length_assumed"] = True
-                assumed.append("word_length")
-            if not cfg.get("stop_bits"):
-                cfg["stop_bits"]         = DEFAULTS["UART"]["stop_bits"]
-                cfg["stop_bits_assumed"] = True
-                assumed.append("stop_bits")
-            if not cfg.get("parity"):
-                cfg["parity"]         = DEFAULTS["UART"]["parity"]
-                cfg["parity_assumed"] = True
-                assumed.append("parity")
+        # Track missing — do NOT inject tx/rx pins
+        if baud is None:
+            assumed.append("baudrate")
+        if intent in ["UART_INIT", "UART_TRANSMIT"]:
+            assumed.append("tx_pin")
+        if intent in ["UART_INIT", "UART_RECEIVE"]:
+            assumed.append("rx_pin")
 
         block["config"] = cfg
 
     # ── TIMER blocks ──────────────────────────────────
-    elif intent in ["TIMER_DELAY","TIMER_PWM"]:
+    elif intent in ["TIMER_DELAY", "TIMER_PWM"]:
 
-        timer = block.get("peripheral","")
-        if timer not in TIMER_MAP:
+        timer = block.get("peripheral", "")
+
+        # Timer may be None for partial examples
+        if timer and timer not in TIMER_MAP:
             return block, assumed, {
                 "field":      "peripheral",
                 "message":    f"{timer} is not available "
@@ -452,67 +298,38 @@ def _validate_block(block, intent):
                 "suggestion": "Use TIM2, TIM3, or TIM4",
             }
 
-        info = TIMER_MAP[timer]
-
-
-
         if intent == "TIMER_DELAY":
-            delay = cfg.get("delay_ms")
-            if delay is None:
-                delay = DEFAULTS["TIMER"]["delay_ms"]
-                p, per = psc_period(delay)
-                cfg["delay_ms"]      = delay
-                cfg["prescaler"]     = p
-                cfg["period"]        = per
-                cfg["delay_assumed"] = True
+            if not timer:
+                assumed.append("timer")
+            if not cfg.get("delay_ms"):
                 assumed.append("delay_ms")
-
-
-            cfg["timer_assumed"] = True
-            assumed.append("timer")
-            block["config"] = cfg
 
         elif intent == "TIMER_PWM":
             channel = cfg.get("channel")
+
+            # Only validate channel if it is present
+            if channel is not None and timer:
+                info = TIMER_MAP[timer]
+                if channel not in info["channels"]:
+                    return block, assumed, {
+                        "field":      "channel",
+                        "message":    (f"{timer} does not "
+                                       f"have channel "
+                                       f"{channel}. Valid: "
+                                       f"{list(info['channels'].keys())}"),
+                        "suggestion": (f"Use channels 1-4 "
+                                       f"for {timer}"),
+                    }
+
+            # Track missing — do NOT inject pwm_pin
             if channel is None:
-                channel = DEFAULTS["TIMER"]["channel"]
-                cfg["channel"]          = channel
-                cfg["channel_assumed"]  = True
                 assumed.append("channel")
-
-            # Validate channel exists for this timer
-            if channel not in info["channels"]:
-                return block, assumed, {
-                    "field":   "channel",
-                    "message": (f"{timer} does not have "
-                                f"channel {channel}. "
-                                f"Valid: "
-                                f"{list(info['channels'].keys())}"),
-                    "suggestion": (f"Use channels 1-4 "
-                                   f"for {timer}"),
-                }
-
-            duty = cfg.get("duty_cycle_percent")
-            if duty is None:
-                duty = DEFAULTS["TIMER"]["duty"]
-                cfg["duty_cycle_percent"] = duty
-                cfg["ccr_value"]          = int(
-                    (duty/100) * cfg.get("period",999))
-                cfg["duty_assumed"]       = True
+            if not cfg.get("duty_cycle_percent"):
                 assumed.append("duty")
-
-            # Always update pwm_pin from hardware table
-            cfg["pwm_pin"] = {
-                **info["channels"][channel],
-                "pwm_pin_assumed": True,
-            }
-            assumed.append("pwm_pin")
+            
 
         block["config"] = cfg
 
-# Standardize all assumed flags before returning
-    block["config"] = standardize_assumed_flags(
-        block.get("config", {}), intent)
     return block, assumed, None
 
 
@@ -525,34 +342,29 @@ def finalized_add(examples, stats, ex_id,
                   clean_p, raw_jout, complexity,
                   noise_level=None):
     """
-    Correct pipeline:
-    1. validate_and_finalize  (defaults + validation)
-    2. detect_data_class      (WITH clean prompt)
-    3. apply_noise            (prompt only, never JSON)
-    4. append
+    FIX:
+    Use data_class from validation, not detect_data_class
     """
-    # Step 1: validate + inject defaults
-    final_jout, _, _ = validate_and_finalize(raw_jout)
+    # Step 1: validate
+    final_jout, data_class, _ = validate_and_finalize(raw_jout)
 
-    # Step 2: classify WITH prompt (not without)
-    data_class = detect_data_class(final_jout, clean_p)
-
-    # Step 3: noise on prompt only
+    # Step 2: noise
     if noise_level is None:
-        noise_level = random.choice(
-            ["clean","light","heavy"])
+        noise_level = random.choice(["clean","light","heavy"])
+
     noisy_p = apply_noise(clean_p, noise_level)
 
-    # Step 4: append
+    # Step 3: append
     examples.append({
         "id":           f"ex_{ex_id:05d}",
         "prompt":       noisy_p,
         "clean_prompt": clean_p,
         "complexity":   complexity,
-        "data_class":   data_class,
+        "data_class":   data_class,   # ✅ FIXED
         "noise_level":  noise_level,
         "output":       final_jout,
     })
+
     stats[data_class] = stats.get(data_class, 0) + 1
     return ex_id + 1
 
@@ -760,95 +572,95 @@ def apply_noise(prompt, level):
 COMPLETE_TEMPLATES = {
 
 "GPIO_OUTPUT": [
-    "configure {P}{N} as {MT} output at {SP}",
-    "set {P}{N} as {MT} output running at {SP}",
-    "initialize pin {N} of port {P} as {MT} at {SP}",
-    "setup {P}{N} as {MT} output at {SP}",
-    "make port {P} pin {N} a {MT} output at {SP}",
-    "configure port {P} pin {N} output {MT} {SP}",
-    "set pin {N} on port {P} as {MT} at {SP}",
-    "initialize {P}{N} for {MT} digital output at {SP}",
-    "assign {MT} output to {P}{N} with speed {SP}",
-    "configure {P}{N} for {MT} output operation at {SP}",
-    "i want {P}{N} as {MT} output at {SP}",
-    "turn {P}{N} into a {MT} output running at {SP}",
-    "{P}{N} should work as {MT} output at {SP}",
-    "set up {P}{N} as a {SP} {MT} output pin",
-    "prepare {P}{N} for {MT} output at {SP} speed",
-    "gpio {P}{N} {MT} output {SP}",
-    "{P}{N} output {MT} {SP}",
-    "make {P}{N} drive load as {MT} at {SP}",
-    "configure {P}{N} push pull output {SP}",
-    "set {P}{N} to output mode {MT} at {SP}",
+    "configure {P} {N} as {mode} output at {SP}",
+    "set {P} {N} as {mode} output running at {SP}",
+    "initialize pin {N} of port {P} as {mode} at {SP}",
+    "setup {P} {N} as {mode} output at {SP}",
+    "make port {P} pin {N} a {mode} output at {SP}",
+    "configure port {P} pin {N} output {mode} {SP}",
+    "set pin {N} on port {P} as {mode} at {SP}",
+    "initialize {P} {N} for {mode} digital output at {SP}",
+    "assign {mode} output to {P} {N} with speed {SP}",
+    "configure {P} {N} for {mode} output operation at {SP}",
+    "i want {P} {N} as {mode} output at {SP}",
+    "turn {P} {N} into a {mode} output running at {SP}",
+    "{P} {N} should work as {mode} output at {SP}",
+    "set up {P} {N} as a {SP} {mode} output pin",
+    "prepare {P} {N} for {mode} output at {SP} speed",
+    "gpio {P} {N} {mode} output {SP}",
+    "{P} {N} output {mode} {SP}",
+    "make {P} {N} drive load as {mode} at {SP}",
+    "configure {P} {N} push pull output {SP}",
+    "set {P} {N} to output mode {mode} at {SP}",
 ],
 
 "GPIO_TOGGLE": [
-    "blink LED on {P}{N} every {D}ms",
-    "toggle {P}{N} every {D} milliseconds",
-    "flip {P}{N} state every {D}ms",
-    "make {P}{N} blink at {D}ms interval",
-    "set {P}{N} high then low every {D}ms",
+    "blink LED on {P} {N} every {D}ms",
+    "toggle {P} {N} every {D} milliseconds",
+    "flip {P} {N} state every {D}ms",
+    "make {P} {N} blink at {D}ms interval",
+    "set {P} {N} high then low every {D}ms",
     "blink LED at port {P} pin {N} with {D}ms period",
     "toggle pin {N} of port {P} every {D}ms",
-    "periodically toggle {P}{N} with {D}ms delay",
-    "switch {P}{N} on and off every {D}ms",
+    "periodically toggle {P} {N} with {D}ms delay",
+    "switch {P} {N} on and off every {D}ms",
     "create {D}ms blink on {P}{N}",
-    "i want {P}{N} to blink every {D}ms",
-    "make the LED on {P}{N} flash every {D}ms",
-    "drive {P}{N} with {D}ms on-off cycle",
-    "{P}{N} needs to toggle every {D}ms",
-    "repeatedly switch {P}{N} every {D} milliseconds",
-    "{P}{N} blink {D}ms",
-    "led blink on {P}{N} {D}ms period",
-    "toggle {P}{N} with {D} ms cycle",
+    "i want {P} {N} to blink every {D}ms",
+    "make the LED on {P} {N} flash every {D}ms",
+    "drive {P} {N} with {D}ms on-off cycle",
+    "{P} {N} needs to toggle every {D}ms",
+    "repeatedly switch {P} {N} every {D} milliseconds",
+    "{P} {N} blink {D}ms",
+    "led blink on {P} {N} {D}ms period",
+    "toggle {P} {N} with {D} ms cycle",
     "{D}ms blink cycle on port {P} pin {N}",
-    "make {P}{N} oscillate every {D}ms",
+    "make {P} {N} oscillate every {D}ms",
 ],
 
 "GPIO_INPUT": [
-    "configure {P}{N} as {MT} input",
-    "set {P}{N} as input with {MT}",
-    "initialize pin {N} port {P} as {MT} input",
-    "setup {P}{N} as digital input {MT}",
-    "make {P}{N} a {MT} input pin",
-    "configure port {P} pin {N} for {MT} input",
-    "set pin {N} on port {P} as {MT} input",
-    "initialize {P}{N} for {MT} digital input",
-    "prepare {P}{N} as {MT} input pin",
-    "configure {P}{N} input mode as {MT}",
-    "i need {P}{N} as {MT} input",
-    "assign {MT} input to {P}{N}",
-    "{P}{N} should be {MT} input",
-    "turn {P}{N} into a {MT} input pin",
-    "set up {P}{N} to sense signals as {MT}",
-    "{P}{N} input {MT}",
-    "gpio {P}{N} {MT} input mode",
-    "configure {P}{N} for reading as {MT}",
-    "pin {N} port {P} as {MT} input",
-    "make {P}{N} detect signals in {MT} mode",
+    "configure {P} {N} as {mode} input",
+    "set {P} {N} as input with {mode}",
+    "initialize pin {N} port {P} as {mode} input",
+    "setup {P} {N} as digital input {mode}",
+    "make {P} {N} a {mode} input pin",
+    "configure port {P} pin {N} for {mode} input",
+    "set pin {N} on port {P} as {mode} input",
+    "initialize {P} {N} for {mode} digital input",
+    "prepare {P} {N} as {mode} input pin",
+    "configure {P} {N} input mode as {mode}",
+    "i need {P} {N} as {mode} input",
+    "assign {mode} input to {P} {N}",
+    "{P} {N} should be {mode} input",
+    "turn {P} {N} into a {mode} input pin",
+    "set up {P} {N} to sense signals as {mode}",
+    "{P} {N} input {mode}",
+    "gpio {P} {N} {mode} input mode",
+    "configure {P} {N} for reading as {mode}",
+    "pin {N} port {P} as {mode} input",
+    "make {P} {N} detect signals in {mode} mode",
 ],
 
 "GPIO_READ": [
-    "read the state of {P}{N}",
-    "get current value of {P}{N}",
-    "check if {P}{N} is high or low",
-    "read digital value from {P}{N}",
+    "read the state of {P} {N}",
+    "get current value of {P} {N}",
+    "check if {P} {N} is high or low",
+    "read digital value from {P} {N}",
     "sample input on pin {N} of port {P}",
-    "get logic level of {P}{N}",
+    "get logic level of {P} {N}",
     "read pin {N} on port {P}",
-    "check logic level at {P}{N}",
+    "check logic level at {P} {N}",
     "get state of port {P} pin {N}",
-    "read input data register for {P}{N}",
-    "what is state of {P}{N}",
-    "is {P}{N} driven high or low",
-    "detect logic state at {P}{N}",
-    "capture digital value of {P}{N}",
-    "sample voltage level on {P}{N}",
-    "{P}{N} read",
-    "read {P}{N} value",
-    "check {P}{N}",
-    "get {P}{N} level",
-    "sense {P}{N} state",
+    "read input data register for {P} {N}",
+    "what is state of {P} {N}",
+    "is {P} {N} driven high or low",
+    "detect logic state at {P} {N}",
+    "capture digital value of {P} {N}",
+    "sample voltage level on {P} {N}",
+    "{P} {N} read",
+    "read {P} {N} value",
+    "check {P} {N}",
+    "get {P} {N} level",
+    "sense {P} {N} state",
 ],
 
 "UART_INIT": [
@@ -1166,53 +978,77 @@ def build_gpio_output(port, pin, speed, mode,
                       speed_assumed=False,
                       mode_assumed=False,
                       action_assumed=True):
+
     ok, err = validate_hardware(port, pin)
     if not ok:
         raise ValueError(err)
+
+    cfg = {
+        "port": port,
+        "pin": pin,
+        "pin_name": f"P{port} {pin}"   # ✅ ADD THIS
+    }
+
+    if mode is not None:
+        cfg["mode"] = mode
+    if speed is not None:
+        cfg["speed"] = speed
+
     return {
         "intent":     "GPIO_OUTPUT",
         "peripheral": "GPIO",
         "rcc":        build_rcc(f"GPIO{port}"),
-        "config": {
-            "port":  port,
-            "pin":   pin,
-            "mode":  mode,
-            "speed": speed,
-            **({"mode_assumed": True}
-               if mode_assumed else {}),
-            **({"speed_assumed": True}
-               if speed_assumed else {}),
-        },
-        "action": {
-            "type":    "set_high",
-            **({"assumed": True}
-               if action_assumed else {}),
-        },
+        "config":     cfg,
+        "action":     {},
     }
 
+# CURRENT: random.choice(SAFE_GPIO_PINS)
+# This picks randomly → port A appears more
 
-def build_gpio_toggle(port, pin, delay_ms,
-                      delay_assumed=False):
+# FIXED: force balanced selection
+def balanced_gpio_pin():
+    """
+    Pick pins with balanced port distribution
+    """
+    port = random.choice(["A","B"])  # equal chance
+    if port == "A":
+        pin = random.choice(
+            [0,1,2,3,4,5,6,7])
+    else:
+        pin = random.choice(
+            [0,1,5,6,7,8,9])
+    return port, pin
+
+# Replace all:
+#   random.choice(SAFE_GPIO_PINS)
+# With:
+#   balanced_gpio_pin()
+def build_gpio_toggle(port, pin, delay_ms=None):
     ok, err = validate_hardware(port, pin)
     if not ok:
         raise ValueError(err)
-    return {
+
+    cfg = {
+        "port": port,
+        "pin": pin,
+        "pin_name": f"P{port} {pin}"   # ✅ IMPORTANT FIX
+    }
+
+    block = {
         "intent":     "GPIO_TOGGLE",
         "peripheral": "GPIO",
         "rcc":        build_rcc(f"GPIO{port}"),
-        "config": {
-            "port":  port,
-            "pin":   pin,
-            "mode":  "output_push_pull",
-            "speed": "50MHz",
-        },
-        "action": {"type": "toggle"},
-        "timing": {
-            "delay_ms": delay_ms,
-            **({"assumed": True}
-               if delay_assumed else {}),
-        },
+        "config":     cfg,
+        "action":     {"type": "toggle"}
     }
+
+    # ✅ Only include timing if explicitly present
+    if delay_ms is not None:
+        block["timing"] = {
+            "delay_ms": delay_ms
+        }
+
+    return block
 
 
 def build_gpio_input(port, pin, mode,
@@ -1220,35 +1056,37 @@ def build_gpio_input(port, pin, mode,
     ok, err = validate_hardware(port, pin)
     if not ok:
         raise ValueError(err)
+
+    cfg = {
+        "port": port,
+        "pin": pin,
+        "pin_name": f"P{port} {pin}"   # ✅ IMPORTANT FIX
+    }
+
+    if mode is not None:
+        cfg["mode"] = mode
+
     return {
         "intent":     "GPIO_INPUT",
         "peripheral": "GPIO",
         "rcc":        build_rcc(f"GPIO{port}"),
-        "config": {
-            "port":  port,
-            "pin":   pin,
-            "mode":  mode,
-            "speed": None,
-            **({"mode_assumed": True}
-               if mode_assumed else {}),
-        },
-        "action": {"type": "read"},
+        "config":     cfg,
+        "action":     {"type": "read"},
     }
-
 
 def build_gpio_read(port, pin):
     ok, err = validate_hardware(port, pin)
     if not ok:
         raise ValueError(err)
+
     return {
         "intent":     "GPIO_READ",
         "peripheral": "GPIO",
         "rcc":        build_rcc(f"GPIO{port}"),
         "config": {
-            "port":  port,
-            "pin":   pin,
-            "mode":  "input_floating",
-            "speed": None,
+            "port": port,
+            "pin": pin,
+            "pin_name": f"P{port} {pin}"   # ✅ IMPORTANT FIX
         },
         "action": {"type": "read_idr"},
     }
@@ -1259,117 +1097,89 @@ def build_uart_init(uart, baud, bits, stop,
                     bits_assumed=False,
                     stop_assumed=False):
     info = USART_MAP[uart]
+    cfg={}
+    if baud is not None:
+        cfg["baudrate"]=baud
+    if bits is not None:
+        cfg["word_length"]=bits
+    if stop is not None:
+        cfg["stop_bits"]=stop
     return {
         "intent":       "UART_INIT",
         "peripheral":   uart,
         "base_address": info["base"],
         "rcc":          build_rcc(uart),
-        "config": {
-            "baudrate":    baud,
-            "brr_value":   brr_value(baud),
-            "word_length": bits,
-            "parity":      "none",
-            "stop_bits":   stop,
-            "tx_pin": {
-                **info["tx"],
-                **({"assumed": True}
-                   if True else {}),  # always assumed
-            },
-            "rx_pin": {
-                **info["rx"],
-                "assumed": True,
-            },
-            **({"baudrate_assumed": True}
-               if baud_assumed else {}),
-            **({"word_length_assumed": True}
-               if bits_assumed else {}),
-            **({"stop_bits_assumed": True}
-               if stop_assumed else {}),
-        },
+        "config": cfg,
         "action": {"type": "init"},
     }
 
 
 def build_uart_tx(uart, baud, baud_assumed=False):
     info = USART_MAP[uart]
+    cfg={}
+    
+    if baud is not None:
+        cfg["baudrate"]=baud
     return {
         "intent":       "UART_TRANSMIT",
         "peripheral":   uart,
         "base_address": info["base"],
         "rcc":          build_rcc(uart),
-        "config": {
-            "baudrate": baud,
-            "tx_pin": {**info["tx"], "assumed": True},
-            **({"baudrate_assumed": True}
-               if baud_assumed else {}),
-        },
+        "config": cfg,
         "action": {"type": "transmit"},
     }
 
 
 def build_uart_rx(uart, baud, baud_assumed=False):
     info = USART_MAP[uart]
+    cfg  = {}
+    if baud is not None:
+        cfg["baudrate"] = baud
     return {
         "intent":       "UART_RECEIVE",
         "peripheral":   uart,
         "base_address": info["base"],
         "rcc":          build_rcc(uart),
-        "config": {
-            "baudrate": baud,
-            "rx_pin": {**info["rx"], "assumed": True},
-            **({"baudrate_assumed": True}
-               if baud_assumed else {}),
-        },
+        "config": cfg,
         "action": {"type": "receive"},
     }
 
-
 def build_timer_delay(timer, delay_ms,
                       delay_assumed=False):
-    p, per = psc_period(delay_ms)
-    info   = TIMER_MAP[timer]
+    cfg = {}
+    if timer is None:
+        return {
+            "intent":  "TIMER_DELAY",
+            "config":  cfg,
+            "action":  {"type": "delay"},
+        }
+    info = TIMER_MAP[timer]
+    if delay_ms is not None:
+        cfg["delay_ms"] = delay_ms
     return {
         "intent":       "TIMER_DELAY",
         "peripheral":   timer,
         "base_address": info["base"],
         "rcc":          build_rcc(timer),
-        "config": {
-            "prescaler": p,
-            "period":    per,
-            "delay_ms":  delay_ms,
-            "unit":      "ms",
-            **({"delay_assumed": True}
-               if delay_assumed else {}),
-        },
+        "config": cfg,
         "action": {"type": "delay"},
     }
-
 
 def build_timer_pwm(timer, channel, duty,
                     duty_assumed=False,
                     channel_assumed=False):
-    info    = TIMER_MAP[timer]
-    pwm_pin = info["channels"][channel]
-    period  = 999
-    ccr     = int((duty / 100) * period)
+    info = TIMER_MAP[timer]
+    cfg  = {}
+    if channel is not None:
+        cfg["channel"] = channel
+    if duty is not None:
+        cfg["duty_cycle_percent"] = duty
     return {
         "intent":       "TIMER_PWM",
         "peripheral":   timer,
         "base_address": info["base"],
         "rcc":          build_rcc(timer),
-        "config": {
-            "channel":            channel,
-            "prescaler":          719,
-            "period":             period,
-            "duty_cycle_percent": duty,
-            "ccr_value":          ccr,
-            "pwm_pin":            {**pwm_pin,
-                                   "assumed": True},
-            **({"duty_assumed": True}
-               if duty_assumed else {}),
-            **({"channel_assumed": True}
-               if channel_assumed else {}),
-        },
+        "config": cfg,
         "action": {"type": "pwm_start"},
     }
 
@@ -1418,7 +1228,7 @@ def build_ambiguous(missing, suggestion):
 # ══════════════════════════════════════════════════════
 
 def make_complete_gpio_output():
-    port, pin = random.choice(SAFE_GPIO_PINS)
+    port, pin = balanced_gpio_pin()
     speed     = random.choice(GPIO_SPEEDS)
     mode      = random.choice(GPIO_MODES_OUTPUT)
     mt        = MODE_TEXT[mode]
@@ -1432,21 +1242,21 @@ def make_complete_gpio_output():
 
 
 def make_partial_gpio_output():
-    port, pin = random.choice(SAFE_GPIO_PINS)
-    speed     = "50MHz"    # default, not in prompt
-    mode      = "output_push_pull"  # default
-    tmpl      = random.choice(
-        PARTIAL_TEMPLATES["GPIO_OUTPUT"])
+    port, pin = balanced_gpio_pin()
+
+    tmpl = random.choice(
+        PARTIAL_TEMPLATES["GPIO_OUTPUT"]
+    )
+
     prompt = tmpl.format(P=port, N=pin)
-    j = build_gpio_output(port, pin, speed, mode,
-                          speed_assumed=True,
-                          mode_assumed=True,
-                          action_assumed=True)
+
+    # ❌ NO defaults
+    j = build_gpio_output(port, pin, speed=None, mode=None)
+
     return prompt, [j], "VALID_PARTIAL"
 
-
 def make_complete_gpio_toggle():
-    port, pin = random.choice(SAFE_GPIO_PINS)
+    port, pin = balanced_gpio_pin()
     delay     = random.choice([100,200,500,1000,2000])
     tmpl      = random.choice(
         COMPLETE_TEMPLATES["GPIO_TOGGLE"])
@@ -1456,18 +1266,22 @@ def make_complete_gpio_toggle():
 
 
 def make_partial_gpio_toggle():
-    port, pin = random.choice(SAFE_GPIO_PINS)
-    delay     = 500   # default
-    tmpl      = random.choice(
-        PARTIAL_TEMPLATES["GPIO_TOGGLE"])
+    port, pin = balanced_gpio_pin()
+
+    tmpl = random.choice(
+        PARTIAL_TEMPLATES["GPIO_TOGGLE"]
+    )
+
     prompt = tmpl.format(P=port, N=pin)
-    j = build_gpio_toggle(port, pin, delay,
-                          delay_assumed=True)
+
+    # ✅ FIX: use correct parameter name
+    j = build_gpio_toggle(port, pin, delay_ms=None)
+
     return prompt, [j], "VALID_PARTIAL"
 
 
 def make_complete_gpio_input():
-    port, pin = random.choice(SAFE_GPIO_PINS)
+    port, pin = balanced_gpio_pin()
     mode      = random.choice(GPIO_MODES_INPUT)
     mt        = MODE_TEXT[mode]
     tmpl      = random.choice(
@@ -1479,18 +1293,17 @@ def make_complete_gpio_input():
 
 
 def make_partial_gpio_input():
-    port, pin = random.choice(SAFE_GPIO_PINS)
+    port, pin = balanced_gpio_pin()
     mode      = "input_floating"  # default
     tmpl      = random.choice(
         PARTIAL_TEMPLATES["GPIO_INPUT"])
     prompt = tmpl.format(P=port, N=pin)
-    j = build_gpio_input(port, pin, mode,
-                         mode_assumed=True)
+    j = build_gpio_input(port, pin, mode=None)
     return prompt, [j], "VALID_PARTIAL"
 
 
 def make_gpio_read():
-    port, pin = random.choice(SAFE_GPIO_PINS)
+    port, pin = balanced_gpio_pin()
     tmpl      = random.choice(
         COMPLETE_TEMPLATES["GPIO_READ"])
     prompt = tmpl.format(P=port, N=pin)
@@ -1510,19 +1323,18 @@ def make_complete_uart_init():
     j = build_uart_init(uart, baud, bits, stop)
     return prompt, [j], "VALID_COMPLETE"
 
-
 def make_partial_uart_init():
     uart = random.choice(["USART1","USART2","USART3"])
-    baud = 115200   # default
-    bits = 8        # default
-    stop = 1        # default
+
     tmpl = random.choice(
-        PARTIAL_TEMPLATES["UART_INIT"])
-    prompt = tmpl.format(U=uart, B=baud)
-    j = build_uart_init(uart, baud, bits, stop,
-                        baud_assumed=True,
-                        bits_assumed=True,
-                        stop_assumed=True)
+        PARTIAL_TEMPLATES["UART_INIT"]
+    )
+
+    prompt = tmpl.format(U=uart)
+
+    # ❌ NO defaults
+    j = build_uart_init(uart, baud=None, bits=None, stop=None)
+
     return prompt, [j], "VALID_PARTIAL"
 
 
@@ -1537,10 +1349,9 @@ def make_complete_uart_tx():
 
 def make_partial_uart_tx():
     uart = random.choice(["USART1","USART2","USART3"])
-    baud = 115200
     tmpl = random.choice(PARTIAL_TEMPLATES["UART_TX"])
-    prompt = tmpl.format(U=uart, B=baud)
-    j = build_uart_tx(uart, baud, baud_assumed=True)
+    prompt = tmpl.format(U=uart)
+    j = build_uart_tx(uart, baud=None)
     return prompt, [j], "VALID_PARTIAL"
 
 
@@ -1555,10 +1366,9 @@ def make_complete_uart_rx():
 
 def make_partial_uart_rx():
     uart = random.choice(["USART1","USART2","USART3"])
-    baud = 115200
     tmpl = random.choice(PARTIAL_TEMPLATES["UART_RX"])
-    prompt = tmpl.format(U=uart, B=baud)
-    j = build_uart_rx(uart, baud, baud_assumed=True)
+    prompt = tmpl.format(U=uart)
+    j = build_uart_rx(uart, baud=None)
     return prompt, [j], "VALID_PARTIAL"
 
 
@@ -1573,13 +1383,17 @@ def make_complete_timer_delay():
 
 
 def make_partial_timer_delay():
-    timer = DEFAULTS["TIMER"]["instance"]
-    delay = random.choice([100,200,500,1000,2000])
+    
+
     tmpl  = random.choice(
         PARTIAL_TEMPLATES["TIMER_DELAY"])
-    prompt = tmpl.format(T=timer, D=delay)
-    # delay is in prompt but timer assumed
-    j = build_timer_delay(timer, delay)
+    
+    delay = random.choice([100, 200, 500, 1000, 2000])
+
+    prompt = tmpl.format(D=delay)
+
+    j = build_timer_delay(timer=None, delay_ms=None)
+
     return prompt, [j], "VALID_PARTIAL"
 
 
@@ -1593,17 +1407,18 @@ def make_complete_timer_pwm():
     j = build_timer_pwm(timer, channel, duty)
     return prompt, [j], "VALID_COMPLETE"
 
-
 def make_partial_timer_pwm():
-    timer   = random.choice(["TIM2","TIM3","TIM4"])
-    channel = 1      # default
-    duty    = 50     # default
-    tmpl    = random.choice(
-        PARTIAL_TEMPLATES["TIMER_PWM"])
-    prompt = tmpl.format(T=timer, C=channel, DT=duty)
-    j = build_timer_pwm(timer, channel, duty,
-                        duty_assumed=True,
-                        channel_assumed=True)
+    timer = random.choice(["TIM2","TIM3","TIM4"])
+
+    tmpl = random.choice(
+        PARTIAL_TEMPLATES["TIMER_PWM"]
+    )
+
+    prompt = tmpl.format(T=timer, C=1, DT=50)
+
+    # ❌ NO defaults
+    j = build_timer_pwm(timer, channel=None, duty=None)
+
     return prompt, [j], "VALID_PARTIAL"
 
 
@@ -1970,8 +1785,9 @@ def detect_data_class(output_blocks, clean_prompt=""):
         # Rule 4: UART pins always hardware-fixed
         if intent in ["UART_INIT","UART_TRANSMIT",
                       "UART_RECEIVE"]:
-            if cfg.get("tx_pin") or cfg.get("rx_pin"):
-                return "VALID_PARTIAL"
+            if isinstance(cfg.get("tx_pin"),dict):
+                if cfg["tx_pin"].get("assumed"):
+                    return "VALID_PARTIAL"
 
     return "VALID_COMPLETE"
 
@@ -2001,8 +1817,6 @@ def generate_dataset(target=12000):
 
     def add(clean_p, jout, data_class, complexity):
         nonlocal ex_id
-        noise = random.choice(noise_levels)
-        noisy = apply_noise(clean_p, noise)
         ex_id = finalized_add(
             examples, stats, ex_id,
             clean_p, jout, complexity)
@@ -2055,7 +1869,7 @@ def generate_dataset(target=12000):
                             uart_lock = block["peripheral"]
                         elif block["peripheral"] != uart_lock:
                             # Rebuild with locked instance
-                            baud = block["config"]["baudrate"]
+                            baud = block["config"].get("baudrate",None)
                             if block["intent"] == "UART_INIT":
                                 block = build_uart_init(
                                     uart_lock, baud, 8, 1,
@@ -2084,17 +1898,19 @@ def generate_dataset(target=12000):
         clean = conn.join(parts)
         noise = random.choice(noise_levels)
         noisy = apply_noise(clean, noise)
+        
+        final_jout,data_class,_=validate_and_finalize(jout)
 
         examples.append({
             "id":           f"ex_{ex_id:05d}",
             "prompt":       noisy,
             "clean_prompt": clean,
             "complexity":   "complex",
-            "data_class":   "VALID_COMPLETE",
+            "data_class":   data_class,
             "noise_level":  noise,
-            "output":       jout,
+            "output":       final_jout,
         })
-        stats["VALID_COMPLETE"] += 1
+        stats[data_class] += 1
         ex_id += 1
 
     # INVALID

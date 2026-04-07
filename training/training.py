@@ -115,66 +115,94 @@ class STM32Dataset(Dataset):
                   f"(processing error)")
 
     def _build_entity_map(self):
-        """
-        Maps known token strings to entity tags.
-        Used to auto-label tokens during training.
-        """
         entity_map = {}
-
-        # Ports
+    
+        # Ports — match exact token form
         for p in ["A","B","C","D"]:
-            entity_map[p]        = "B-PORT"
-            entity_map[f"P{p}"]  = "B-PORT"
-            
-        for port in ["A","B","C","D"]:
-            for pin in range(16):
-                entity_map[f"P{port}{pin}"]="B-PIN"
-
+            entity_map[p]       = "B-PORT"
+            entity_map[f"P{p}"] = "B-PORT"
+    
         # Pins 0-15
         for n in range(16):
-            entity_map[str(n)]   = "B-PIN"
-
-        # Speeds
+            entity_map[str(n)] = "B-PIN"
+            
+    
+        # Speeds — exact form
         for s in ["50MHz","10MHz","2MHz"]:
-            entity_map[s]        = "B-SPEED"
-
-        # Modes
+            entity_map[s] = "B-SPEED"
+    
+        # Modes — CANONICAL form only
+        # These must match what tokenizer produces
         for m in ["output_push_pull",
                   "output_open_drain",
                   "input_floating",
                   "input_pull_up",
                   "input_pull_down"]:
-            entity_map[m]        = "B-MODE"
-
+            entity_map[m] = "B-MODE"
+    
         # UART
         for u in ["USART1","USART2","USART3",
                   "UART1","UART2","UART3"]:
-            entity_map[u]        = "B-UART"
-
+            entity_map[u] = "B-UART"
+    
         # Baudrates
         for b in ["9600","19200","38400",
                   "57600","115200"]:
-            entity_map[b]        = "B-BAUDRATE"
-
+            entity_map[b] = "B-BAUDRATE"
+    
         # Timers
         for t in ["TIM2","TIM3","TIM4"]:
-            entity_map[t]        = "B-TIMER"
-
+            entity_map[t] = "B-TIMER"
+    
         # Delays
         for d in ["100ms","200ms","500ms",
                   "1000ms","2000ms"]:
-            entity_map[d]        = "B-DELAY"
-
+            entity_map[d] = "B-DELAY"
+    
         # Duty cycles
         for dc in ["25%","50%","75%"]:
-            entity_map[dc]       = "B-DUTY"
-
+            entity_map[dc] = "B-DUTY"
+    
         # Channels
         for ch in ["CH1","CH2","CH3","CH4"]:
-            entity_map[ch]       = "B-CHANNEL"
-
+            entity_map[ch] = "B-CHANNEL"
+    
         return entity_map
-
+    
+    def verify_entity_map(self, tokenizer, samples=20):
+        """
+        NEW: Verify entity_map matches tokenizer output
+        Run this once before training starts
+        """
+        critical = [
+            "output_push_pull",
+            "output_open_drain",
+            "input_floating",
+            "input_pull_up",
+            "input_pull_down",
+            "50MHz", "115200",
+            "PA5", "PB7",
+            "CH1", "50%",
+        ]
+        print("\nEntity map verification:")
+        all_ok = True
+        for word in critical:
+            enc    = tokenizer.encode(word)
+            tokens = enc.tokens[1:-1]  # strip BOS/EOS
+            tag    = self.entity_map.get(tokens[0]
+                     if tokens else "", "O")
+            is_single = len(tokens) == 1
+            is_tagged = tag != "O"
+            ok = is_single and is_tagged
+            icon = "✅" if ok else "❌"
+            if not ok:
+                all_ok = False
+            print(f"  {icon} '{word}' → "
+                  f"tokens={tokens} tag={tag}")
+        if not all_ok:
+            print("\n⚠ Fix tokenizer or entity_map "
+                  "before training!")
+        return all_ok
     def _get_intent_label(self, output):
         """
         Extract intent class from JSON output block.
@@ -777,8 +805,8 @@ if __name__ == "__main__":
     # Load configs
     train_cfg = TrainConfig()
     model_cfg = STM32Config()
-    tok=Tokenizer.from_file(train_cfg.tokenizer_path)
-    model_cfg.vocab_size()
+    tok=Tokenizer.from_file(str(train_cfg.tokenizer_path))
+    model_cfg.vocab_size=tok.get_vocab_size()
     
 
     # Load tokenizer
