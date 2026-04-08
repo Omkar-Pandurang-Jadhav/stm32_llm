@@ -615,6 +615,12 @@ COMPLETE_TEMPLATES = {
     "toggle {P} {N} with {D} ms cycle",
     "{D}ms blink cycle on port {P} pin {N}",
     "make {P} {N} oscillate every {D}ms",
+    "turn {P} {N} on and off every {D}ms",
+    "pulse {P} {N} with period {D}ms",
+    "alternate {P} {N} state every {D}ms",
+    "square wave on {P} {N} period {D}ms",
+    "{P} {N} on off {D}ms",
+    "LED on {P} {N} blink rate {D}ms",
 ],
 
 "GPIO_INPUT": [
@@ -684,6 +690,16 @@ COMPLETE_TEMPLATES = {
     "serial {U} {B} baud",
     "{B} baud {W} bit on {U}",
     "configure {U} uart {B} baud {W} bits",
+    "start {U} at {B} baud",
+    "open {U} {B}",
+    "activate {U} serial {B} baud",
+    "enable {U} at {B}",
+    "use {U} for serial {B} baud",
+    "run {U} at {B} baud",
+    "{U} start {B}",
+    "serial comm {U} {B}",
+    "initialize serial port {U} {B} baud",
+    "begin {U} {B} baud",
 ],
 
 "UART_TX": [
@@ -809,42 +825,42 @@ COMPLETE_TEMPLATES = {
 PARTIAL_TEMPLATES = {
 
 "GPIO_OUTPUT": [
-    "configure {P}{N} as output",
-    "set {P}{N} as output pin",
-    "make {P}{N} output",
-    "{P}{N} output",
-    "setup {P}{N} for output",
-    "initialize {P}{N} output pin",
+    "configure {P} {N} as output",
+    "set {P} {N} as output pin",
+    "make {P} {N} output",
+    "{P} {N} output",
+    "setup {P} {N} for output",
+    "initialize {P} {N} output pin",
     "configure pin {N} of port {P} as output",
     "set port {P} pin {N} to output",
-    "{P}{N} as output",
-    "output on {P}{N}",
+    "{P} {N} as output",
+    "output on {P} {N}",
 ],
 
 "GPIO_TOGGLE": [
-    "blink {P}{N}",
-    "toggle {P}{N}",
-    "make {P}{N} blink",
-    "led blink {P}{N}",
-    "{P}{N} toggle",
-    "blink led on {P}{N}",
-    "flip {P}{N}",
-    "{P}{N} blink",
-    "make {P}{N} flash",
-    "oscillate {P}{N}",
+    "blink {P} {N}",
+    "toggle {P} {N}",
+    "make {P} {N} blink",
+    "led blink {P} {N}",
+    "{P} {N} toggle",
+    "blink led on {P} {N}",
+    "flip {P} {N}",
+    "{P} {N} blink",
+    "make {P} {N} flash",
+    "oscillate {P} {N}",
 ],
 
 "GPIO_INPUT": [
-    "configure {P}{N} as input",
-    "set {P}{N} as input",
-    "make {P}{N} input",
-    "{P}{N} input",
-    "setup {P}{N} for input",
-    "initialize {P}{N} input",
-    "{P}{N} as input pin",
-    "input on {P}{N}",
-    "set {P}{N} to read mode",
-    "{P}{N} read mode",
+    "configure {P} {N} as input",
+    "set {P} {N} as input",
+    "make {P} {N} input",
+    "{P} {N} input",
+    "setup {P} {N} for input",
+    "initialize {P} {N} input",
+    "{P} {N} as input pin",
+    "input on {P} {N}",
+    "set {P} {N} to read mode",
+    "{P} {N} read mode",
 ],
 
 "UART_INIT": [
@@ -962,7 +978,81 @@ AMBIGUOUS_PROMPTS = [
     "receive data",
 ]
 
+# Current problem:
+# 400 UART_INIT examples / 30 templates = ~13 per template
+# Too few for rare combinations
 
+# Fix: Generate examples PER TEMPLATE not per intent
+# This guarantees every template appears enough times
+
+INTENT_DISTRIBUTION = {
+    # (intent, template_list, count_per_template)
+    "GPIO_OUTPUT"  : 25,   # 20 templates × 25 = 500
+    "GPIO_TOGGLE"  : 25,   # 20 templates × 25 = 500
+    "GPIO_INPUT"   : 25,
+    "GPIO_READ"    : 25,
+    "UART_INIT"    : 20,   # 20 templates × 20 = 400
+    "UART_TX"      : 20,
+    "UART_RX"      : 20,
+    "TIMER_DELAY"  : 20,
+    "TIMER_PWM"    : 15,
+    "RCC_ENABLE"   : 15,
+}
+
+def generate_per_template(intent, templates,
+                          count_per_template,
+                          builder_fn):
+    """
+    Generate count_per_template examples
+    for EVERY template
+    Guarantees all vocabulary patterns seen
+    """
+    examples = []
+    for tmpl in templates:
+        for _ in range(count_per_template):
+            try:
+                ex = builder_fn(tmpl)
+                if ex:
+                    examples.append(ex)
+            except Exception:
+                pass
+    return examples
+
+# Current: PC in SAFE_GPIO_PINS only has PC13,PC14,PC15
+# User may type PC5, PC7 → correctly → INVALID
+
+# Add explicit INVALID examples for PC0-PC12:
+def make_invalid_port_c():
+    """
+    Explicitly train model that PC0-PC12 are invalid
+    """
+    pin    = random.choice(range(0, 13))  # PC0-PC12
+    prompt = random.choice([
+        f"toggle PC{pin} every 500ms",
+        f"configure PC{pin} as output",
+        f"set PC{pin} as input",
+        f"blink PC{pin}",
+    ])
+    j = build_error(
+        "INVALID_PORT_C_PIN",
+        f"PC{pin} does not exist on STM32F103VB. "
+        f"Only PC13, PC14, PC15 are available.",
+        "Use PC13, PC14, or PC15",
+        invalid_pin=f"PC{pin}",
+        valid_pins=["PC13","PC14","PC15"],
+    )
+    return prompt, [j], "INVALID"
+
+# Add PC13-PC15 to VALID examples:
+def make_complete_gpio_port_c():
+    pin  = random.choice([13, 14, 15])
+    port = "C"
+    # Only output/input, no PWM (no TIM channels on PC)
+    intent = random.choice([
+        "GPIO_OUTPUT", "GPIO_INPUT",
+        "GPIO_TOGGLE", "GPIO_READ"
+    ])
+    ...
 # ══════════════════════════════════════════════════════
 # JSON BUILDERS
 # ══════════════════════════════════════════════════════
@@ -1006,19 +1096,34 @@ def build_gpio_output(port, pin, speed, mode,
 # This picks randomly → port A appears more
 
 # FIXED: force balanced selection
+# Replace random.choice(SAFE_GPIO_PINS) everywhere
+# with this function:
+
 def balanced_gpio_pin():
     """
-    Pick pins with balanced port distribution
+    Force equal distribution:
+    - Equal chance per port
+    - Equal chance per valid pin
+    - Never picks reserved or invalid pins
     """
-    port = random.choice(["A","B"])  # equal chance
-    if port == "A":
-        pin = random.choice(
-            [0,1,2,3,4,5,6,7])
-    else:
-        pin = random.choice(
-            [0,1,5,6,7,8,9])
-    return port, pin
+    # Weight ports by usable pin count
+    port_weights = {
+        "A": 13,   # PA0-PA12 (PA13,14,15 reserved)
+        "B": 13,   # PB0-PB2, PB5-PB15 (PB3,PB4 reserved)
+        "C": 3,    # PC13,PC14,PC15 only
+        "D": 2,    # PD0,PD1 only
+    }
+    port = random.choices(
+        list(port_weights.keys()),
+        weights=list(port_weights.values())
+    )[0]
 
+    valid = [
+        pin for pin in PORT_VALID_PINS[port]
+        if (port, pin) not in RESERVED_PINS
+    ]
+    pin = random.choice(valid)
+    return port, pin
 # Replace all:
 #   random.choice(SAFE_GPIO_PINS)
 # With:

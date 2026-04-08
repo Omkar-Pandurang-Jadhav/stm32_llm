@@ -396,20 +396,26 @@ class STM32LLM(nn.Module):
 # ══════════════════════════════════════════════════════
 
 class STM32Loss(nn.Module):
-    def __init__(self, config: STM32Config,
-                 intent_weight=1.0,
-                 entity_weight=0.5):
+    def __init__(self, config,
+                intent_weight=1.0,
+                entity_weight=0.5,
+                intent_weights=None):
+
         super().__init__()
+
         self.intent_weight  = intent_weight
         self.entity_weight  = entity_weight
 
-        # Cross entropy for intent classification
-        self.intent_loss_fn = nn.CrossEntropyLoss()
+        if intent_weights is not None:
+            self.intent_loss_fn = nn.CrossEntropyLoss(
+                weight=intent_weights
+            )
+        else:
+            self.intent_loss_fn = nn.CrossEntropyLoss()
 
-        # Cross entropy for entity tagging
-        # ignore_index=-100 skips padding tokens
         self.entity_loss_fn = nn.CrossEntropyLoss(
-            ignore_index=-100)
+            ignore_index=-100
+        )
 
     def forward(self,
                 intent_logits, intent_labels,

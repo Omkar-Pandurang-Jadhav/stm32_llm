@@ -13,6 +13,26 @@ from tokenizers import Tokenizer
 sys.path.append(str(Path(__file__).parent.parent))
 from model.model import STM32LLM, STM32Config, STM32Loss
 
+
+from collections import Counter
+
+def compute_class_weights(dataset, num_classes):
+    counts = Counter()
+
+    for ex in dataset.examples:
+        label = ex["intent_label"].item()
+        counts[label] += 1
+
+    total = sum(counts.values())
+
+    weights = []
+    for i in range(num_classes):
+        count = counts.get(i, 1)
+        weight = total / (num_classes * count)
+        weights.append(weight)
+
+    return torch.tensor(weights, dtype=torch.float)
+
 # ══════════════════════════════════════════════════════
 # TRAINING CONFIG
 # Change these based on CPU vs GPU
@@ -348,13 +368,17 @@ def make_loader(examples, tokenizer,
         examples, tokenizer,
         model_cfg, use_noisy)
     print(f"  Dataset size: {len(dataset)} examples")
-    return DataLoader(
+
+
+    loader = DataLoader(
         dataset,
         batch_size  = train_cfg.batch_size,
         shuffle     = shuffle,
         num_workers = 0,
         pin_memory  = (train_cfg.device == "cuda"),
     )
+
+    return loader, dataset
 
 
 # ══════════════════════════════════════════════════════
@@ -377,13 +401,22 @@ def get_lr(step, embed_dim, warmup_steps):
 
 class Trainer:
     def __init__(self, model, train_cfg,
-                 model_cfg):
+                 model_cfg,train_dataset):
         self.model      = model
         self.cfg        = train_cfg
         self.model_cfg  = model_cfg
         self.device     = torch.device(
             train_cfg.device)
-        self.loss_fn    = STM32Loss(model_cfg)
+        # Compute class weights
+        weights = compute_class_weights(
+            train_dataset,
+            model_cfg.num_intents
+        )
+
+        self.loss_fn = STM32Loss(
+            model_cfg,
+            intent_weights=weights.to(self.device)
+        )
         self.optimizer  = torch.optim.AdamW(
             model.parameters(),
             lr           = train_cfg.lr,
@@ -610,17 +643,27 @@ def quick_test(train_cfg, model_cfg, tokenizer,
     print(f"Train: {len(train_ex)} examples")
     print(f"Val:   {len(val_ex)} examples")
 
-    train_loader = make_loader(
+    train_loader, train_dataset = make_loader(
         train_ex, tokenizer, model_cfg,
-        train_cfg, use_noisy=False)
-    val_loader   = make_loader(
+        train_cfg, use_noisy=False
+    )
+
+    val_loader, _ = make_loader(
         val_ex, tokenizer, model_cfg,
         train_cfg, use_noisy=False,
-        shuffle=False)
+        shuffle=False
+    )
 
     model   = STM32LLM(model_cfg).to(
         torch.device(train_cfg.device))
-    trainer = Trainer(model, train_cfg, model_cfg)
+ 
+
+    trainer = Trainer(
+        model,
+        train_cfg,
+        model_cfg,
+        train_dataset
+    )
 
     for epoch in range(1, 3):
         print(f"\nEpoch {epoch}/2")
@@ -684,29 +727,44 @@ def full_training(train_cfg, model_cfg,
     # ── Build model ───────────────────────────────
     device  = torch.device(train_cfg.device)
     model   = STM32LLM(model_cfg).to(device)
-    trainer = Trainer(model, train_cfg, model_cfg)
-
     total, _ = model.count_parameters()
-    print(f"\nModel: {total:,} parameters")
-    print(f"Device: {device}")
 
-    # ══════════════════════════════════════════════
+    # STAGE 1
+     # ══════════════════════════════════════════════
     # STAGE 1: Simple clean only
     # Model learns basic intent mapping
     # ══════════════════════════════════════════════
     train_ex, val_ex = split_data(clean_s)
-    train_l = make_loader(
+
+    train_loader, train_dataset = make_loader(
         train_ex, tokenizer, model_cfg,
-        train_cfg, use_noisy=False)
-    val_l   = make_loader(
+        train_cfg, use_noisy=False
+    )
+
+    val_loader, _ = make_loader(
         val_ex, tokenizer, model_cfg,
         train_cfg, use_noisy=False,
-        shuffle=False)
+        shuffle=False
+    )
+
+    # 🔥 CREATE TRAINER HERE (ONLY ONCE)
+    trainer = Trainer(
+        model,
+        train_cfg,
+        model_cfg,
+        train_dataset
+    )
 
     acc1 = trainer.run_stage(
         1, "Simple Clean Examples",
-        train_l, val_l,
-        train_cfg.stage1_epochs)
+        train_loader, val_loader,
+        train_cfg.stage1_epochs
+    )
+
+    print(f"\nModel: {total:,} parameters")
+    print(f"Device: {device}")
+
+   
 
     # ══════════════════════════════════════════════
     # STAGE 2: Simple clean + noisy
@@ -714,17 +772,21 @@ def full_training(train_cfg, model_cfg,
     # ══════════════════════════════════════════════
     all_simple_ex      = clean_s + noisy_s
     train_ex, val_ex   = split_data(all_simple_ex)
-    train_l = make_loader(
+    
+    train_loader, _ = make_loader(
         train_ex, tokenizer, model_cfg,
-        train_cfg, use_noisy=True)
-    val_l   = make_loader(
+        train_cfg, use_noisy=False
+    )
+
+    val_loader, _ = make_loader(
         val_ex, tokenizer, model_cfg,
         train_cfg, use_noisy=False,
-        shuffle=False)
+        shuffle=False
+    )
 
     acc2 = trainer.run_stage(
         2, "Simple Clean + Noisy",
-        train_l, val_l,
+        train_loader, val_loader,
         train_cfg.stage2_epochs)
 
     # ══════════════════════════════════════════════
@@ -732,17 +794,21 @@ def full_training(train_cfg, model_cfg,
     # Model learns multi-peripheral prompts
     # ══════════════════════════════════════════════
     train_ex, val_ex = split_data(complex_)
-    train_l = make_loader(
+
+    train_loader, _ = make_loader(
         train_ex, tokenizer, model_cfg,
-        train_cfg, use_noisy=True)
-    val_l   = make_loader(
+        train_cfg, use_noisy=False
+    )
+
+    val_loader, _ = make_loader(
         val_ex, tokenizer, model_cfg,
         train_cfg, use_noisy=False,
-        shuffle=False)
+        shuffle=False
+    )
 
     acc3 = trainer.run_stage(
         3, "Complex Multi-Intent",
-        train_l, val_l,
+        train_loader, val_loader,
         train_cfg.stage3_epochs)
 
     # ══════════════════════════════════════════════
@@ -750,17 +816,21 @@ def full_training(train_cfg, model_cfg,
     # Final polishing on everything
     # ══════════════════════════════════════════════
     train_ex, val_ex = split_data(full_data)
-    train_l = make_loader(
+
+    train_loader, _ = make_loader(
         train_ex, tokenizer, model_cfg,
-        train_cfg, use_noisy=True)
-    val_l   = make_loader(
+        train_cfg, use_noisy=False
+    )
+
+    val_loader, _ = make_loader(
         val_ex, tokenizer, model_cfg,
         train_cfg, use_noisy=False,
-        shuffle=False)
+        shuffle=False
+    )
 
     acc4 = trainer.run_stage(
         4, "Full Dataset Fine-tune",
-        train_l, val_l,
+        train_loader, val_loader,
         train_cfg.stage4_epochs)
 
     # ── Final summary ─────────────────────────────
