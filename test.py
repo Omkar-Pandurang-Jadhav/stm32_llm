@@ -4,6 +4,7 @@ from tokenizers import Tokenizer
 import sys
 
 from preprocessor.preprocessor import preprocess
+from json_builder.json_builder import build_json
 
 # ===============================
 # PATH SETUP
@@ -72,9 +73,29 @@ def predict_prompt(prompt: str):
     print(f"Tokens   : {tokens}")
     print(f"Intent   : {intent}")
     print("Entities:")
+    entity_dict = {}
+
+    print("Entities:")
     for tok, tag in zip(tokens, pred_tags):
         print(f"  {tok:20s} -> {tag}")
+    
+        # ignore special tokens
+        if tag != "O" and tok not in ["<BOS>", "<EOS>", "<PAD>"]:
+            entity_dict[tok] = tag
+            
+    # ===============================
+    # BUILD JSON
+    # ===============================
+    try:
+        json_output = build_json(intent, entity_dict)
 
+        print("\nJSON Output:")
+        import json
+        print(json.dumps(json_output, indent=2))
+
+    except Exception as e:
+        print(f"JSON Builder Error: {e}")
+        
 # ===============================
 # INTERACTIVE LOOP
 # ===============================
