@@ -93,6 +93,13 @@ DEFAULTS = {
 # Converts BIO tag dict → clean field values
 # ══════════════════════════════════════════════════════
 
+def compute_brr(pclk,baudrate):
+    usartdiv =pclk/(16*baudrate)
+
+    mantissa=int(usartdiv)
+    fraction=int((usartdiv-mantissa)*16)
+
+    return (mantissa<<4) | fraction 
 def parse_entities(entities):
     """
     Input:  dict of {token: BIO_tag}
@@ -399,9 +406,10 @@ def build_uart_init(fields):
     baud = snap_baudrate(baud)
     info = USART_MAP[uart]
 
+    pclk = 8000000
     cfg = {
         "baudrate":    baud,
-        "brr_value":   SYSTEM_CLOCK // baud,
+        "brr_value":   hex(compute_brr(pclk,baud)),
         "word_length": bits,
         "parity":      "none",
         "stop_bits":   stop,
