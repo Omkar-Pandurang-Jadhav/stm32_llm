@@ -1,0 +1,14 @@
+{
+  "dataset": "/Users/omkar/Documents/stm32_llm/test_results/stm32_qwen_test_predictions.jsonl",
+  "compiler": "/Applications/ArmGNUToolchain/15.3.rel1/arm-none-eabi/bin/arm-none-eabi-gcc",
+  "total": 751,
+  "passed": 730,
+  "failed": 21,
+  "success_rate_percent": 97.2,
+  "failure_rate_percent": 2.8,
+  "elapsed_seconds": 16.01,
+  "error_categories": {
+    "syntax": 19,
+    "undeclared_identifier": 2
+  }
+}

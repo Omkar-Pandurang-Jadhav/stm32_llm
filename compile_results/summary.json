@@ -1,0 +1,11 @@
+{
+  "dataset": "/Users/omkar/Documents/stm32_llm/stm32_instruction_code_v3_code_only.jsonl",
+  "compiler": "/Applications/ArmGNUToolchain/15.3.rel1/arm-none-eabi/bin/arm-none-eabi-gcc",
+  "total": 10800,
+  "passed": 10800,
+  "failed": 0,
+  "success_rate_percent": 100.0,
+  "failure_rate_percent": 0.0,
+  "elapsed_seconds": 371.87,
+  "error_categories": {}
+}

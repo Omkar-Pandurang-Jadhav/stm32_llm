@@ -1,0 +1,29 @@
+{
+  "original_records": 10800,
+  "exact_duplicates_removed": 3213,
+  "records_after_duplicates": 7587,
+  "conflicting_prompt_groups": 36,
+  "records_removed_for_conflicts": 77,
+  "final_clean_records": 7510,
+  "unique_prompt_groups": 7510,
+  "train_records": 6008,
+  "validation_records": 751,
+  "test_records": 751,
+  "seed": 42,
+  "system_prompt": "You generate pure bare-metal C code for the STM32F103VB microcontroller.\n\nUse direct hardware register access to configure and control peripherals.\nDo not use STM32 HAL, Standard Peripheral Library (SPL), STM32 LL drivers, Arduino libraries, or any other high-level peripheral abstraction or library.\n\nYou may use the STM32F103 CMSIS device header for register and bit definitions, such as stm32f103xb.h.\n\nGenerate complete compilable C code with the required headers and main(). The generated code must directly configure the STM32F103VB hardware through its peripheral registers.",
+  "intent_distribution": {
+    "UART_TRANSMIT": 900,
+    "GPIO_INPUT": 1187,
+    "GPIO_OUTPUT": 1475,
+    "GPIO_TOGGLE": 1683,
+    "UART_INIT": 1378,
+    "TIMER_DELAY": 1438,
+    "UART_RECEIVE": 695,
+    "TIMER_PWM": 704,
+    "RCC_ENABLE": 268,
+    "GPIO_READ": 424
+  },
+  "bare_metal_records": 7510,
+  "hal_records": 0,
+  "spl_records": 0
+}

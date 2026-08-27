@@ -36,9 +36,9 @@ function isFormComplete(intent, entities) {
 // ── Status Indicator ─────────────────────────────────────────────────────────
 function ApiStatus({ status }) {
   const configs = {
-    online:      { color: '#00ff9d', label: 'BACKEND ONLINE',  pulse: true },
-    offline:     { color: '#ff003c', label: 'BACKEND OFFLINE', pulse: false },
-    checking:    { color: '#ffcc00', label: 'CHECKING...',      pulse: true },
+    online: { color: '#00ff9d', label: 'BACKEND ONLINE', pulse: true },
+    offline: { color: '#ff003c', label: 'BACKEND OFFLINE', pulse: false },
+    checking: { color: '#ffcc00', label: 'CHECKING...', pulse: true },
   };
   const cfg = configs[status] || configs.checking;
   return (
@@ -79,7 +79,7 @@ function Toast({ message, type, onClose }) {
   }, [onClose]);
 
   const colors = {
-    error:   { bg: '#ff003c18', border: '#ff003c44', text: '#ff003c' },
+    error: { bg: '#ff003c18', border: '#ff003c44', text: '#ff003c' },
     success: { bg: '#00ff9d18', border: '#00ff9d44', text: '#00ff9d' },
   };
   const c = colors[type] || colors.error;
@@ -141,7 +141,19 @@ export default function App() {
     setOutput(null);
     try {
       const result = await generateJson(intent, entities);
+
+      console.log("========== API RESULT ==========");
+      console.log(result);
+      console.log(typeof result);
+
       setOutput(result);
+
+      if (result.error) {
+        setToast({
+          message: result.error,
+          type: 'error'
+        });
+      }
     } catch (err) {
       setToast({ message: err.message || 'Failed to generate config', type: 'error' });
     } finally {
@@ -287,7 +299,7 @@ export default function App() {
                 STEP 3 — INSPECT OUTPUT
               </span>
             </div>
-            <JsonOutput data={output} isLoading={isGenerating} />
+            <JsonOutput data={output?.json || output} isLoading={isGenerating} />
           </div>
 
           {/* Register quick-reference */}
@@ -379,18 +391,18 @@ function getRegisterRows(intent, entities) {
   if (intent.startsWith('GPIO')) {
     const port = entities.port || 'x';
     return [
-      { reg: `GPIO${port}_CRL`,  offset: '+0x00', purpose: 'Pin config 0–7' },
-      { reg: `GPIO${port}_CRH`,  offset: '+0x04', purpose: 'Pin config 8–15' },
-      { reg: `GPIO${port}_IDR`,  offset: '+0x08', purpose: 'Input data (RO)' },
-      { reg: `GPIO${port}_ODR`,  offset: '+0x0C', purpose: 'Output data' },
+      { reg: `GPIO${port}_CRL`, offset: '+0x00', purpose: 'Pin config 0–7' },
+      { reg: `GPIO${port}_CRH`, offset: '+0x04', purpose: 'Pin config 8–15' },
+      { reg: `GPIO${port}_IDR`, offset: '+0x08', purpose: 'Input data (RO)' },
+      { reg: `GPIO${port}_ODR`, offset: '+0x0C', purpose: 'Output data' },
       { reg: `GPIO${port}_BSRR`, offset: '+0x10', purpose: 'Atomic set/reset' },
     ];
   }
   if (intent.startsWith('UART')) {
     const u = entities.usart || 'USARTx';
     return [
-      { reg: `${u}_SR`,  offset: '+0x00', purpose: 'Status (TXE, RXNE)' },
-      { reg: `${u}_DR`,  offset: '+0x04', purpose: 'Data register RW' },
+      { reg: `${u}_SR`, offset: '+0x00', purpose: 'Status (TXE, RXNE)' },
+      { reg: `${u}_DR`, offset: '+0x04', purpose: 'Data register RW' },
       { reg: `${u}_BRR`, offset: '+0x08', purpose: 'Baud rate register' },
       { reg: `${u}_CR1`, offset: '+0x0C', purpose: 'Control (UE,TE,RE)' },
     ];
@@ -399,7 +411,7 @@ function getRegisterRows(intent, entities) {
     const t = entities.timer || 'TIMx';
     return [
       { reg: `${t}_CR1`, offset: '+0x00', purpose: 'Control (CEN)' },
-      { reg: `${t}_SR`,  offset: '+0x10', purpose: 'Status (UIF)' },
+      { reg: `${t}_SR`, offset: '+0x10', purpose: 'Status (UIF)' },
       { reg: `${t}_CNT`, offset: '+0x24', purpose: 'Counter value' },
       { reg: `${t}_PSC`, offset: '+0x28', purpose: 'Prescaler' },
       { reg: `${t}_ARR`, offset: '+0x2C', purpose: 'Auto-reload' },
@@ -409,7 +421,7 @@ function getRegisterRows(intent, entities) {
     return [
       { reg: 'RCC_APB2ENR', offset: '+0x18', purpose: 'GPIO/USART1/TIM1' },
       { reg: 'RCC_APB1ENR', offset: '+0x1C', purpose: 'TIM2-4/USART2-3' },
-      { reg: 'RCC_AHBENR',  offset: '+0x14', purpose: 'DMA, FLITF, SRAM' },
+      { reg: 'RCC_AHBENR', offset: '+0x14', purpose: 'DMA, FLITF, SRAM' },
     ];
   }
   return [];

@@ -1,0 +1,9207 @@
+TOTAL CONFLICTING PROMPTS: 36
+==========================================================================================
+
+[1] PROMPT
+enable usart2
+
+RECORD COUNT: 17
+
+--- RECORD 1 ---
+ID: ex_07128
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_04886
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 3 ---
+ID: ex_07467
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 4 ---
+ID: ex_05038
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 5 ---
+ID: ex_07483
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 6 ---
+ID: ex_03863
+Intent: RCC_ENABLE
+INPUT JSON:
+[
+  {
+    "intent": "RCC_ENABLE",
+    "peripheral": "USART2",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "action": {
+      "type": "clock_enable"
+    }
+  }
+]
+
+CODE HASH: a70a4b390d2e
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB1ENR |= (1U << 17);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 7 ---
+ID: ex_05009
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 8 ---
+ID: ex_07914
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 9 ---
+ID: ex_07282
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 10 ---
+ID: ex_07743
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 11 ---
+ID: ex_07833
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 12 ---
+ID: ex_02931
+Intent: RCC_ENABLE
+INPUT JSON:
+[
+  {
+    "intent": "RCC_ENABLE",
+    "peripheral": "USART2",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "action": {
+      "type": "clock_enable"
+    }
+  }
+]
+
+CODE HASH: a70a4b390d2e
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB1ENR |= (1U << 17);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 13 ---
+ID: ex_07244
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 14 ---
+ID: ex_05572
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 15 ---
+ID: ex_05835
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 16 ---
+ID: ex_06332
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 17 ---
+ID: ex_07217
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[2] PROMPT
+start usart3
+
+RECORD COUNT: 20
+
+--- RECORD 1 ---
+ID: ex_06360
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_07154
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 3 ---
+ID: ex_06479
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 4 ---
+ID: ex_07745
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 5 ---
+ID: ex_07336
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 6 ---
+ID: ex_08211
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 7 ---
+ID: ex_06109
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 8 ---
+ID: ex_04841
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 9 ---
+ID: ex_07471
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 10 ---
+ID: ex_06843
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 11 ---
+ID: ex_08147
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 12 ---
+ID: ex_03675
+Intent: RCC_ENABLE
+INPUT JSON:
+[
+  {
+    "intent": "RCC_ENABLE",
+    "peripheral": "USART3",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "action": {
+      "type": "clock_enable"
+    }
+  }
+]
+
+CODE HASH: 8a641934afad
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB1ENR |= (1U << 18);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 13 ---
+ID: ex_05839
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 14 ---
+ID: ex_07717
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 15 ---
+ID: ex_07739
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 16 ---
+ID: ex_06834
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 17 ---
+ID: ex_05436
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 18 ---
+ID: ex_05180
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 19 ---
+ID: ex_06411
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 20 ---
+ID: ex_08276
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[3] PROMPT
+start usart1
+
+RECORD COUNT: 16
+
+--- RECORD 1 ---
+ID: ex_06512
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_07138
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 3 ---
+ID: ex_07923
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 4 ---
+ID: ex_04807
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 5 ---
+ID: ex_08002
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 6 ---
+ID: ex_05307
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 7 ---
+ID: ex_05457
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 8 ---
+ID: ex_06691
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 9 ---
+ID: ex_08169
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 10 ---
+ID: ex_01675
+Intent: RCC_ENABLE
+INPUT JSON:
+[
+  {
+    "intent": "RCC_ENABLE",
+    "peripheral": "USART1",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "action": {
+      "type": "clock_enable"
+    }
+  }
+]
+
+CODE HASH: ca400f5d8e36
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 14);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 11 ---
+ID: ex_07437
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 12 ---
+ID: ex_04919
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 13 ---
+ID: ex_05597
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 14 ---
+ID: ex_06696
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 15 ---
+ID: ex_01740
+Intent: RCC_ENABLE
+INPUT JSON:
+[
+  {
+    "intent": "RCC_ENABLE",
+    "peripheral": "USART1",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "action": {
+      "type": "clock_enable"
+    }
+  }
+]
+
+CODE HASH: ca400f5d8e36
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 14);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 16 ---
+ID: ex_05369
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[4] PROMPT
+b 5 input
+
+RECORD COUNT: 2
+
+--- RECORD 1 ---
+ID: ex_06330
+Intent: GPIO_INPUT
+INPUT JSON:
+[
+  {
+    "intent": "GPIO_INPUT",
+    "peripheral": "GPIO",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 3,
+      "peripheral_name": "IOPBEN"
+    },
+    "config": {
+      "port": "B",
+      "pin": 5,
+      "pin_name": "PB 5"
+    },
+    "action": {
+      "type": "read"
+    }
+  }
+]
+
+CODE HASH: 9d4b8cb24fe7
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRL &= ~(0xFU << 20);
+    GPIOB->CRL |= (0x4U << 20);
+    volatile uint32_t pin_state_0 = GPIOB->IDR & (1U << 5);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_00653
+Intent: GPIO_INPUT
+INPUT JSON:
+[
+  {
+    "intent": "GPIO_INPUT",
+    "peripheral": "GPIO",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 3,
+      "peripheral_name": "IOPBEN"
+    },
+    "config": {
+      "port": "B",
+      "pin": 5,
+      "pin_name": "PB 5",
+      "mode": "input_pull_up"
+    },
+    "action": {
+      "type": "read"
+    }
+  }
+]
+
+CODE HASH: 3bba6a3d41e4
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRL &= ~(0xFU << 20);
+    GPIOB->CRL |= (0x3U << 20);
+    volatile uint32_t pin_state_0 = GPIOB->IDR & (1U << 5);
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[5] PROMPT
+enable usart3
+
+RECORD COUNT: 16
+
+--- RECORD 1 ---
+ID: ex_07130
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_06246
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 3 ---
+ID: ex_05424
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 4 ---
+ID: ex_05108
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 5 ---
+ID: ex_05543
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 6 ---
+ID: ex_05383
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 7 ---
+ID: ex_06011
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 8 ---
+ID: ex_05470
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 9 ---
+ID: ex_07592
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 10 ---
+ID: ex_03383
+Intent: RCC_ENABLE
+INPUT JSON:
+[
+  {
+    "intent": "RCC_ENABLE",
+    "peripheral": "USART3",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "action": {
+      "type": "clock_enable"
+    }
+  }
+]
+
+CODE HASH: 8a641934afad
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB1ENR |= (1U << 18);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 11 ---
+ID: ex_04847
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 12 ---
+ID: ex_06298
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 13 ---
+ID: ex_05920
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 14 ---
+ID: ex_07724
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 29b047440e32
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x45U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 15 ---
+ID: ex_01873
+Intent: RCC_ENABLE
+INPUT JSON:
+[
+  {
+    "intent": "RCC_ENABLE",
+    "peripheral": "USART3",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "action": {
+      "type": "clock_enable"
+    }
+  }
+]
+
+CODE HASH: 8a641934afad
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB1ENR |= (1U << 18);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 16 ---
+ID: ex_04667
+Intent: RCC_ENABLE
+INPUT JSON:
+[
+  {
+    "intent": "RCC_ENABLE",
+    "peripheral": "USART3",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "action": {
+      "type": "clock_enable"
+    }
+  }
+]
+
+CODE HASH: 8a641934afad
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB1ENR |= (1U << 18);
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[6] PROMPT
+enable usart1 at 115200
+
+RECORD COUNT: 3
+
+--- RECORD 1 ---
+ID: ex_01396
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {
+      "baudrate": 115200,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 3b325253b812
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR1 |= USART_CR1_M;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_01169
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {
+      "baudrate": 115200,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 3b325253b812
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR1 |= USART_CR1_M;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 3 ---
+ID: ex_00412
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {
+      "baudrate": 115200,
+      "word_length": 8,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[7] PROMPT
+start usart2
+
+RECORD COUNT: 22
+
+--- RECORD 1 ---
+ID: ex_07880
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_06039
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 3 ---
+ID: ex_05744
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 4 ---
+ID: ex_08203
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 5 ---
+ID: ex_04396
+Intent: RCC_ENABLE
+INPUT JSON:
+[
+  {
+    "intent": "RCC_ENABLE",
+    "peripheral": "USART2",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "action": {
+      "type": "clock_enable"
+    }
+  }
+]
+
+CODE HASH: a70a4b390d2e
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB1ENR |= (1U << 17);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 6 ---
+ID: ex_06606
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 7 ---
+ID: ex_04940
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 8 ---
+ID: ex_07768
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 9 ---
+ID: ex_01819
+Intent: RCC_ENABLE
+INPUT JSON:
+[
+  {
+    "intent": "RCC_ENABLE",
+    "peripheral": "USART2",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "action": {
+      "type": "clock_enable"
+    }
+  }
+]
+
+CODE HASH: a70a4b390d2e
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB1ENR |= (1U << 17);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 10 ---
+ID: ex_05696
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 11 ---
+ID: ex_07508
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 12 ---
+ID: ex_06726
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 13 ---
+ID: ex_00778
+Intent: RCC_ENABLE
+INPUT JSON:
+[
+  {
+    "intent": "RCC_ENABLE",
+    "peripheral": "USART2",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "action": {
+      "type": "clock_enable"
+    }
+  }
+]
+
+CODE HASH: a70a4b390d2e
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB1ENR |= (1U << 17);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 14 ---
+ID: ex_02625
+Intent: RCC_ENABLE
+INPUT JSON:
+[
+  {
+    "intent": "RCC_ENABLE",
+    "peripheral": "USART2",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "action": {
+      "type": "clock_enable"
+    }
+  }
+]
+
+CODE HASH: a70a4b390d2e
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB1ENR |= (1U << 17);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 15 ---
+ID: ex_06144
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 16 ---
+ID: ex_07705
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 17 ---
+ID: ex_05346
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 18 ---
+ID: ex_07713
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 19 ---
+ID: ex_07120
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 20 ---
+ID: ex_06836
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 21 ---
+ID: ex_05782
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 22 ---
+ID: ex_04965
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[8] PROMPT
+c 14 input
+
+RECORD COUNT: 3
+
+--- RECORD 1 ---
+ID: ex_05349
+Intent: GPIO_INPUT
+INPUT JSON:
+[
+  {
+    "intent": "GPIO_INPUT",
+    "peripheral": "GPIO",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 4,
+      "peripheral_name": "IOPCEN"
+    },
+    "config": {
+      "port": "C",
+      "pin": 14,
+      "pin_name": "PC 14"
+    },
+    "action": {
+      "type": "read"
+    }
+  }
+]
+
+CODE HASH: a692c69277b2
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 4);
+    GPIOC->CRH &= ~(0xFU << 24);
+    GPIOC->CRH |= (0x4U << 24);
+    volatile uint32_t pin_state_0 = GPIOC->IDR & (1U << 14);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_00752
+Intent: GPIO_INPUT
+INPUT JSON:
+[
+  {
+    "intent": "GPIO_INPUT",
+    "peripheral": "GPIO",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 4,
+      "peripheral_name": "IOPCEN"
+    },
+    "config": {
+      "port": "C",
+      "pin": 14,
+      "pin_name": "PC 14",
+      "mode": "input_pull_down"
+    },
+    "action": {
+      "type": "read"
+    }
+  }
+]
+
+CODE HASH: a190733c9133
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 4);
+    GPIOC->CRH &= ~(0xFU << 24);
+    GPIOC->CRH |= (0x3U << 24);
+    volatile uint32_t pin_state_0 = GPIOC->IDR & (1U << 14);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 3 ---
+ID: ex_05040
+Intent: GPIO_INPUT
+INPUT JSON:
+[
+  {
+    "intent": "GPIO_INPUT",
+    "peripheral": "GPIO",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 4,
+      "peripheral_name": "IOPCEN"
+    },
+    "config": {
+      "port": "C",
+      "pin": 14,
+      "pin_name": "PC 14"
+    },
+    "action": {
+      "type": "read"
+    }
+  }
+]
+
+CODE HASH: a692c69277b2
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 4);
+    GPIOC->CRH &= ~(0xFU << 24);
+    GPIOC->CRH |= (0x4U << 24);
+    volatile uint32_t pin_state_0 = GPIOC->IDR & (1U << 14);
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[9] PROMPT
+enable usart1 at 38400
+
+RECORD COUNT: 4
+
+--- RECORD 1 ---
+ID: ex_02405
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {
+      "baudrate": 38400,
+      "word_length": 8,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: d5f174d81840
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0xD0U;
+    USART1->CR1 = 0;
+    USART1->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_04563
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {
+      "baudrate": 38400,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: d59c534e0d71
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0xD0U;
+    USART1->CR1 = 0;
+    USART1->CR1 |= USART_CR1_M;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 3 ---
+ID: ex_00633
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {
+      "baudrate": 38400,
+      "word_length": 8,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 5470b888fc6d
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0xD0U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 4 ---
+ID: ex_01360
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {
+      "baudrate": 38400,
+      "word_length": 8,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 5470b888fc6d
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0xD0U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[10] PROMPT
+enable usart1
+
+RECORD COUNT: 18
+
+--- RECORD 1 ---
+ID: ex_06714
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_07193
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 3 ---
+ID: ex_00679
+Intent: RCC_ENABLE
+INPUT JSON:
+[
+  {
+    "intent": "RCC_ENABLE",
+    "peripheral": "USART1",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "action": {
+      "type": "clock_enable"
+    }
+  }
+]
+
+CODE HASH: ca400f5d8e36
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 14);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 4 ---
+ID: ex_08235
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 5 ---
+ID: ex_07903
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 6 ---
+ID: ex_07186
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 7 ---
+ID: ex_08143
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 8 ---
+ID: ex_06922
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 9 ---
+ID: ex_02875
+Intent: RCC_ENABLE
+INPUT JSON:
+[
+  {
+    "intent": "RCC_ENABLE",
+    "peripheral": "USART1",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "action": {
+      "type": "clock_enable"
+    }
+  }
+]
+
+CODE HASH: ca400f5d8e36
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 14);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 10 ---
+ID: ex_04969
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 11 ---
+ID: ex_05948
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 12 ---
+ID: ex_07003
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 13 ---
+ID: ex_06993
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 14 ---
+ID: ex_07179
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 15 ---
+ID: ex_07438
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 16 ---
+ID: ex_01499
+Intent: RCC_ENABLE
+INPUT JSON:
+[
+  {
+    "intent": "RCC_ENABLE",
+    "peripheral": "USART1",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "action": {
+      "type": "clock_enable"
+    }
+  }
+]
+
+CODE HASH: ca400f5d8e36
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 14);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 17 ---
+ID: ex_06762
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 18 ---
+ID: ex_05192
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {},
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 13be4edfd214
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[11] PROMPT
+run usart1 at 57600 baud
+
+RECORD COUNT: 3
+
+--- RECORD 1 ---
+ID: ex_00643
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {
+      "baudrate": 57600,
+      "word_length": 8,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 81970aa9acb5
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x8AU;
+    USART1->CR1 = 0;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_02010
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {
+      "baudrate": 57600,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 171b62b91ef4
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x8AU;
+    USART1->CR1 = 0;
+    USART1->CR1 |= USART_CR1_M;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 3 ---
+ID: ex_00467
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {
+      "baudrate": 57600,
+      "word_length": 8,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 757ae39b8989
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x8AU;
+    USART1->CR1 = 0;
+    USART1->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[12] PROMPT
+usart2
+
+RECORD COUNT: 6
+
+--- RECORD 1 ---
+ID: ex_05357
+Intent: UART_RECEIVE
+INPUT JSON:
+[
+  {
+    "intent": "UART_RECEIVE",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "receive"
+    }
+  }
+]
+
+CODE HASH: a2d16feeabfb
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_RE | USART_CR1_UE;
+    while (!( USART2->SR & USART_SR_RXNE )) { }
+    volatile uint16_t received = (uint16_t)USART2->DR;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_07836
+Intent: UART_RECEIVE
+INPUT JSON:
+[
+  {
+    "intent": "UART_RECEIVE",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "receive"
+    }
+  }
+]
+
+CODE HASH: a2d16feeabfb
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_RE | USART_CR1_UE;
+    while (!( USART2->SR & USART_SR_RXNE )) { }
+    volatile uint16_t received = (uint16_t)USART2->DR;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 3 ---
+ID: ex_06192
+Intent: UART_RECEIVE
+INPUT JSON:
+[
+  {
+    "intent": "UART_RECEIVE",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "receive"
+    }
+  }
+]
+
+CODE HASH: a2d16feeabfb
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_RE | USART_CR1_UE;
+    while (!( USART2->SR & USART_SR_RXNE )) { }
+    volatile uint16_t received = (uint16_t)USART2->DR;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 4 ---
+ID: ex_06326
+Intent: UART_RECEIVE
+INPUT JSON:
+[
+  {
+    "intent": "UART_RECEIVE",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "receive"
+    }
+  }
+]
+
+CODE HASH: a2d16feeabfb
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_RE | USART_CR1_UE;
+    while (!( USART2->SR & USART_SR_RXNE )) { }
+    volatile uint16_t received = (uint16_t)USART2->DR;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 5 ---
+ID: ex_00444
+Intent: RCC_ENABLE
+INPUT JSON:
+[
+  {
+    "intent": "RCC_ENABLE",
+    "peripheral": "USART2",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "action": {
+      "type": "clock_enable"
+    }
+  }
+]
+
+CODE HASH: a70a4b390d2e
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB1ENR |= (1U << 17);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 6 ---
+ID: ex_05414
+Intent: UART_RECEIVE
+INPUT JSON:
+[
+  {
+    "intent": "UART_RECEIVE",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {},
+    "action": {
+      "type": "receive"
+    }
+  }
+]
+
+CODE HASH: a2d16feeabfb
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_RE | USART_CR1_UE;
+    while (!( USART2->SR & USART_SR_RXNE )) { }
+    volatile uint16_t received = (uint16_t)USART2->DR;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[13] PROMPT
+serial usart2 9600 baud
+
+RECORD COUNT: 3
+
+--- RECORD 1 ---
+ID: ex_03937
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 9,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 1576c697d9ff
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x341U;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_00476
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 8,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 121a83e6c53f
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x341U;
+    USART2->CR1 = 0;
+    USART2->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 3 ---
+ID: ex_04080
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 8,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 121a83e6c53f
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x341U;
+    USART2->CR1 = 0;
+    USART2->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[14] PROMPT
+open usart2 115200
+
+RECORD COUNT: 4
+
+--- RECORD 1 ---
+ID: ex_01869
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 115200,
+      "word_length": 9,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 1feae72ae8e5
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_00797
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 115200,
+      "word_length": 9,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 1feae72ae8e5
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 3 ---
+ID: ex_04358
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 115200,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 58e5a455ce39
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 4 ---
+ID: ex_04753
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 115200,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 58e5a455ce39
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[15] PROMPT
+usart2 start 57600
+
+RECORD COUNT: 5
+
+--- RECORD 1 ---
+ID: ex_00242
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 57600,
+      "word_length": 9,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 67f1018de003
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x8AU;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_04463
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 57600,
+      "word_length": 8,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 54a3309d8630
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x8AU;
+    USART2->CR1 = 0;
+    USART2->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 3 ---
+ID: ex_00523
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 57600,
+      "word_length": 8,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 3c02496b980c
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x8AU;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 4 ---
+ID: ex_02580
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 57600,
+      "word_length": 8,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 3c02496b980c
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x8AU;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 5 ---
+ID: ex_00469
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 57600,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 3425e42ca069
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x8AU;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[16] PROMPT
+configure usart1 for 57600 baud 9 bit
+
+RECORD COUNT: 2
+
+--- RECORD 1 ---
+ID: ex_03727
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {
+      "baudrate": 57600,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 171b62b91ef4
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x8AU;
+    USART1->CR1 = 0;
+    USART1->CR1 |= USART_CR1_M;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_03113
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {
+      "baudrate": 57600,
+      "word_length": 9,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: b778b6219239
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x8AU;
+    USART1->CR1 = 0;
+    USART1->CR1 |= USART_CR1_M;
+    USART1->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[17] PROMPT
+usart2 start 115200
+
+RECORD COUNT: 3
+
+--- RECORD 1 ---
+ID: ex_01577
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 115200,
+      "word_length": 9,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 1feae72ae8e5
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_02911
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 115200,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 58e5a455ce39
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 3 ---
+ID: ex_00211
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 115200,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 58e5a455ce39
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[18] PROMPT
+start usart2 at 115200 baud
+
+RECORD COUNT: 2
+
+--- RECORD 1 ---
+ID: ex_01435
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 115200,
+      "word_length": 8,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 15ecd7b0887f
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_04138
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 115200,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 58e5a455ce39
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[19] PROMPT
+open usart2 9600
+
+RECORD COUNT: 3
+
+--- RECORD 1 ---
+ID: ex_00048
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 927cadf18d3a
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x341U;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_01378
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 9,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 1576c697d9ff
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x341U;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 3 ---
+ID: ex_03382
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 9,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 1576c697d9ff
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x341U;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[20] PROMPT
+serial usart3 9600 baud
+
+RECORD COUNT: 2
+
+--- RECORD 1 ---
+ID: ex_04500
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 8,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: e79893448aee
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x341U;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_02200
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 1a104d053adb
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x341U;
+    USART3->CR1 = 0;
+    USART3->CR1 |= USART_CR1_M;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[21] PROMPT
+i a 1 as input
+
+RECORD COUNT: 2
+
+--- RECORD 1 ---
+ID: ex_00911
+Intent: GPIO_INPUT
+INPUT JSON:
+[
+  {
+    "intent": "GPIO_INPUT",
+    "peripheral": "GPIO",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 2,
+      "peripheral_name": "IOPAEN"
+    },
+    "config": {
+      "port": "A",
+      "pin": 1,
+      "pin_name": "PA 1",
+      "mode": "input_floating"
+    },
+    "action": {
+      "type": "read"
+    }
+  }
+]
+
+CODE HASH: 8cc8e4d38bff
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 4);
+    GPIOA->CRL |= (0x4U << 4);
+    volatile uint32_t pin_state_0 = GPIOA->IDR & (1U << 1);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_02182
+Intent: GPIO_INPUT
+INPUT JSON:
+[
+  {
+    "intent": "GPIO_INPUT",
+    "peripheral": "GPIO",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 2,
+      "peripheral_name": "IOPAEN"
+    },
+    "config": {
+      "port": "A",
+      "pin": 1,
+      "pin_name": "PA 1",
+      "mode": "input_pull_up"
+    },
+    "action": {
+      "type": "read"
+    }
+  }
+]
+
+CODE HASH: 8d9c8271f3ed
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 4);
+    GPIOA->CRL |= (0x3U << 4);
+    volatile uint32_t pin_state_0 = GPIOA->IDR & (1U << 1);
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[22] PROMPT
+configure usart2 uart 9600 baud 9 bits
+
+RECORD COUNT: 2
+
+--- RECORD 1 ---
+ID: ex_03738
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 927cadf18d3a
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x341U;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_04634
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 9,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 1576c697d9ff
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x341U;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[23] PROMPT
+open usart3 57600
+
+RECORD COUNT: 2
+
+--- RECORD 1 ---
+ID: ex_01145
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {
+      "baudrate": 57600,
+      "word_length": 8,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 7cb1c0dc44d4
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x8AU;
+    USART3->CR1 = 0;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_00149
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {
+      "baudrate": 57600,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: cab6ad5d5f62
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x8AU;
+    USART3->CR1 = 0;
+    USART3->CR1 |= USART_CR1_M;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[24] PROMPT
+configure b 15 push pull output 10mhz
+
+RECORD COUNT: 2
+
+--- RECORD 1 ---
+ID: ex_03999
+Intent: GPIO_OUTPUT
+INPUT JSON:
+[
+  {
+    "intent": "GPIO_OUTPUT",
+    "peripheral": "GPIO",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 3,
+      "peripheral_name": "IOPBEN"
+    },
+    "config": {
+      "port": "B",
+      "pin": 15,
+      "pin_name": "PB 15",
+      "mode": "output_push_pull",
+      "speed": "10MHz"
+    },
+    "action": {}
+  }
+]
+
+CODE HASH: 1f2fe47b1f63
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 28);
+    GPIOB->CRH |= (0x1U << 28);
+    GPIOB->BSRR = (1U << 15);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_01968
+Intent: GPIO_OUTPUT
+INPUT JSON:
+[
+  {
+    "intent": "GPIO_OUTPUT",
+    "peripheral": "GPIO",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 3,
+      "peripheral_name": "IOPBEN"
+    },
+    "config": {
+      "port": "B",
+      "pin": 15,
+      "pin_name": "PB 15",
+      "mode": "output_open_drain",
+      "speed": "10MHz"
+    },
+    "action": {}
+  }
+]
+
+CODE HASH: f272e3a74aaa
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 28);
+    GPIOB->CRH |= (0x5U << 28);
+    GPIOB->BSRR = (1U << 15);
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[25] PROMPT
+b 0 input mode
+
+RECORD COUNT: 2
+
+--- RECORD 1 ---
+ID: ex_04288
+Intent: GPIO_INPUT
+INPUT JSON:
+[
+  {
+    "intent": "GPIO_INPUT",
+    "peripheral": "GPIO",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 3,
+      "peripheral_name": "IOPBEN"
+    },
+    "config": {
+      "port": "B",
+      "pin": 0,
+      "pin_name": "PB 0",
+      "mode": "input_pull_up"
+    },
+    "action": {
+      "type": "read"
+    }
+  }
+]
+
+CODE HASH: c599d3ce63c4
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRL &= ~(0xFU << 0);
+    GPIOB->CRL |= (0x3U << 0);
+    volatile uint32_t pin_state_0 = GPIOB->IDR & (1U << 0);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_00129
+Intent: GPIO_INPUT
+INPUT JSON:
+[
+  {
+    "intent": "GPIO_INPUT",
+    "peripheral": "GPIO",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 3,
+      "peripheral_name": "IOPBEN"
+    },
+    "config": {
+      "port": "B",
+      "pin": 0,
+      "pin_name": "PB 0",
+      "mode": "input_floating"
+    },
+    "action": {
+      "type": "read"
+    }
+  }
+]
+
+CODE HASH: 5c1a50dc7b6e
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRL &= ~(0xFU << 0);
+    GPIOB->CRL |= (0x4U << 0);
+    volatile uint32_t pin_state_0 = GPIOB->IDR & (1U << 0);
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[26] PROMPT
+serial comm usart2 9600
+
+RECORD COUNT: 4
+
+--- RECORD 1 ---
+ID: ex_02090
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 927cadf18d3a
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x341U;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_00502
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 927cadf18d3a
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x341U;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 3 ---
+ID: ex_02164
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 8,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: d76bb1b523f3
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x341U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 4 ---
+ID: ex_01715
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 8,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: d76bb1b523f3
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x341U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[27] PROMPT
+activate usart1 serial 57600 baud
+
+RECORD COUNT: 2
+
+--- RECORD 1 ---
+ID: ex_02559
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {
+      "baudrate": 57600,
+      "word_length": 9,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: b778b6219239
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x8AU;
+    USART1->CR1 = 0;
+    USART1->CR1 |= USART_CR1_M;
+    USART1->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_02178
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {
+      "baudrate": 57600,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 171b62b91ef4
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x8AU;
+    USART1->CR1 = 0;
+    USART1->CR1 |= USART_CR1_M;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[28] PROMPT
+usart2 start 9600
+
+RECORD COUNT: 2
+
+--- RECORD 1 ---
+ID: ex_04212
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 8,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: d76bb1b523f3
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x341U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_00272
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 9,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 1576c697d9ff
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x341U;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[29] PROMPT
+begin usart1 57600 baud
+
+RECORD COUNT: 2
+
+--- RECORD 1 ---
+ID: ex_01002
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {
+      "baudrate": 57600,
+      "word_length": 9,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: b778b6219239
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x8AU;
+    USART1->CR1 = 0;
+    USART1->CR1 |= USART_CR1_M;
+    USART1->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_01704
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {
+      "baudrate": 57600,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 171b62b91ef4
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x8AU;
+    USART1->CR1 = 0;
+    USART1->CR1 |= USART_CR1_M;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[30] PROMPT
+enable usart3 at 9600
+
+RECORD COUNT: 3
+
+--- RECORD 1 ---
+ID: ex_01789
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 1a104d053adb
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x341U;
+    USART3->CR1 = 0;
+    USART3->CR1 |= USART_CR1_M;
+    USART3->CR2 = 0U;
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_02246
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 9,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: aaeaf11f2492
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x341U;
+    USART3->CR1 = 0;
+    USART3->CR1 |= USART_CR1_M;
+    USART3->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 3 ---
+ID: ex_02433
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART3",
+    "base_address": "0x40004400",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 18,
+      "peripheral_name": "USART3EN"
+    },
+    "config": {
+      "baudrate": 9600,
+      "word_length": 8,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 1d38a9c4633b
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRH &= ~(0xFU << 8);
+    GPIOB->CRH |= (0xBU << 8);
+    GPIOB->CRH &= ~(0xFU << 12);
+    GPIOB->CRH |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 18);
+    USART3->BRR = 0x341U;
+    USART3->CR1 = 0;
+    USART3->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART3->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[31] PROMPT
+usart1 start 115200
+
+RECORD COUNT: 2
+
+--- RECORD 1 ---
+ID: ex_02892
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {
+      "baudrate": 115200,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 3b325253b812
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR1 |= USART_CR1_M;
+    USART1->CR2 = 0U;
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_00558
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART1",
+    "base_address": "0x40013800",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 14,
+      "peripheral_name": "USART1EN"
+    },
+    "config": {
+      "baudrate": 115200,
+      "word_length": 8,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: e992409dd998
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRH &= ~(0xFU << 4);
+    GPIOA->CRH |= (0xBU << 4);
+    GPIOA->CRH &= ~(0xFU << 8);
+    GPIOA->CRH |= (0x4U << 8);
+    RCC->APB2ENR |= (1U << 14);
+    USART1->BRR = 0x45U;
+    USART1->CR1 = 0;
+    USART1->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[32] PROMPT
+enable usart2 at 115200
+
+RECORD COUNT: 2
+
+--- RECORD 1 ---
+ID: ex_02940
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 115200,
+      "word_length": 8,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: a830eb967217
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_04715
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 115200,
+      "word_length": 9,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 1feae72ae8e5
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x45U;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[33] PROMPT
+start usart2 at 57600 baud
+
+RECORD COUNT: 2
+
+--- RECORD 1 ---
+ID: ex_00985
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 57600,
+      "word_length": 9,
+      "stop_bits": 1
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 3425e42ca069
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x8AU;
+    USART2->CR1 = 0;
+    USART2->CR1 |= USART_CR1_M;
+    USART2->CR2 = 0U;
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_00977
+Intent: UART_INIT
+INPUT JSON:
+[
+  {
+    "intent": "UART_INIT",
+    "peripheral": "USART2",
+    "base_address": "0x40004000",
+    "rcc": {
+      "register": "RCC_APB1ENR",
+      "base_address": "0x40021000",
+      "offset": "0x1C",
+      "bit": 17,
+      "peripheral_name": "USART2EN"
+    },
+    "config": {
+      "baudrate": 57600,
+      "word_length": 8,
+      "stop_bits": 2
+    },
+    "action": {
+      "type": "init"
+    }
+  }
+]
+
+CODE HASH: 54a3309d8630
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 2);
+    GPIOA->CRL &= ~(0xFU << 8);
+    GPIOA->CRL |= (0xBU << 8);
+    GPIOA->CRL &= ~(0xFU << 12);
+    GPIOA->CRL |= (0x4U << 12);
+    RCC->APB1ENR |= (1U << 17);
+    USART2->BRR = 0x8AU;
+    USART2->CR1 = 0;
+    USART2->CR2 = (2U << USART_CR2_STOP_Pos);
+    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[34] PROMPT
+initialize c 13 for digital input
+
+RECORD COUNT: 2
+
+--- RECORD 1 ---
+ID: ex_00490
+Intent: GPIO_INPUT
+INPUT JSON:
+[
+  {
+    "intent": "GPIO_INPUT",
+    "peripheral": "GPIO",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 4,
+      "peripheral_name": "IOPCEN"
+    },
+    "config": {
+      "port": "C",
+      "pin": 13,
+      "pin_name": "PC 13",
+      "mode": "input_floating"
+    },
+    "action": {
+      "type": "read"
+    }
+  }
+]
+
+CODE HASH: 3f67373f6676
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 4);
+    GPIOC->CRH &= ~(0xFU << 20);
+    GPIOC->CRH |= (0x4U << 20);
+    volatile uint32_t pin_state_0 = GPIOC->IDR & (1U << 13);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_00665
+Intent: GPIO_INPUT
+INPUT JSON:
+[
+  {
+    "intent": "GPIO_INPUT",
+    "peripheral": "GPIO",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 4,
+      "peripheral_name": "IOPCEN"
+    },
+    "config": {
+      "port": "C",
+      "pin": 13,
+      "pin_name": "PC 13",
+      "mode": "input_pull_down"
+    },
+    "action": {
+      "type": "read"
+    }
+  }
+]
+
+CODE HASH: a6c8dd7bd082
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 4);
+    GPIOC->CRH &= ~(0xFU << 20);
+    GPIOC->CRH |= (0x3U << 20);
+    volatile uint32_t pin_state_0 = GPIOC->IDR & (1U << 13);
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[35] PROMPT
+c 14
+
+RECORD COUNT: 2
+
+--- RECORD 1 ---
+ID: ex_07826
+Intent: GPIO_TOGGLE
+INPUT JSON:
+[
+  {
+    "intent": "GPIO_TOGGLE",
+    "peripheral": "GPIO",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 4,
+      "peripheral_name": "IOPCEN"
+    },
+    "config": {
+      "port": "C",
+      "pin": 14,
+      "pin_name": "PC 14"
+    },
+    "action": {
+      "type": "toggle"
+    }
+  }
+]
+
+CODE HASH: 7e2fb35c55d0
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+static void gpio_toggle_delay_0(void)
+{
+    TIM2->PSC = 7199U;
+    TIM2->ARR = 4999U;
+    TIM2->EGR = TIM_EGR_UG;
+    TIM2->SR &= ~TIM_SR_UIF;
+    TIM2->CR1 |= TIM_CR1_CEN;
+    while (!(TIM2->SR & TIM_SR_UIF)) { }
+    TIM2->CR1 &= ~TIM_CR1_CEN;
+    TIM2->SR &= ~TIM_SR_UIF;
+}
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 4);
+    GPIOC->CRH &= ~(0xFU << 24);
+    GPIOC->CRH |= (0x3U << 24);
+    RCC->APB1ENR |= (1U << 0);
+
+    while (1)
+    {
+        GPIOC->ODR ^= (1U << 14);
+        gpio_toggle_delay_0();
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_02201
+Intent: GPIO_READ
+INPUT JSON:
+[
+  {
+    "intent": "GPIO_READ",
+    "peripheral": "GPIO",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 4,
+      "peripheral_name": "IOPCEN"
+    },
+    "config": {
+      "port": "C",
+      "pin": 14,
+      "pin_name": "PC 14"
+    },
+    "action": {
+      "type": "read_idr"
+    }
+  }
+]
+
+CODE HASH: a692c69277b2
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 4);
+    GPIOC->CRH &= ~(0xFU << 24);
+    GPIOC->CRH |= (0x4U << 24);
+    volatile uint32_t pin_state_0 = GPIOC->IDR & (1U << 14);
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
+[36] PROMPT
+configure b 5 push pull output 10mhz
+
+RECORD COUNT: 2
+
+--- RECORD 1 ---
+ID: ex_03009
+Intent: GPIO_OUTPUT
+INPUT JSON:
+[
+  {
+    "intent": "GPIO_OUTPUT",
+    "peripheral": "GPIO",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 3,
+      "peripheral_name": "IOPBEN"
+    },
+    "config": {
+      "port": "B",
+      "pin": 5,
+      "pin_name": "PB 5",
+      "mode": "output_push_pull",
+      "speed": "10MHz"
+    },
+    "action": {}
+  }
+]
+
+CODE HASH: b6ad9b304240
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRL &= ~(0xFU << 20);
+    GPIOB->CRL |= (0x1U << 20);
+    GPIOB->BSRR = (1U << 5);
+
+    while (1)
+    {
+    }
+}
+
+
+--- RECORD 2 ---
+ID: ex_04509
+Intent: GPIO_OUTPUT
+INPUT JSON:
+[
+  {
+    "intent": "GPIO_OUTPUT",
+    "peripheral": "GPIO",
+    "rcc": {
+      "register": "RCC_APB2ENR",
+      "base_address": "0x40021000",
+      "offset": "0x18",
+      "bit": 3,
+      "peripheral_name": "IOPBEN"
+    },
+    "config": {
+      "port": "B",
+      "pin": 5,
+      "pin_name": "PB 5",
+      "mode": "output_open_drain",
+      "speed": "10MHz"
+    },
+    "action": {}
+  }
+]
+
+CODE HASH: dd4a5d5bf7c6
+CODE:
+#include "stm32f103xb.h"
+#include <stdint.h>
+
+int main(void)
+{
+    RCC->APB2ENR |= (1U << 3);
+    GPIOB->CRL &= ~(0xFU << 20);
+    GPIOB->CRL |= (0x5U << 20);
+    GPIOB->BSRR = (1U << 5);
+
+    while (1)
+    {
+    }
+}
+
+
+==========================================================================================
+
